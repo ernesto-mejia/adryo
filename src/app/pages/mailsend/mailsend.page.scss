@@ -1,0 +1,93 @@
+.background_ {
+    position: fixed;
+    background-image: url(../../../assets/media/Login_background.png);
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: center;
+  }
+  
+  .login {
+    min-width: 300px;
+    max-width: 60%;
+    margin: 0px auto;
+    padding: 0;
+    margin: auto;
+    color: black;
+    z-index: 99999;
+  }
+  
+  .custom-form {
+    border-radius: 10px;
+    background-color: #ecf0f3;
+    margin: 0px auto;
+    padding: 1rem 3rem;
+  }
+  
+  
+  
+  .native-input.sc-ion-input-ios:invalid  {
+    padding: 3px !important;
+  }
+  
+  
+  
+  input {
+    text-align: center;
+    background-color: #fff;
+    border: none;
+    color: #000;
+    outline: none;
+   }
+   .input_error {
+    border: red 1px solid;
+    border-radius: 8px;
+  }
+   a{
+    color: rgb(80, 79, 79);
+   }
+  
+  
+  .btn-entrar {
+    height: 40px;
+    width: 100px;
+    background-color: #fff;
+    border-color:  #0e383b;
+    color:  #0e383b;
+  }
+  .logout p{
+    font-size: calc(0.55rem + 0.5vw);
+  }
+  .recover h5 {
+    font-size: calc(0.7rem + 0.5vw);
+    font-weight: bold;
+  }
+  .backrecover {
+    text-decoration: underline gray;
+  }
+  .mt-3 p {
+    width: 100%;
+    text-align: center;
+    color: #27929A;
+    font-size: calc(0.55rem + 0.5vw);
+  }
+  .cont_input  {
+    border-radius: 7px !important;
+    background-color: #bdbdbd21 !important;
+    padding: 0px !important;
+  }
+  
+  #input input{
+  padding: 4px !important;
+  }
+  .native-input.sc-ion-input-md {
+    padding: 4px !important;
+  }
+.fa-check-circle {
+    font-size: calc(2rem + 0.5vw);
+    color: #54C147;
+}
+  

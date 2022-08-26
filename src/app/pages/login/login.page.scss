@@ -1,0 +1,84 @@
+.background_ {
+  position: fixed;
+  background-image: url(../../../assets/media/Login_background.png);
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-x: center;
+}
+
+.login {
+  min-width: 300px;
+  max-width: 60%;
+  margin: 0px auto;
+  padding: 0;
+  margin: auto;
+  color: black;
+  z-index: 99999;
+}
+
+.custom-form {
+  border-radius: 10px;
+  background-color: #ecf0f3;
+  margin: 0px auto;
+  padding: 1rem 3rem;
+}
+
+
+input {
+  text-align: center;
+  background-color: #fff;
+  border: none;
+  color: #000;
+  outline: none;
+
+}
+p {
+  width: 100%;
+  text-align: center;
+  color: red;
+  font-size: calc(0.55rem + 0.5vw);
+}
+.input_error {
+  border: red 1px solid;
+  border-radius: 5px;
+}
+ a{
+  color: rgb(80, 79, 79);
+ }
+
+#eye_ {
+  min-width: 50px;
+  padding-top: 7%;
+}
+
+.btn-entrar {
+  height: 40px;
+  width: 100px;
+  background-color: #0e383b;
+  color: #fff;
+}
+.cont_input  {
+  border-radius: 7px !important;
+  background-color: #bdbdbd21 !important;
+  padding: 0px !important;
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  #eye_ {
+    padding-top: calc(4% - 2px);
+  }
+ }
+ @media (min-width: 700px) {
+  #eye_ {
+    padding-top: calc(4% - 2px);
+  }
+ }
+ @media (min-width: 1000px) and (orientation: landscape) {
+  #eye_ {
+    padding-top: calc(3% - 2px);
+  }
+ }

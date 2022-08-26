@@ -1,0 +1,34 @@
+<app-header titulo="Lista de clientes"></app-header>
+<div class="col-12 text-center" style="background-color: #fff; color: black; padding: 0 40px;">
+  <h5 class="find_advance"  routerLink="/search-client"> Búsqueda avanzada</h5>
+  <p class="m-0 info-find">Da click para realizar una busqueda avanzada.</p>
+</div>
+<ion-content>
+
+  <div class="col-12 text-center" style="background-color: #fff; color: black">
+    <ion-list >
+      <ion-item  class="background-color" *ngFor="let item of data; let i = index;">
+          <ion-label class="color">
+            <div class="row">
+              <div class="col-10">
+                <p class="m-0" style="    font-weight: 800;">Nombre Completo</p>
+                <p class="m-0"> Desarrollos/Propiedades </p>
+                <p class="m-0">5546598790</p>
+              </div>
+              <div class="col-2 pt-2">
+                <p class=" et_ t_1">OP</p>
+                <p class=" et_ t_2">AC</p>
+              </div>
+            </div>
+          </ion-label>
+      </ion-item>
+  </ion-list>
+  </div>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+     loadingSpinner="crescent"
+     loadingText="Cargando más información...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

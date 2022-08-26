@@ -1,0 +1,37 @@
+
+<ion-content>
+
+  <div class="background_ "></div>
+  <div class="row h-100">
+
+    <div class="login text-center col-12 logout">
+
+
+      <form class="custom-form" (ngSubmit)="recover(fRecover)" #fRecover="ngForm">
+
+          <h5>Recuperar Contraseña</h5>
+
+          <p>Te enviaremos un correo electrónico, revisa tu abndeja de entra o spam.</p>
+
+          <div class="mt-3 cont_input" >
+            <ion-input id="input" type="email"  email="true" name="email" [(ngModel)]="recoverUser.email"   placeholder="Correo electrónico" required></ion-input>
+          </div>
+
+
+          <div id="error" class="mt-3 d-flex d-none">
+            <p>No hay ninfuna cuenta asociada a este correo electrónico.</p>
+          </div>
+
+          <button type="submit" class="btn btn-entrar mt-4">Enviar</button>
+
+          <div class="mt-3 ">
+            <ion-back-button defaultHref="/" text="Cancelar" color="gray"  icon="" class="backrecover"></ion-back-button>
+          </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</ion-content>

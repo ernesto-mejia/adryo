@@ -1,0 +1,74 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+
+/* Core CSS required for Ionic components to work properly */
+
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: #ffffff;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+.title-default {
+  background-color: #1e5b5a !important;
+  border: none;
+  padding: 0;
+}
+ion-content .background_ {
+  background-color: #fff !important;
+  border: none;
+}
+.md body {
+  --ion-item-background: #ffffff;
+  --ion-toolbar-background: #1e5b5a;
+  --ion-tab-bar-background: #984848;
+}
+.header-md::after {
+  position: fixed !important;
+}
+
+
+ion-title  {
+  border: none;
+text-align: center;
+--ion-toolbar-background:#1e5b5a;
+color: #fff;
+}
+ion-toolbar {
+  display: flex;
+  padding-top: 0px !important;
+}
