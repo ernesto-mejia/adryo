@@ -1,70 +1,90 @@
 <ion-content>
 
   <div id="Principal" class="row">
-
+    <!-- -------------------------- Hader navegacion --------------------------- -->
       <div class="col-12 cont_user">
 
-        <div class="carousel-inner ">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+        
+          <div class="carousel-inner b_c">
+            
+            <div class="carousel-item active">
+              <div class="row b_c body avatar">
 
-          <div class="carousel-item active">
-            <div class="row b_c body avatar">
-
-              <div class="img-user">
-               
-              </div>
-
-              <div class="col-12 p-0 d-flex justify-content-center welcome">
-                <div class="row w-100">
-                  <p class="p-0 m-0 p_wel">Bienvenido</p>
-                </div>
-              </div>
-
-              <div class="col-12 p-0 d-flex justify-content-center user">
-                <div class="row w-100">
-                  <h4 class="p-0 p_use">Usuario</h4>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="carousel-item " >
-            <div class="row b_c body ">
+                <div class="img-user"></div>
 
                 <div class="col-12 p-0 d-flex justify-content-center welcome">
                   <div class="row w-100">
-                    <p class="p-0 m-0 p_wel">Proximos eventos</p>
+                    <p class="p-0 m-0 p_wel">Bienvenido</p>
+                  </div>
+                </div>
+
+                <div class="col-12 p-0 d-flex justify-content-center user">
+                  <div class="row w-100">
+                    <h4 class="p-0 p_use">Usuario</h4>
                   </div>
                 </div>
 
               </div>
 
-          </div>
+            </div>
 
-          <div class="carousel-item">
-            <div class="row b_c body ">
+            <div class="carousel-item">
+              <div class="row b_c body ">
 
-              <div class="col-12 p-0 d-flex justify-content-center welcome">
-                <div class="row w-100">
-                  <p class="p-0 m-0 p_wel">Metas</p>
+                  <div class="col-12 p-0 d-flex justify-content-center welcome">
+                    <div class="row w-100">
+                      <p class="p-0 m-0 p_wel">Proximos eventos</p>
+                    </div>
+                  </div>
+
                 </div>
-              </div>
 
+            </div>
+
+            <div class="carousel-item">
+              <div class="row b_c body ">
+
+                <div class="col-12 p-0 d-flex justify-content-center welcome">
+                  <div class="row w-100">
+                    <p class="p-0 m-0 p_wel">Metas</p>
+                  </div>
+                </div>
+
+
+              </div>
 
             </div>
 
           </div>
+        </div>
 
+        <div class="row footer" >
+          <div class="col-12 h-100 p-0 d-flex justify-content-center">
+            <div class="card_b b_c"></div>
+            <div class="card-bottom b_c"> 
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+            </div>
+            
+          </div>
         </div>
 
       </div>
+    <!-- ----------------------------------------------------------------------- -->
+   
+    
+    <!-- ----------------------- Seccion agregar cliente ----------------------- -->
       <div class="col-12 add-client">
         <p class="find_advance "  id="open-modal" expand="block">
           <i class="fas fa-plus-circle" style="margin-right: 10px;"></i> 
           <span style="padding-top: 2px;"> Agregar Cliente</span>
         </p>
       </div>
+      <!-- ----------------------- Moldal agrregar cliente ----------------------- -->
       <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)" class="b_c">
         <ng-template>
           <ion-header>
@@ -73,9 +93,9 @@
                 <ion-button (click)="cancel()"  class="color-back">Cancelar</ion-button>
               </ion-buttons>
               <ion-title>Agregar Cliente</ion-title>
-             
             </ion-toolbar>
           </ion-header>
+
           <ion-content class="ion-padding">
             <ion-item>
               <ion-label position="stacked">Nombre*</ion-label>
@@ -122,18 +142,22 @@
                 <ion-button (click)="confirm()" [strong]="true" class="color-back">Registrar cliente</ion-button>
               </ion-buttons>
             </div>
-           
+            
           </ion-content>
+
         </ng-template>
       </ion-modal>
+    <!-- ----------------------------------------------------------------------- -->
 
+
+    <!-- -------------------- Seccion mosaico de navegacion -------------------- -->
       <div class="col-12 cont_nav">
         <div class="row body">
 
           
           <div class="col-4 section_" style="margin-bottom: 25px;">
             <div class="btn-nav h-100" routerLink="/client-list">
-           
+            
               <i class="fas fa-user-friends"></i>
               <p> Lista de clientes</p>
             </div>
@@ -183,7 +207,8 @@
           </div>
         </div>
       </div>
-
+    <!-- ----------------------------------------------------------------------- -->
+    
   </div>
 
 </ion-content>

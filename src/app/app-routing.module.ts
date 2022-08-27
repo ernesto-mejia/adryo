@@ -58,6 +58,10 @@ const routes: Routes = [
   },  {
     path: 'search-client',
     loadChildren: () => import('./pages/search-client/search-client.module').then( m => m.SearchClientPageModule)
+  },
+  {
+    path: 'card-client',
+    loadChildren: () => import('./pages/card-client/card-client.module').then( m => m.CardClientPageModule)
   }
 
 
