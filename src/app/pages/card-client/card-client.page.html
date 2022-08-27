@@ -1,10 +1,51 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>card-client</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- ----------------------------- Encabezado ------------------------------ -->
 
-<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start" >
+        <ion-back-button class="back_color" defaultHref="/client-list" text="" ></ion-back-button>
+      </ion-buttons>
+      <ion-title class="ion-text-capitalize title-default"> card del cliente </ion-title>
+      <ion-buttons slot="end" >
+        <ion-button class="back_color" ><i class="fas fa-pen"></i></ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 
-</ion-content>
-<app-navigation-bar></app-navigation-bar>
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- -------------------------- Contenido de card -------------------------- -->
+
+  <ion-content>
+
+  </ion-content>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- ------------------------- Barra de navegacion ------------------------- -->
+
+  <ion-tabs class="navigationBar">
+
+    <ion-tab-bar slot="bottom" class="cont-navigation">
+      
+      <ion-tab-button routerLink="/properties">
+        <i class="fas fa-home-lg"></i>   
+      </ion-tab-button>
+
+      <ion-tab-button routerLink="/client-list">
+        <i class="fas fa-user-friends"></i>  
+      </ion-tab-button>
+
+      <ion-tab-button routerLink="/sales-funnel">
+        <i class="fas fa-filter"></i>  
+      </ion-tab-button>
+
+      <ion-tab-button routerLink="/calendar">
+        <i class="fas fa-calendar-alt"></i>
+      </ion-tab-button>
+      
+    </ion-tab-bar>
+
+  </ion-tabs>
+
+<!-- ----------------------------------------------------------------------- -->
