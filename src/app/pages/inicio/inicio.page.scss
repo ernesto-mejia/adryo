@@ -16,13 +16,14 @@ ion-input {
   color: gray;
 }
 .b_c {
-  background-color: #edffff;
+  background-color: #d6f5f5;
 }
 #Principal{
   height: 100vh;
   background-color: #fff;
 }
 #Principal .cont_user{
+  min-height: 310px;
   height: auto;
 }
 #Principal .cont_user .body{
@@ -52,19 +53,11 @@ ion-input {
 .icon_ {
   height: 40%;
 }
-.card-bottom {
-  position: absolute;
-  height: 120px;
-  width: 100%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  box-shadow: 0px 1px 6px 0px rgb(0 0 0 / 10%);
-}
+
 .card_b {
   z-index: 99;
   width: 100%;
-  height: 70px;
+  height: 40px;
   top: -1px;
 }
 .btn-nav {
@@ -97,6 +90,7 @@ ion-input {
   font-size: 45px;
   font-weight: bold;
 }
+
 .p_use {
   color: #27a196;
   font-size: 35px;
@@ -132,10 +126,19 @@ ion-input {
   width: 10px;
 }
 #carouselExampleIndicators {
-  min-height: 73%;
-  background-color: #edffff;
+  z-index: 99;
+  min-height: 82%;
+  background-color: #d6f5f5;
 }
-
+.card-bottom {
+  position: absolute;
+  height: 80px;
+  width: 100%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  box-shadow: 0px 4px 12px 0px rgb(0 0 0 / 25%);
+}
 .find_advance {
   min-height: 40px;
   min-height: 45px;
@@ -171,6 +174,62 @@ ion-buttons {
 .color-back {
   color: #fff;
 }
+
+/* ---------------------------- Proximos-Eventos ---------------------------- */
+.next-event {
+  margin-top: 15px;
+}
+.next-event_ {
+  margin-top: 10px;
+  min-height: 165px;
+  padding: 0 60px !important;
+}
+.next-event i {
+  color: #1e5b5a;
+  font-size: 36px;
+  margin-right: 80px;
+}
+.p-next {
+  color: #195f57;
+  font-size: 24px;
+  font-weight: bold;
+}
+.event_ {
+  max-height: 50px;
+  color: black;
+  border-radius: 9px;
+}
+
+/* -------------------------------------------------------------------------- */
+
+
+
+
+/* ---------------------------- Metas ---------------------------- */
+.meta{
+  padding: 0 60px;
+  margin-top: 15px;
+}
+.meta i {
+  color: #1e5b5a;
+  font-size: 36px;
+  margin-right: 80px;
+}
+.p-meta {
+  color: #195f57;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+
+
+
+
+
 @media (orientation: landscape) {
   #Principal{
     height: auto;
