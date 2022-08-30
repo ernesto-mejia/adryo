@@ -58,7 +58,8 @@ ion-input {
   z-index: 99;
   width: 100%;
   height: 40px;
-  top: -1px;
+  top: -7px;
+  position: relative;
 }
 .btn-nav {
   text-align: center;
@@ -224,6 +225,39 @@ ion-buttons {
 
 /* -------------------------------------------------------------------------- */
 
+
+/* ---------------------------------- modal --------------------------------- */
+
+ion-buttons {
+  background: #1e5b5a;
+  border-radius: 5px;
+}
+.btn-add {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.ios ion-modal ion-toolbar  {
+  padding-top: 0px !important;
+}
+.color-back {
+  font-size: 25px;
+  color: #fff;
+}
+.cont_input_ {
+  padding: 5px 20px 6px 20px;
+}
+.search_ {  
+  text-align: left;
+  height: 25px;
+  border: solid 1px gray;
+  border-radius: 7px !important;
+}
+.label_ {
+  width: 100%;
+  text-align: start;
+} 
 
 
 
