@@ -39,7 +39,6 @@ export class UsuarioService {
 
             console.log(resp['mensaje']);
             this.storage.create();
-            this.storage.clear();
             this.user = null;
             this.storage.clear();
             resolve(false);
@@ -61,8 +60,8 @@ export class UsuarioService {
 
     logout() {
       this.user = null;
-      this.storage.clear();
       this.naveCtrl.navigateRoot('/login', {animated: true});
+      this.storage.clear();
     };
 
 
@@ -75,11 +74,11 @@ export class UsuarioService {
         .subscribe(resp => {
           console.log(resp);
           // eslint-disable-next-line @typescript-eslint/dot-notation
-          if ( resp['Ok'] ) {
+          if (resp['Ok'] ) {
             console.log(resp['mensaje']);
             resolve(true);
           };
-          if (resp['Ok']) {
+          if (!resp['Ok']) {
             console.log(resp['mensaje']);
             resolve(false);
           };

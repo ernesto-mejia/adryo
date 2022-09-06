@@ -62,6 +62,10 @@ const routes: Routes = [
   {
     path: 'card-client',
     loadChildren: () => import('./pages/card-client/card-client.module').then( m => m.CardClientPageModule)
+  },
+  {
+    path: 'events',
+    loadChildren: () => import('./pages/events/events.module').then( m => m.EventsPageModule)
   }
 
 
