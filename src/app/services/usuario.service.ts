@@ -2,7 +2,7 @@ import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { NavController } from '@ionic/angular';
-import { InfoAdviser } from '../interfaces';
+import { InfoAdviser, dataEvents } from '../interfaces';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -17,6 +17,7 @@ export class UsuarioService {
   user: string = null;
   email: string = null;
   adviserId: string = null;
+  
 
   constructor(private http: HttpClient,
               private storage: Storage,
