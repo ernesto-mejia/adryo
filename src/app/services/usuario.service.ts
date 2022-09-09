@@ -1,9 +1,10 @@
-/* eslint-disable @typescript-eslint/dot-notation */
 import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { NavController } from '@ionic/angular';
-
+import { InfoAdviser } from '../interfaces';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,13 @@ export class UsuarioService {
   @Input() message;
   user: string = null;
   email: string = null;
+  adviserId: string = null;
 
   constructor(private http: HttpClient,
               private storage: Storage,
               private naveCtrl: NavController,) { }
 
+  /* ----------------------------- Iniciar sesion ----------------------------- */
 
     login(email: string, password: string) {
 
@@ -28,8 +31,8 @@ export class UsuarioService {
       return new Promise(resolve => {
         this.http.post(`https://adryo.com.mx/users/login_app`, data)
         .subscribe(resp => {
-          //console.log(resp);
-          // eslint-disable-next-line @typescript-eslint/dot-notation
+          console.log(resp);
+          
           if ( resp['Ok'] ) {
             this.saveUserId(resp['user_id']);
             this.message = resp['mensaje'];
@@ -38,9 +41,6 @@ export class UsuarioService {
           if (!resp['Ok']) {
 
             console.log(resp['mensaje']);
-            this.storage.create();
-            this.user = null;
-            this.storage.clear();
             resolve(false);
             this.message = resp['mensaje'];
           };
@@ -58,13 +58,19 @@ export class UsuarioService {
 
     };
 
+  /* -------------------------------------------------------------------------- */
+
+  /* ------------------------------ Cerrar Sesion ----------------------------- */
     logout() {
       this.user = null;
       this.naveCtrl.navigateRoot('/login', {animated: true});
       this.storage.clear();
     };
 
+  /* -------------------------------------------------------------------------- */
 
+  /* -------------------------- Recuperar contraseña -------------------------- */
+  
     recover(email: string) {
 
       const data = {email};
@@ -73,7 +79,7 @@ export class UsuarioService {
         this.http.post(`https://adryo.com.mx/users/validate_user`, data)
         .subscribe(resp => {
           console.log(resp);
-          // eslint-disable-next-line @typescript-eslint/dot-notation
+          
           if (resp['Ok'] ) {
             console.log(resp['mensaje']);
             resolve(true);
@@ -86,5 +92,28 @@ export class UsuarioService {
       });
 
     }
+
+  /* -------------------------------------------------------------------------- */
+
+
+  /* ----------------------------- Navegacion/Inicio ----------------------------- */
+ 
+    getUserData(adviserId: string):Observable<InfoAdviser> {
+    
+      var data = {adviserId};
+
+      var dataUser = {
+        id: data.adviserId
+      };
+     
+      const url = 'https://beta.adryo.com.mx/users/get_advisor_info';
+
+      return this.http.post<InfoAdviser>(url, dataUser).pipe(map(resp => resp[0]));
+      
+    }
+
+  /* -------------------------------------------------------------------------- */
+
+
 
 }

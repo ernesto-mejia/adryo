@@ -2,25 +2,50 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { NavController } from '@ionic/angular';
-
 import { IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { loginData, InfoAdviser } from '../../interfaces/index';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
-export class InicioPage implements OnInit {
-  user: string = null;
-  constructor(private http: HttpClient,
-    private storage: Storage,
-    private naveCtrl: NavController) { }
 
-  ngOnInit() {
+export class InicioPage  {
+
+  user: string = null;
+  userId: string = null;
+  ar: Promise<any>;
+
+  constructor(private http: HttpClient,
+              private storage: Storage,
+              private naveCtrl: NavController,
+              private usuarioService: UsuarioService
+  ) { 
+    this.as();
   }
-  logout() {
-    
+
+  adviser: InfoAdviser = {};
+
+
+  advId = {
+    id: '5'
+  };
+  async as() {
+    const storage = await this.storage.create();
+    const name = await this.storage.get('user_id');
+
+    this.usuarioService.getUserData(this.advId.id).subscribe(resp => {
+      this.adviser = resp;
+      console.log(resp);
+      
+    });
+
+  }
+
+  logout() {    
     this.storage.clear();
     this.user = null;
     this.storage.clear();

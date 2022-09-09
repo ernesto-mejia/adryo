@@ -17,7 +17,7 @@ export class LoginPage implements OnInit {
     password: ''
   };
 
-  // eslint-disable-next-line @typescript-eslint/member-ordering
+  
   @Input() message;
 
   ionicForm: FormGroup;
@@ -38,13 +38,10 @@ export class LoginPage implements OnInit {
     const valido = await this.usuarioService.login(this.loginUser.email,this.loginUser.password);
 
     if (valido) {
-      //navegar a home
       this.naveCtrl.navigateRoot('inicio', {animated: true});
     } else {
-      //retubs aler error
-      //this.uiService.presentAlert('Usario y/o contraseña incorrectos.');
       this.error();
-      this.message= this.message;
+      this.message = this.message;
     }
       //console.log(this.loginUser);
   }

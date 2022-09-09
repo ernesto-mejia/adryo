@@ -105,6 +105,7 @@
                         </ion-select>                    
                     </div>
                 </div> 
+
                 <div class="col-12 text-center mb-2" >
                     <div class="input-group">
                     <ion-label class="label_">Desarrollos</ion-label>
@@ -115,14 +116,41 @@
                     </ion-select>
                     
                     </div>
-                </div>        
+                </div>  
+
                 <div class="col-12 btn-add">
                     <ion-buttons >
                         <ion-button (click)="confirm()" [strong]="true" class="color-back">Buscar</ion-button>
                     </ion-buttons>
                 </div>
-            </div> 
 
+            </div> 
+            <ion-item>
+                <label>Pizza</label>
+                <select value="" id="select-chosen" chosen
+                data-placeholder-text-single="'Pick one of these'"
+                disable-search="true"
+                allow-single-deselect="true">
+                    <option value="0" label="Afghanistan">Afghanistan</option>
+                    <option value="1" label="Åland Islands">Åland Islands</option>
+                    <option value="2" label="Albania">Albania</option>
+                    <option value="3" label="Algeria">Algeria</option>
+                    <option value="4" label="American Samoa">American Samoa</option>
+                    <option value="5" label="AndorrA">AndorrA</option>
+                    <option value="6" label="Angola">Angola</option>
+                    <option value="7" label="Anguilla">Anguilla</option>
+                    <option value="8" label="Antarctica">Antarctica</option>
+                    <option value="9" label="Antigua and Barbuda">Antigua and Barbuda</option>
+                    <option value="10" label="Argentina">Argentina</option>
+                    <option value="11" label="Armenia">Armenia</option>
+                    <option value="12" label="Aruba">Aruba</option>
+                    <option value="13" label="Australia">Australia</option>
+                    <option value="14" label="Austria">Austria</option>
+                    <option value="15" label="Azerbaijan">Azerbaijan</option>
+                    <option value="16" label="Bahamas">Bahamas</option>
+                </select>
+            </ion-item>
+                
         </ion-list>
         
 
