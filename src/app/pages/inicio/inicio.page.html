@@ -44,6 +44,7 @@
                   </div>
 
                   <div class="col-12 justify-content-center next-event_">
+
                     <div class="row event_" style="background-color:#c0f0ef;" *ngFor="let event of events">
                       <div class="col-6 cont-event">Cita</div>
                       <div class="col-6 cont-event">{{event.fecha}}</div>
@@ -51,7 +52,6 @@
                       <div class="col-6 cont-event">{{event.direccion}}</div>
                     </div>
                   
-
                   </div>
 
                 </div>
@@ -73,10 +73,12 @@
                   </div>
 
                   <div class="col-12 justify-content-center meta">
-                    <h1 class=" w-100 text-end" style="color: rgb(30,91,90); margin-top: 55px;">10M</h1>
-                  <div class="row w-100 m-0" style="background: rgb(30,91,90); background: linear-gradient(90deg, rgba(30,91,90,1) 0%, rgba(105,219,217,1) 100%); height: 25px;">
-                    
-                  </div>
+                    <h1 class=" w-100 text-end" style="color: rgb(30,91,90); margin-top: 55px;">{{adviser.ventas_monto_meta}}M</h1>
+                    <div class="row w-100 m-0" style="background: rgb(30,91,90); background: linear-gradient(90deg, rgba(30,91,90,1) 0%, rgba(105,219,217,1) 100%); height: 25px;">
+                      
+                    </div>
+                    <h1 class=" w-100 text-end" style="color: rgb(30,91,90); ">{{adviser.ventas_monto_vendidas}}M</h1>
+                    <h5 class=" w-100 text-end" style="color: rgb(30,91,90); ">Unidades vendidas: {{adviser.ventas_monto_unidades}}</h5>
                   
                 </div>
 
