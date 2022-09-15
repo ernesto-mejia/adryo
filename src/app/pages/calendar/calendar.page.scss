@@ -24,8 +24,25 @@ p {
   padding: 10px;
 }
 
+
+.find_advance {
+  min-height: 40px;
+  min-height: 45px;
+  background-color: #1e5b5a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+
 /* ---------------------------------- modal --------------------------------- */
 
+.ion-padding {
+  background: rgb(255 255 255 / 0%) !important;
+  border-radius: 6% !important;
+}
 ion-content {
   background: white;
   border-radius: 25px;
@@ -75,4 +92,15 @@ ion-content {
   display: flex;
   justify-content: center;
   margin-top: 15px;
+}
+
+
+
+/* ---------------------------------- filtro event view --------------------------------- */
+
+.filter-event {
+  width: 40px;
+  border: solid 1px #1e5b5a;
+  border-radius: 25px;
+  color: #1e5b5a;
 }

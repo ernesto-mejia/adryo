@@ -1,10 +1,24 @@
 <app-header titulo="Calendario"></app-header>
+<!-- -------------------------- Busqueda avanzada -------------------------- -->
+<div class="col-12 text-center" style="background-color: #fff; color: black; padding: 0 40px; margin-bottom: 15px;">
+  <h5 class="find_advance"  routerLink="/search-event"><i class="far fa-search" style="margin-right: 10px;"></i> Búsqueda avanzada</h5>
+  <p class="m-0 info-find"></p>
+</div>
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- -------------------------- Contenido -------------------------- -->
 
 <ion-content>
 
-  <div class="col-12" style="background-color: #fff; color: black; padding: 0px 20px;" >
+  <div class="col-12 " style="background-color: #fff; color: black; padding: 0px 20px;" >
+    <div class="row">
+      <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-plus-circle"></i></p></div>
+      <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-map-marker-alt"></i></p></div>
+      <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-phone"></i></p></div>
+      <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-envelope"></i></p></div>
+    </div>
 
-    <h3>Mes</h3>
     <div class=" " style="margin-top: 10px;" >
       <div class="row cont-card-event">
         <div class="col-3 card-date text-center">

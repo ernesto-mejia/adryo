@@ -53,7 +53,8 @@ ion-content .background_ {
   border: none;
 }
 .md body {
-  --ion-item-background: #ffffff;
+  --ion-item-background: rgb(255, 255, 255,0) !important;
+
   --ion-toolbar-background: #1e5b5a;
   --ion-tab-bar-background: #984848;
   --ion-item-background: #ffffff;
@@ -78,7 +79,7 @@ ion-toolbar {
   position: relative !important;
   height: 90px !important;
 }
-.navigationBar .cont-nav{  
+.navigationBar .cont-nav{
   height: 100%;
 }
 .tab-has-label {
@@ -117,4 +118,12 @@ ion-toolbar {
 .ion-modal_ ion-toolbar {
   --background: #1e5b5a;
   --color: white;
+}
+
+.ion-page {
+    --border-radius: 41px;
+    --box-shadow: 0 28px 48pxrgba(0, 0, 0, 0.4);
+}
+ion-tab-bar {
+  border-radius: 10px 10px 0 0;
 }

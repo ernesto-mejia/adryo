@@ -36,7 +36,6 @@ const routes: Routes = [
     path: 'developments',
     loadChildren: () => import('./pages/developments/developments.module').then( m => m.DevelopmentsPageModule)
   },
-
   {
     path: 'mail-send',
     loadChildren: () => import('./pages/login/mailsend/mailsend.module').then( m => m.MailsendPageModule)
@@ -68,7 +67,12 @@ const routes: Routes = [
   {
     path: 'eventos',
     loadChildren: () => import('./pages/cliente/eventos/eventos.module').then( m => m.EventosPageModule)
+  },
+  {
+    path: 'search-event',
+    loadChildren: () => import('./pages/calendar/search-event/search-event.module').then( m => m.SearchEventPageModule)
   }
+
 
 
 
