@@ -3,6 +3,9 @@ import { event } from 'jquery';
 import { IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 
+import { Storage } from '@ionic/storage';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { clientList } from '../../interfaces';
 @Component({
   selector: 'app-client-list',
   templateUrl: './client-list.page.html',
@@ -10,34 +13,26 @@ import { OverlayEventDetail } from '@ionic/core/components';
 })
 export class ClientListPage implements OnInit {
 
-  data: any[] = Array(15);
-  constructor() { }
+    constructor(
+      private storage: Storage,
+      private usuarioService: UsuarioService
+  ) { this.as(); }
+
+  public cliens: clientList;
 
   ngOnInit() {
   }
-  // eslint-disable-next-line @typescript-eslint/no-shadow
-  loadData(event) {
-    console.log(event);
+
+  async as() {
+    const storage = await this.storage.create();
+    const name = await this.storage.get('user_id');
+
+    this.usuarioService.getClientList(name).subscribe( (resp: clientList) => {
+    this.cliens = resp;
+
+    });
+
   }
 
   
-  @ViewChild(IonModal) modal: IonModal;
-
-  message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
-  name: string;
-
-  cancel() {
-    this.modal.dismiss(null, 'cancel');
-  }
-
-  confirm() {
-    this.modal.dismiss(this.name, 'confirm');
-  }
-
-  onWillDismiss(event: Event) {
-    const ev = event as CustomEvent<OverlayEventDetail<string>>;
-    if (ev.detail.role === 'confirm') {
-      this.message = `Hello, ${ev.detail.data}!`;
-    }
-  }
 }

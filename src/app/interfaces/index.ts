@@ -5,7 +5,14 @@ export interface InfoAdviser {
     ventas_monto_vendidas?:     string;
     ventas_unidad_meta?:        string;
     ventas_monto_meta?:         string;
-    events?: string;
+    events?: string;   
+    nombre?:                string;
+    correo_electronico?:    string;
+    desarrollo?:            string;
+    telefono?:              string;
+    status?:                string;
+    etapa?:                 string; 
+  
 }
 
 export interface loginData {   
@@ -13,13 +20,14 @@ export interface loginData {
     user_id?:           string;
     cuenta_id?:         string;
     cuenta_logo?:       string;
-   
 }
 
-export interface dataEvents {   
-    fecha?:             string;
-    direccion?:         string;
-    cliente?:           string;
-   
+export interface clientList {   
+    nombre?:                string;
+    correo_electronico?:    string;
+    desarrollo?:            string;
+    telefono?:              string;
+    status?:                string;
+    etapa?:                 string;
 }
 

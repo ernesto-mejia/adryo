@@ -2,7 +2,7 @@ import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { NavController } from '@ionic/angular';
-import { InfoAdviser, dataEvents } from '../interfaces';
+import { InfoAdviser, clientList } from '../interfaces';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -114,6 +114,24 @@ export class UsuarioService {
     }
 
   /* -------------------------------------------------------------------------- */
+
+  /* ----------------------------- Lista-de-clientes ----------------------------- */
+ 
+  getClientList(adviserId: string):Observable<clientList> {
+    
+    var data = {adviserId};
+
+    var dataUser = {
+      id: data.adviserId
+    };
+   
+    const url = 'https://beta.adryo.com.mx/clientes/get_cliente_info';
+
+    return this.http.post<clientList>(url, dataUser).pipe(map(resp => resp));
+    
+  }
+
+/* -------------------------------------------------------------------------- */
 
 
 

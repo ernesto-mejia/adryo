@@ -16,21 +16,26 @@
 
       <ion-list >
 
-        <ion-item  class="background-color" *ngFor="let item of data; let i = index;">
+        <ion-item  class="background-color" *ngFor="let cliente of cliens">
 
             <ion-label class="color">
 
               <div class="row" routerLink="/card-client">
 
                 <div class="col-10">
-                  <p class="m-0" style="    font-weight: 800;">Nombre Completo</p>
-                  <p class="m-0"> Desarrollos/Propiedades </p>
-                  <p class="m-0">5546598790</p>
+                  <p class="m-0" style="font-weight: 800;">{{cliente.nombre}}</p>
+                  <p class="m-0"> {{cliente.desarrollo}}</p>
+                  <p class="m-0">{{cliente.telefono}}</p>
                 </div>
 
                 <div class="col-2 pt-2">
-                  <p class=" et_ t_1">OP</p>
-                  <p class=" et_ t_2">AC</p>
+                  <p *ngIf=" cliente.etapa == '1' " class=" et_ t_1">OP</p>
+                  <p *ngIf=" cliente.etapa == '2' " class=" et_ t_2">TA</p>
+                  <p *ngIf=" cliente.etapa == '3' " class=" et_ t_3">NA</p>
+                  <p *ngIf=" cliente.etapa == '4' " class=" et_ t_4">PR</p>
+                  <p *ngIf=" cliente.status == 'Activo' " class=" et_ t_5">AC</p>
+                  <p *ngIf=" cliente.status == 'Inactivo' " class=" et_ t_6">IT</p>
+                  <p *ngIf=" cliente.status == 'Indefinido' " class=" et_ t_7">ID</p>
                 </div>
 
               </div>
@@ -52,93 +57,6 @@
       <i class="fas fa-plus"></i>
     </p>
   </div>
-<!-- ----------------------------------------------------------------------- -->
-
-<!-- ----------------------- Moldal agrregar cliente ----------------------- -->
-  <div class="row">
-    <ion-modal trigger="open-modal-client-list" [initialBreakpoint]="0.60" [breakpoints]="[0, 0.25, 0.5, 0.75]">
-      <ng-template>
-        
-
-        <ion-content class="ion-padding">
-
-          <ion-list>
-          
-            <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
-              <p class="m-0 font-weight-bold" style="color: black;">Añadir cliente</p>
-            <div class="col-12 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Nombre del cliente:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="nombre apellidos"></ion-input>
-                </div>
-              </div>
-            <div class="col-12 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Correo electrónico:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
-                </div>
-              </div>
-              <div class="col-6 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Teléfono 1:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-                </div>
-              </div>
-              <div class="col-6 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Teléfono 2:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-                </div>
-              </div>
-              <div class="col-6 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Teléfono 3:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-                </div>
-              </div>
-              <div class="col-6 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Tipo de cliente:</ion-label>
-                  <ion-select placeholder="Select fruit"  [(ngModel)]="name"  >
-                    <ion-select-option value="apples">Apples</ion-select-option>
-                    <ion-select-option value="oranges">Oranges</ion-select-option>
-                    <ion-select-option value="bananas">Bananas</ion-select-option>
-                  </ion-select>
-                
-                </div>
-              </div>
-            <div class="col-12 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Forma de contacto:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="Mercado libre"></ion-input>
-                </div>
-              </div>
-            <div class="col-12 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Desarrolo</ion-label>
-                  <ion-select placeholder="Select fruit"  [(ngModel)]="name"  >
-                    <ion-select-option value="apples">Apples</ion-select-option>
-                    <ion-select-option value="oranges">Oranges</ion-select-option>
-                    <ion-select-option value="bananas">Bananas</ion-select-option>
-                  </ion-select>
-                
-                </div>
-              </div>
-            
-            <div class="col-12 btn-add">
-              <ion-buttons >
-                <ion-button (click)="confirm()" [strong]="true" class="color-back">Registrar</ion-button>
-              </ion-buttons>
-            </div>
-          </div>  
-          </ion-list>
-          
-          
-        </ion-content>
-
-      </ng-template>
-    </ion-modal>
-  </div> 
 <!-- ----------------------------------------------------------------------- -->
 
 <!-- ------------------------- Barra de navegacion ------------------------- -->

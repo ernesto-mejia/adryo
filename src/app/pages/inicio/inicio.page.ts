@@ -5,9 +5,7 @@ import { NavController } from '@ionic/angular';
 import { IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { loginData, InfoAdviser, dataEvents } from '../../interfaces/index';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { InfoAdviser } from '../../interfaces/index';
 
 @Component({
   selector: 'app-inicio',
@@ -19,10 +17,7 @@ export class InicioPage  {
   cliente: string = null;
   user: string = null;
   userId: string = null;
-  ar: Promise<any>;
   events: string;
-  fecha: string = null;
-  direccion: string = null;
 
   constructor(private http: HttpClient,
               private storage: Storage,
@@ -43,7 +38,7 @@ export class InicioPage  {
     const storage = await this.storage.create();
     const name = await this.storage.get('user_id');
 
-    this.usuarioService.getUserData(this.advId.id).subscribe(resp => {
+    this.usuarioService.getUserData(name).subscribe(resp => {
       this.adviser = resp;
       this.events = resp.events;
       console.log(resp);

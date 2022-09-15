@@ -19,5 +19,10 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "lib": [
+    "es2018",
+    "dom",
+    "DOM.Iterable"
+  ]
 }
