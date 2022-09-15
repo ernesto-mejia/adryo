@@ -5,7 +5,7 @@
       <div class="col-12 cont_user">
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
-        
+
           <div class="carousel-inner b_c">
             <!-- ------------------------- Imagen-nombre-user -------------------------- -->
             <div class="carousel-item active">
@@ -37,10 +37,10 @@
               <div class="row b_c p-0 ">
 
                   <div class="col-12 p-0 d-flex justify-content-center next-event">
-                    
+
                       <i class="fas fa-calendar-alt"></i>
                       <p class="p-0 m-0 p-next">Proximos eventos</p>
-                    
+
                   </div>
 
                   <div class="col-12 justify-content-center next-event_">
@@ -51,7 +51,7 @@
                       <div class="col-6 cont-event">{{event.cliente}}</div>
                       <div class="col-6 cont-event">{{event.direccion}}</div>
                     </div>
-                  
+
                   </div>
 
                 </div>
@@ -66,20 +66,20 @@
                 <div class="row b_c p-0 ">
 
                   <div class="col-12 p-0 d-flex justify-content-center meta">
-                    
+
                       <i class="fad fa-bullseye-arrow"></i>
                       <p class="p-0 m-0 p-meta">Metas de agosto</p>
-                    
+
                   </div>
 
                   <div class="col-12 justify-content-center meta">
                     <h1 class=" w-100 text-end" style="color: rgb(30,91,90); margin-top: 55px;">{{adviser.ventas_monto_meta}}M</h1>
                     <div class="row w-100 m-0" style="background: rgb(30,91,90); background: linear-gradient(90deg, rgba(30,91,90,1) 0%, rgba(105,219,217,1) 100%); height: 25px;">
-                      
+
                     </div>
                     <h1 class=" w-100 text-end" style="color: rgb(30,91,90); ">{{adviser.ventas_monto_vendidas}}M</h1>
                     <h5 class=" w-100 text-end" style="color: rgb(30,91,90); ">Unidades vendidas: {{adviser.ventas_monto_unidades}}</h5>
-                  
+
                 </div>
 
                 </div>
@@ -94,24 +94,24 @@
         <div class="row footer" >
           <div class="col-12 h-100 p-0 d-flex justify-content-center">
             <div class="card_b b_c"></div>
-            <div class="card-bottom b_c"> 
+            <div class="card-bottom b_c">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
               </ol>
             </div>
-            
+
           </div>
         </div>
 
       </div>
     <!-- ----------------------------------------------------------------------- -->
-    
+
     <!-- ----------------------- Seccion agregar cliente ----------------------- -->
       <div class="col-12 add-client">
         <p class="find_advance " id="open-modal-client-add-modal" expand="block" >
-          <i class="fas fa-plus-circle" style="margin-right: 10px;"></i> 
+          <i class="fas fa-plus-circle" style="margin-right: 10px;"></i>
           <span style="padding-top: 2px;"> Agregar Cliente</span>
         </p>
       </div>
@@ -120,12 +120,12 @@
 
       <div class="row">
         <ion-modal trigger="open-modal-client-add-modal" [initialBreakpoint]="0.60" [breakpoints]="[0, 0.25, 0.5, 0.75]">
-          <ng-template>            
+          <ng-template>
 
             <ion-content class="ion-padding">
 
               <ion-list>
-              
+
                 <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
                   <p class="m-0 font-weight-bold" style="color: black;">Registrar cliente</p>
                   <div class="col-12 text-center mb-2" >
@@ -166,7 +166,7 @@
                         <ion-select-option value="oranges">Oranges</ion-select-option>
                         <ion-select-option value="bananas">Bananas</ion-select-option>
                       </ion-select>
-                    
+
                     </div>
                   </div>
                   <div class="col-12 text-center mb-2" >
@@ -183,24 +183,24 @@
                         <ion-select-option value="oranges">Oranges</ion-select-option>
                         <ion-select-option value="bananas">Bananas</ion-select-option>
                       </ion-select>
-                    
+
                     </div>
                   </div>
-                
+
                   <div class="col-12 btn-add">
                     <ion-buttons >
                       <ion-button (click)="confirm()" [strong]="true" class="color-back">Registrar</ion-button>
                     </ion-buttons>
                   </div>
-                </div>  
+                </div>
 
-              </ion-list>              
-              
+              </ion-list>
+
             </ion-content>
 
           </ng-template>
         </ion-modal>
-      </div> 
+      </div>
 
     <!-- ----------------------------------------------------------------------- -->
 
@@ -209,10 +209,10 @@
       <div class="col-12 cont_nav">
         <div class="row body">
 
-          
+
           <div class="col-4 section_" style="margin-bottom: 25px;">
             <div class="btn-nav h-100" routerLink="/client-list">
-            
+
               <i class="fas fa-user-friends"></i>
               <p> Lista de clientes</p>
             </div>
@@ -221,41 +221,41 @@
           <div class="col-4 section_">
 
             <div class="btn-nav h-100" routerLink="/sales-funnel">
-              
+
               <i class="fas fa-filter"></i>
               <p>Embudo de ventas</p>
             </div>
           </div>
 
-          
+
           <div class="col-4 section_">
             <div class="btn-nav h-100" routerLink="/calendar">
               <div>
                 <i class="fas fa-calendar-alt"></i>
               </div>
-              
+
               <p>Calendario</p>
             </div>
           </div>
 
-        
+
           <div class="col-4 section_">
             <div class="btn-nav h-100" routerLink="/properties">
-              
+
               <i class="fas fa-home-lg"></i>
               <p>Propiedades</p>
             </div>
           </div>
           <div class="col-4 section_">
             <div class="btn-nav h-100" routerLink="/developments">
-              
+
               <i class="fas fa-city"></i>
               <p>Desarrollos</p>
             </div>
           </div>
           <div class="col-4 section_">
-            <div class="btn-nav h-100" routerLink="/settings">
-              
+            <div class="btn-nav h-100" routerLink="/user-settings">
+
               <i class="far fa-cog"></i>
               <p>Configuración</p>
             </div>
@@ -263,7 +263,7 @@
         </div>
       </div>
     <!-- ----------------------------------------------------------------------- -->
-    
+
   </div>
 
 </ion-content>
