@@ -70,7 +70,7 @@ const routes: Routes = [
   },
   {
     path: 'search-event',
-    loadChildren: () => import('./pages/calendar/search-event/search-event.module').then( m => m.SearchEventPageModule)
+    loadChildren: () => import('./pages/search-event/search-event.module').then( m => m.SearchEventPageModule)
   }
 
 

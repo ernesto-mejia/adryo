@@ -1,0 +1,65 @@
+.color{
+  color: #000;
+}
+.md body {
+  --ion-item-background: #ffffff;
+  --ion-item-background: #000;
+  color: #000;
+  --ion-color-step-50: #1e5b5a;
+}
+.label-stacked.sc-ion-label-ios-h {
+  color: #000;
+}
+.item.sc-ion-label-md-h, .item .sc-ion-label-md-h  {
+  color: #000 !important;
+}
+ion-input {
+  color: gray;
+}
+.add-client {
+  margin-top: 100px;
+  padding: 0 108px;
+}
+.item-native {
+  background: #fff;
+  color: gray;
+}
+ion-buttons {
+  background: #1e5b5a;
+    border-radius: 5px;
+}
+.btn-add {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.ios ion-modal ion-toolbar  {
+  padding-top: 0px !important;
+}
+.color-back {
+  font-size: 25px;
+  color: #fff;
+}
+.cont_input_ {
+  padding: 5px 20px 6px 20px;
+}
+.search_ {
+text-align: left;
+height: 25px;
+border: solid 1px gray;
+border-radius: 7px !important;
+}
+.label_ {
+  width: 100%;
+  text-align: start;
+}
+.form-check {
+  text-align: center;
+  width: 49px;
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5em;
+  margin-bottom: 0.125rem;
+  padding: 0;
+}
