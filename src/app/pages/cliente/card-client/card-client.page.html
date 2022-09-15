@@ -19,12 +19,12 @@
 <div class="row">
   <ion-modal trigger="open-modal-client-edit" [initialBreakpoint]="0.60" [breakpoints]="[0, 0.25, 0.5, 0.75]">
     <ng-template>
-      
+
 
       <ion-content class="ion-padding">
 
         <ion-list>
-        
+
           <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
             <p class="m-0 font-weight-bold" style="color: black;">Editar cliente</p>
           <div class="col-12 text-center mb-2" >
@@ -65,7 +65,7 @@
                   <ion-select-option value="oranges">Oranges</ion-select-option>
                   <ion-select-option value="bananas">Bananas</ion-select-option>
                 </ion-select>
-              
+
               </div>
             </div>
           <div class="col-12 text-center mb-2" >
@@ -82,42 +82,42 @@
                   <ion-select-option value="oranges">Oranges</ion-select-option>
                   <ion-select-option value="bananas">Bananas</ion-select-option>
                 </ion-select>
-              
+
               </div>
             </div>
-          
+
           <div class="col-12 btn-add">
             <ion-buttons >
               <ion-button (click)="confirm()" [strong]="true" class="color-back">Guardar</ion-button>
             </ion-buttons>
           </div>
-        </div>  
+        </div>
         </ion-list>
-        
-        
+
+
       </ion-content>
 
     </ng-template>
   </ion-modal>
-</div> 
+</div>
 <!-- ----------------------------------------------------------------------- -->
 
 
 <!-- -------------------------- Contenido de card -------------------------- -->
 <ion-content style="color: black;" class="content__">
-  
+
   <!-- ---------------------------- info general ----------------------------- -->
 
     <h2 style="color: black;">Información general</h2>
-    
+
     <div class="col-12">
 
       <div class="row" style="border-bottom:solid 1px gray ; color: black;">
         <div class="col-6">Estatus del cliente</div>
         <div class="col-6">Estado del cliente</div>
         <div class="col-6 d-inline-flex">
-          <p class="m-0 p-info-estatus-1" style="margin-right: 5px;">OPORTUNO</p> 
-          <p class="m-0 p-info-estatus-2">ACTIVO</p> 
+          <p class="m-0 p-info-estatus-1" style="margin-right: 5px;">OPORTUNO</p>
+          <p class="m-0 p-info-estatus-2">ACTIVO</p>
         </div>
         <div class="col-6">Interés preliminar</div>
       </div>
@@ -143,7 +143,7 @@
         </div>
         <div class="col-6">Facebook</div>
       </div>
-      
+
     </div>
 
   <!-- ----------------------------------------------------------------------- -->
@@ -170,20 +170,20 @@
             <p class="m-0" style="font-size: 15px;">Cliente creado por usuario Super administrador cuenta demmo Adryo. Solicita infromación de Cumbre Herradura vía Facebook</p>
             <p class="m-0" style="font-size: 15px;">2022-08-18 20:50</p>
           </div>
-          
+
           <div class="row"  style="border-bottom:solid 1px gray ; color: black;">
             <h5 style="font-weight: 600;">Super administrador cuenta Adryo</h5>
             <p class="m-0" style="font-size: 15px;">Cliente creado por usuario Super administrador cuenta demmo Adryo. Solicita infromación de Cumbre Herradura vía Facebook</p>
             <p class="m-0" style="font-size: 15px;">2022-08-18 20:50</p>
           </div>
-          
+
           <div class="row"  style="border-bottom:solid 1px gray ; color: black;">
             <h5 style="font-weight: 600;">Super administrador cuenta Adryo</h5>
             <p class="m-0" style="font-size: 15px;">Cliente creado por usuario Super administrador cuenta demmo Adryo. Solicita infromación de Cumbre Herradura vía Facebook</p>
             <p class="m-0" style="font-size: 15px;">2022-08-18 20:50</p>
           </div>
-        </div>     
-      </div>      
+        </div>
+      </div>
     </div>
 
   <!-- ----------------------------------------------------------------------- -->
@@ -191,16 +191,16 @@
 
   <!-- ------------------------ Inmuebles de interes ------------------------- -->
 
-    <h2 style="color: black;">Inmuebles de interés 
+    <h2 style="color: black;">Inmuebles de interés
       <i class="fas fa-plus-circle float-end" style="margin-right: 15px; color: #1e5b5a;" id="open-modal" expand="block"></i>
     </h2>
-      
+
     <div class="col-12">
 
       <div class="row" style="border-bottom:solid 1px gray ; color: black;">
-        <div class="col-12">Despartamento A012-CH</div>       
+        <div class="col-12">Despartamento A012-CH</div>
       </div>
-      
+
     </div>
     <!-- ------------------------- modal-add-inmueble -------------------------- -->
       <ion-modal #modal trigger="open-modal" class="ion-modal_">
@@ -259,14 +259,14 @@
 
   <!-- ----------------------- Desarrollos de interes ------------------------ -->
 
-    <h2 style="color: black;">Desarrollos de interés 
+    <h2 style="color: black;">Desarrollos de interés
       <i class="fas fa-plus-circle float-end" style="margin-right: 15px; color: #1e5b5a;"  id="open-modal_dev" expand="block"></i>
     </h2>
-    
+
     <div class="col-12">
-    
+
       <div class="row" style="border-bottom:solid 1px gray ; color: black;">
-        <div class="col-12">Cumbres Herradura</div>          
+        <div class="col-12">Cumbres Herradura</div>
       </div>
     </div>
 
@@ -299,13 +299,13 @@
                 <p>Product Designer</p>
               </ion-label>
             </ion-item>
-           
+
           </ion-list>
         </ion-content>
       </ng-template>
       </ion-modal>
     <!-- ----------------------------------------------------------------------- -->
-  
+
   <!-- ----------------------------------------------------------------------- -->
 
 
@@ -315,12 +315,12 @@
 
       <div class="row" style=" color: black; margin-top: 15px;">
         <div class="col-4 text-center"><p class="icon-card-extra"><i class="fas fa-phone-alt"></i></p> <p>Lamada</p></div>
-        <div class="col-4 text-center"  id="open-modal-add-note" expand="block"><p class="icon-card-extra"><i class="fas fa-comment-alt-edit"></i></p> <p>Añadir nota</p></div>       
-        <div class="col-4 text-center"   routerLink="/events"><p class="icon-card-extra"><i class="fas fa-book-open"></i></p> <p>Eventos</p></div>
+        <div class="col-4 text-center"  id="open-modal-add-note" expand="block"><p class="icon-card-extra"><i class="fas fa-comment-alt-edit"></i></p> <p>Añadir nota</p></div>
+        <div class="col-4 text-center"   routerLink="/eventos"><p class="icon-card-extra"><i class="fas fa-book-open"></i></p> <p>Eventos</p></div>
       </div>
 
     </div>
-  
+
   <!-- ----------------------------------------------------------------------- -->
 
 </ion-content>
@@ -330,12 +330,12 @@
 <div class="row">
 <ion-modal trigger="open-modal-add-note" [initialBreakpoint]="0.60" [breakpoints]="[0, 0.25, 0.5, 0.75]">
   <ng-template>
-    
+
 
     <ion-content class="ion-padding">
 
       <ion-list>
-      
+
         <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
           <p class="m-0 font-weight-bold" style="color: black;">Editar cliente</p>
         <div class="col-12 text-center mb-2" >
@@ -376,7 +376,7 @@
                 <ion-select-option value="oranges">Oranges</ion-select-option>
                 <ion-select-option value="bananas">Bananas</ion-select-option>
               </ion-select>
-            
+
             </div>
           </div>
         <div class="col-12 text-center mb-2" >
@@ -393,24 +393,24 @@
                 <ion-select-option value="oranges">Oranges</ion-select-option>
                 <ion-select-option value="bananas">Bananas</ion-select-option>
               </ion-select>
-            
+
             </div>
           </div>
-        
+
         <div class="col-12 btn-add">
           <ion-buttons >
             <ion-button (click)="confirm()" [strong]="true" class="color-back">Guardar</ion-button>
           </ion-buttons>
         </div>
-      </div>  
+      </div>
       </ion-list>
-      
-      
+
+
     </ion-content>
 
   </ng-template>
 </ion-modal>
-</div> 
+</div>
 <!-- ----------------------------------------------------------------------- -->
 
 
@@ -420,23 +420,23 @@
 <ion-tabs class="navigationBar">
 
   <ion-tab-bar slot="bottom" class="cont-navigation">
-    
+
     <ion-tab-button routerLink="/properties">
-      <i class="fas fa-home-lg"></i>   
+      <i class="fas fa-home-lg"></i>
     </ion-tab-button>
 
     <ion-tab-button routerLink="/client-list">
-      <i class="fas fa-user-friends"></i>  
+      <i class="fas fa-user-friends"></i>
     </ion-tab-button>
 
     <ion-tab-button routerLink="/sales-funnel">
-      <i class="fas fa-filter"></i>  
+      <i class="fas fa-filter"></i>
     </ion-tab-button>
 
     <ion-tab-button routerLink="/calendar">
       <i class="fas fa-calendar-alt"></i>
     </ion-tab-button>
-    
+
   </ion-tab-bar>
 
 </ion-tabs>

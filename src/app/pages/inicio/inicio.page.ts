@@ -23,7 +23,7 @@ export class InicioPage  {
               private storage: Storage,
               private naveCtrl: NavController,
               private usuarioService: UsuarioService
-  ) { 
+  ) {
     this.as();
   }
 
@@ -38,16 +38,16 @@ export class InicioPage  {
     const storage = await this.storage.create();
     const name = await this.storage.get('user_id');
 
-    this.usuarioService.getUserData(name).subscribe(resp => {
+    this.usuarioService.getUserData(this.advId.id).subscribe(resp => {
       this.adviser = resp;
       this.events = resp.events;
       console.log(resp);
-      
+
     });
 
   }
 
-  logout() {    
+  logout() {
     this.storage.clear();
     this.user = null;
     this.storage.clear();

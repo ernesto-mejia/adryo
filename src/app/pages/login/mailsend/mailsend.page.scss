@@ -1,6 +1,6 @@
 .background_ {
     position: fixed;
-    background-image: url(../../../assets/media/Login_background.png);
+    background-image: url(../../../../assets/media/Login_background.png);
     z-index: 0;
     width: 100vw;
     height: 100vh;
@@ -9,7 +9,7 @@
     background-position: center;
     background-position-x: center;
   }
-  
+
   .login {
     min-width: 300px;
     max-width: 60%;
@@ -19,22 +19,22 @@
     color: black;
     z-index: 99999;
   }
-  
+
   .custom-form {
     border-radius: 10px;
     background-color: #ecf0f3;
     margin: 0px auto;
     padding: 1rem 3rem;
   }
-  
-  
-  
+
+
+
   .native-input.sc-ion-input-ios:invalid  {
     padding: 3px !important;
   }
-  
-  
-  
+
+
+
   input {
     text-align: center;
     background-color: #fff;
@@ -49,8 +49,8 @@
    a{
     color: rgb(80, 79, 79);
    }
-  
-  
+
+
   .btn-entrar {
     height: 40px;
     width: 100px;
@@ -79,7 +79,7 @@
     background-color: #bdbdbd21 !important;
     padding: 0px !important;
   }
-  
+
   #input input{
   padding: 4px !important;
   }
@@ -90,4 +90,3 @@
     font-size: calc(2rem + 0.5vw);
     color: #54C147;
 }
-  

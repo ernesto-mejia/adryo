@@ -26,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'recover',
-    loadChildren: () => import('./pages/recover/recover.module').then( m => m.RecoverPageModule)
+    loadChildren: () => import('./pages/login/recover/recover.module').then( m => m.RecoverPageModule)
   },
   {
     path: 'properties',
@@ -35,6 +35,11 @@ const routes: Routes = [
   {
     path: 'developments',
     loadChildren: () => import('./pages/developments/developments.module').then( m => m.DevelopmentsPageModule)
+  },
+
+  {
+    path: 'mail-send',
+    loadChildren: () => import('./pages/login/mailsend/mailsend.module').then( m => m.MailsendPageModule)
   },
   {
     path: 'calendar',
@@ -50,23 +55,21 @@ const routes: Routes = [
   },
   {
     path: 'client-list',
-    loadChildren: () => import('./pages/client-list/client-list.module').then( m => m.ClientListPageModule)
+    loadChildren: () => import('./pages/cliente/client-list/client-list.module').then( m => m.ClientListPageModule)
   },
   {
-    path: 'settings',
-    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
-  },  {
     path: 'search-client',
-    loadChildren: () => import('./pages/search-client/search-client.module').then( m => m.SearchClientPageModule)
+    loadChildren: () => import('./pages/cliente/search-client/search-client.module').then( m => m.SearchClientPageModule)
   },
   {
     path: 'card-client',
-    loadChildren: () => import('./pages/card-client/card-client.module').then( m => m.CardClientPageModule)
+    loadChildren: () => import('./pages/cliente/card-client/card-client.module').then( m => m.CardClientPageModule)
   },
   {
-    path: 'events',
-    loadChildren: () => import('./pages/events/events.module').then( m => m.EventsPageModule)
+    path: 'eventos',
+    loadChildren: () => import('./pages/cliente/eventos/eventos.module').then( m => m.EventosPageModule)
   }
+
 
 
 

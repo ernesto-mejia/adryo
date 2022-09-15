@@ -5,7 +5,7 @@ import { OverlayEventDetail } from '@ionic/core/components';
 
 import { Storage } from '@ionic/storage';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { clientList } from '../../interfaces';
+import { clientList } from '../../../interfaces';
 @Component({
   selector: 'app-client-list',
   templateUrl: './client-list.page.html',
@@ -33,6 +33,6 @@ export class ClientListPage implements OnInit {
     });
 
   }
+0
 
-  
 }
