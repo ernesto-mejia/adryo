@@ -32,10 +32,25 @@
 .cont-filtro-status label input {
   appearance: none;
 }
-.cont-filtro-status label input:checked ~ p {
-  background-color: #1e5b5a;
+.cont-filtro-status div:nth-child(4n + 1) label input:checked ~ p {
+  background-color: #29c3e3;
   color: #fff;
 }
+.cont-filtro-status div:nth-child(4n + 2) label input:checked ~ p {
+  background-color: #FDB600;
+  color: #fff;
+}
+
+.cont-filtro-status div:nth-child(4n + 3) label input:checked ~ p {
+  background-color: #FF6B17;
+  color: #fff;
+}
+
+.cont-filtro-status div:nth-child(4n + 4) label input:checked ~ p {
+  background-color: #A8A8A8;
+  color: #fff;
+}
+
 
 
 
@@ -54,12 +69,35 @@
   border-radius: 8px 0px 0px 8px;
   color: #fff;
 }
-.card-info{
-  padding-left: 15px;
-}
+
 
 .card-info p{
   color: #000;
   margin: 0;
+}
+.status-p span {
+  padding: 0;
+  font-size: 10px;
+    width: 30px;
+    float: right;
+    background: #29c3e3;
+    border-radius: 25px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.date-card {
+  font-size: 15px;
+  color: rgb(143, 143, 143);
+}
+.card-name-client {
+  font-weight: 700;
+}
+.card-netx-etap {
+  font-size: 8px;
+  color: rgb(184, 184, 184);
 }
 /* -------------------------------------------------------------------------- */

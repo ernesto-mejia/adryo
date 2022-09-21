@@ -147,3 +147,22 @@ ion-modal#example-modal .wrapper {
     border-radius: 5px;
     height: 40px;
 }
+
+/* ------------------------------ filtro rapido ----------------------------- */
+
+.cont-filtro-status label input[type="checkbox"] {
+  width: 10px;
+  position: relative;
+  height: 10px;
+}
+
+.cont-filtro-status label input {
+  appearance: none;
+}
+.cont-filtro-status  label input:checked ~ p {
+  background-color: #1e5b5a;
+  color: #fff;
+}
+
+
+/* -------------------------------------------------------------------------- */

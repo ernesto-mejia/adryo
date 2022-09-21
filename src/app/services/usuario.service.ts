@@ -83,7 +83,7 @@ export class UsuarioService {
   /* -------------------------------------------------------------------------- */
 
   /* ------------------------------ Cerrar Sesion ----------------------------- */
-  
+
     logout() {
       this.user = null;
       this.naveCtrl.navigateRoot('/login', {animated: true});

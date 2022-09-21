@@ -10,14 +10,43 @@
 <!-- -------------------------- Contenido -------------------------- -->
 
   <ion-content>
+     <!-- --------------------------- filter estatus ---------------------------- -->
+     <div id="" class="row  p-0 background_">
+
+      <div class="col-12" style="padding: 0 50px !important;">
+        <div class="row cont-filtro-status">
+          <div class="col-3 d-flex justify-content-center text-center">
+            <label for="">
+              <input type="checkbox" name="" id="">
+              <p class="filter-event"> <i class="fas fa-plus-circle"></i></p>
+            </label>
+          </div>
+          <div class="col-3 d-flex justify-content-center text-center ">
+            <label for="">
+              <input type="checkbox" name="" id="">
+              <p class="filter-event"><i class="fas fa-map-marker-alt"></i></p>
+            </label>
+          </div>
+          <div class="col-3 d-flex justify-content-center text-center">
+              <label for="">
+                <input type="checkbox" name="" id="">
+                <p class="filter-event"><i class="fas fa-phone"></i></p>
+              </label>
+          </div>
+          <div class="col-3 d-flex justify-content-center text-center">
+              <label for="">
+                <input type="checkbox" name="" id="">
+                <p class="filter-event"><i class="fas fa-envelope"></i></p>
+              </label>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  <!-- ----------------------------------------------------------------------- -->
 
     <div class="col-12 " style="background-color: #fff; color: black; padding: 0px 20px;" >
-      <div class="row">
-        <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-plus-circle"></i></p></div>
-        <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-map-marker-alt"></i></p></div>
-        <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-phone"></i></p></div>
-        <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-envelope"></i></p></div>
-      </div>
 
       <div class=" " style="margin-top: 10px;" >
         <div class="row cont-card-event">
@@ -46,6 +75,8 @@
       </div>
 
     </div>
+
+
     <ion-list lines="none">
       <ion-item button="true" detail="false" >
         <ion-label id="open-modal-recordatorios" expand="block" >Recordatorios</ion-label>
@@ -72,7 +103,7 @@
 
             <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
               <p class="m-0 font-weight-bold" style="color: black; margin-bottom: 10px !important;">Recordatorios</p>
-              
+
               <div class="col-12 text-center mb-2" >
                 <div class="row">
                   <div class="col-5">
@@ -115,12 +146,12 @@
   <ion-modal id="example-modal" #modal trigger="open-custom-dialog-event-cancel">
     <ng-template>
       <div class="wrapper">
-       
+
         <ion-list lines="none" style="padding: 30px 15px;">
            <h1 class="text-center m-0 mb-4">Cancelar evento</h1>
         <ion-label>Motivo de cancelación</ion-label>
         <ion-input type="text" placeholder="Motivo"></ion-input>
-      
+
         <div class="col-12 btn-add">
           <ion-buttons >
             <ion-button (click)="confirm()" [strong]="true" class="color-back save-event">Cancelar evento</ion-button>
@@ -196,7 +227,7 @@
               </div>
             </div>
 
-            
+
             <div class="col-12 text-center mb-2" >
               <div class="row">
                 <div class="col-5">
