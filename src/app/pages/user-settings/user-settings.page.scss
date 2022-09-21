@@ -1,0 +1,75 @@
+/* ---------------------------- Imagen de usuario --------------------------- */
+.img-user{
+  height: 100px;
+  width: 100px;
+  background-color: #27a091;
+  border-radius: 100px;
+  padding: 0;background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+/* -------------------------------------------------------------------------- */
+
+/* --------------------------------- huella --------------------------------- */
+label {
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+label .action input {
+  appearance: none;
+}
+label .action i {
+  position: relative;
+  width: 30px;
+  height: 15px;
+  background: #ddd;
+  border-radius: 15px;
+}
+
+label .action i::before {
+  content: '';
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba( 0, 0, 0, 0.1);
+  transition: 0.5s;
+}
+label .action input:checked ~ i {
+  background-color: #1e5b5a;
+}
+
+label .action input:checked ~ i::before {
+  left: calc(100% - 12.5px);
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* ------------------------------ cerrar sesion ----------------------------- */
+
+.cont-logout {
+
+  position: absolute;
+  padding: 0 38px 0 11px;
+  margin-top: 28%;
+  bottom: 37px;
+}
+
+.btn-logout {
+  min-height: 40px;
+  min-height: 45px;
+  background-color: #1e5b5a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+
+
+/* -------------------------------------------------------------------------- */

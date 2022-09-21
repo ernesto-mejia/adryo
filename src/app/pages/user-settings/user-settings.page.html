@@ -3,35 +3,100 @@
 <!-- ------------------ Contenido de listado de clientes ------------------- -->
 <ion-content>
 
-  <div class="col-12 text-center" style="background-color: #fff; color: black">
+  <div class="col-12 text-center h-100" style="background-color: #fff; color: black">
 
     <ion-list >
 
       <ion-item  class="background-color" >
+        <div class="col-4 h-100" style="padding:28px 0px 28px 1px;">
+          <div class="img-user" style="background-image: url('https://adryo.com.mx/{{avatar}}');" >
 
-          <p style="color: red;">imagen</p>
+          </div>
+        </div>
+         <div class="col-8">
+          <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Nombre (s)</p>
+          <p class="m-0" style="color: rgb(129, 129, 129);">Erick Jacobo </p>
+          <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Apellido (s)</p>
+          <p class="m-0" style="color: rgb(129, 129, 129);;">Wong Lopéz</p>
+         </div>
 
       </ion-item>
+
       <ion-item  class="background-color" >
+        <div class="col-12 p-0">
+          <p class="m-0 w-100" style="color: rgb(0, 0, 0); font-weight: 700;">correo</p>
+          <p class="m-0 w-100" style="color: rgb(129, 129, 129);">wongj@adryo.com.mx </p>
+        </div>
 
-        <p style="color: red;">correo</p>
 
-    </ion-item>
-    <ion-item  class="background-color" >
+      </ion-item>
 
-      <p style="color: red;">teléfono</p>
+      <ion-item  class="background-color" >
+        <div class="col-12 p-0">
+          <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Teléfono</p>
+          <p class="m-0" style="color: rgb(129, 129, 129);">5511229988 </p>
 
-  </ion-item>
-  <ion-item  class="background-color" >
+        </div>
+        <p></p>
 
-    <p style="color: red;">contraseña</p>
+      </ion-item>
 
-</ion-item>
+      <ion-item  class="background-color" >
+        <div class="col-10 p-0">
+          <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Contraseña</p>
+
+        </div>
+        <div class="col-2 p-0">
+          <i class="fas fa-eye" style="color: rgb(0, 0, 0); "></i>
+        </div>
+
+      </ion-item>
+
+      <ion-item  class="background-color" >
+        <label class="d-flex finger-label">
+            <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Acceder con huella</p>
+            <span class="action d-flex">
+              <input type="checkbox" name="" id=""><i></i>
+            </span>
+          </label>
+      </ion-item>
 
     </ion-list>
 
+
+    <div class="col-12 cont-logout">
+      <p class="btn-logout " id="open-modal-client-add-modal" expand="block" >
+      Cerrar sesión
+      </p>
+    </div>
   </div>
 
 </ion-content>
 <!-- ----------------------------------------------------------------------- -->
 
+
+<!-- ------------------------- Barra de navegacion ------------------------- -->
+<ion-tabs class="navigationBar">
+
+  <ion-tab-bar slot="bottom" class="cont-navigation">
+
+    <ion-tab-button routerLink="/properties">
+      <i class="fas fa-home-lg"></i>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/client-list">
+      <i class="fas fa-user-friends"></i>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/sales-funnel">
+      <i class="fas fa-filter"></i>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/calendar">
+      <i class="fas fa-calendar-alt"></i>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>
+<!-- ----------------------------------------------------------------------- -->

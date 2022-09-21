@@ -1,12 +1,75 @@
 <app-header titulo="Embudo de Ventas"></app-header>
 
-<ion-content>
-  <div id="" class="row h-100 p-0 background_">
+<!-- -------------------------- Filtro etapa -------------------------- -->
+<div class="col-12 text-center" style="background-color: #fff; color: black; padding: 0 40px; margin-bottom: 15px;">
+  <h5 class="find_advance"  >1. Interés Preliminar <i class="fas fa-chevron-down"></i></h5>
+  <p class="m-0 info-find"></p>
+</div>
+<!-- ----------------------------------------------------------------------- -->
 
-    <div class="col-12 p-0">
+
+<ion-content>
+
+  <!-- --------------------------- filter estatus ---------------------------- -->
+    <div id="" class="row  p-0 background_">
+
+      <div class="col-12" style="padding: 0 50px !important;">
+        <div class="row cont-filtro-status">
+          <div class="col-3 d-flex justify-content-center text-center">
+            <label for="">
+              <input type="checkbox" name="" id="">
+              <p class="filter-event">OP</p>
+            </label>
+          </div>
+          <div class="col-3 d-flex justify-content-center text-center ">
+            <label for="">
+              <input type="checkbox" name="" id="">
+              <p class="filter-event">TA</p>
+            </label>
+          </div>
+          <div class="col-3 d-flex justify-content-center text-center">
+              <label for="">
+                <input type="checkbox" name="" id="">
+                <p class="filter-event">NA</p>
+              </label>
+          </div>
+          <div class="col-3 d-flex justify-content-center text-center">
+              <label for="">
+                <input type="checkbox" name="" id="">
+                <p class="filter-event">PR</p>
+              </label>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  <!-- ----------------------------------------------------------------------- -->
+
+  <!-- -------------------------- list card client --------------------------- -->
+
+    <div class="row " style="padding: 20px 40px;">
+      <div class="col-12 cont-card-event d-flex p-0">
+        <div class="color-status card-date text-center">
+        </div>
+        <div class="card-info">
+          <div class="row">
+            <div class="col-6"><p> Cliente</p></div>
+            <div class="col-6 text-end">
+              <p class="pr-2">01/01/2022</p>
+              <p class="pr-2">OP</p>
+            </div>
+            <div class="col-12"><p> Desarrollo</p></div>
+            <div class="col-12 text-end "><p class="pr-2"> Siguiente etapa <i class="fas fa-angle-double-right"></i> </p></div>
+
+          </div>
+
+        </div>
+      </div>
     </div>
 
-  </div>
+  <!-- ----------------------------------------------------------------------- -->
+
 </ion-content>
 
 <!-- ------------------------- Barra de navegacion ------------------------- -->
@@ -14,22 +77,22 @@
 
   <ion-tab-bar slot="bottom" class="cont-navigation">
     <ion-tab-button routerLink="/properties">
-      <i class="fas fa-home-lg"></i>   
+      <i class="fas fa-home-lg"></i>
     </ion-tab-button>
 
     <ion-tab-button routerLink="/client-list">
-      <i class="fas fa-user-friends"></i>  
+      <i class="fas fa-user-friends"></i>
     </ion-tab-button>
 
     <ion-tab-button routerLink="/sales-funnel">
-      <i class="fas fa-filter"></i>  
+      <i class="fas fa-filter"></i>
     </ion-tab-button>
 
     <ion-tab-button routerLink="/calendar">
       <i class="fas fa-calendar-alt"></i>
     </ion-tab-button>
 
-    
+
   </ion-tab-bar>
 
 </ion-tabs>

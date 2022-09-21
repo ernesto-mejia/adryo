@@ -4,12 +4,20 @@ p {
 }
 .card-image{
   border-radius: 10px;
-  background-color: #1e5b5a;
+  background-color: #b7dfde;
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  height: 80%;
+  height: 75%;
+}
+.status {
+  margin: 0;
+  background-color: #1e5b5a;
+  color: #fff;
+  font-size: 20px;
+  width: 120px;
+  border-radius: 0 0 15px 0;
 }
 .card-name{
   font-size: 22px;
@@ -30,7 +38,7 @@ p {
   height: 5%;
 }
 .card-amenidad{
-  height: 5%;
+  height: 10%;
 }
 
 .card-date{
@@ -58,6 +66,41 @@ p {
 .card-info {
   padding: 10px;
 }
+/* ---------------------------- especificaciones ---------------------------- */
+.extra-propertie {
+  display: inline-flex !important;
+  color: #6f6f6f;
+}
+.extra-img {
+  width: 30%;
+  border-radius: 50%;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.full{
+  background-image: url(../../../assets/media/full.png);
+}
+.cam{
+  background-image: url(../../../assets/media/cam.png);
+}
+.car{
+  background-image: url(../../../assets/media/car.png);
+}
+.ban {
+  background-image: url(../../../assets/media/ban.png);
+}
+
+.info-amenidad {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: gray;
+  font-weight: 700;
+}
+/* -------------------------------------------------------------------------- */
 
 /* ---------------------------------- modal --------------------------------- */
 

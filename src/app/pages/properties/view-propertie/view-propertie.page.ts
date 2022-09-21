@@ -13,7 +13,7 @@ export class ViewPropertiePage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    this.showsection();
   }
   share() {
     Share.share({

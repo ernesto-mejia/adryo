@@ -11,14 +11,16 @@
 
 <ion-content>
 
-  <div id="Propierties" class="col-12" style="background-color: #fff; color: black; padding: 0px 20px;" >
+  <div id="Developments" class="col-12" style="background-color: #fff; color: black; padding: 0px 20px;" >
 
     <div class="d-flex justify-content-center " style="margin-top: 10px;" >
       <div class="row cont-card-event w-100">
         <div class="col-12 card-date text-center" routerLink="/view-development">
 
           <div class=" card-image" >
-
+            <div class="">
+              <p class="status">Preventa</p>
+            </div>
           </div>
           <div class=" card-name">
             <p>Cumbres Herradura</p>
@@ -26,8 +28,11 @@
           <div class=" card-price">
             <p>Desde $1,500,000.00</p>
           </div>
-          <div class=" card-amenidad">
-
+          <div class="row card-amenidad mt-2">
+            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img full"><p class="info-amenidad">52.68 m2</p> </div>
+            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img cam"> <p class="info-amenidad">1 - 2 </p> </div>
+            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img ban"> <p class="info-amenidad">1 - 2 </p>  </div>
+            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img car"> <p class="info-amenidad">1 - 2 </p> </div>
           </div>
 
         </div>
@@ -35,32 +40,31 @@
     </div>
 
   </div>
-
 </ion-content>
 
 
 <!-- ------------------------- Barra de navegacion ------------------------- -->
-<ion-tabs class="navigationBar">
+  <ion-tabs class="navigationBar">
 
-  <ion-tab-bar slot="bottom" class="cont-navigation">
+    <ion-tab-bar slot="bottom" class="cont-navigation">
 
-    <ion-tab-button routerLink="/properties">
-      <i class="fas fa-home-lg"></i>
-    </ion-tab-button>
+      <ion-tab-button routerLink="/properties">
+        <i class="fas fa-home-lg"></i>
+      </ion-tab-button>
 
-    <ion-tab-button routerLink="/client-list">
-      <i class="fas fa-user-friends"></i>
-    </ion-tab-button>
+      <ion-tab-button routerLink="/client-list">
+        <i class="fas fa-user-friends"></i>
+      </ion-tab-button>
 
-    <ion-tab-button routerLink="/sales-funnel">
-      <i class="fas fa-filter"></i>
-    </ion-tab-button>
+      <ion-tab-button routerLink="/sales-funnel">
+        <i class="fas fa-filter"></i>
+      </ion-tab-button>
 
-    <ion-tab-button routerLink="/calendar">
-      <i class="fas fa-calendar-alt"></i>
-    </ion-tab-button>
+      <ion-tab-button routerLink="/calendar">
+        <i class="fas fa-calendar-alt"></i>
+      </ion-tab-button>
 
-  </ion-tab-bar>
+    </ion-tab-bar>
 
-</ion-tabs>
+  </ion-tabs>
 <!-- ----------------------------------------------------------------------- -->

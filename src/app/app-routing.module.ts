@@ -83,7 +83,13 @@ const routes: Routes = [
   {
     path: 'galery-propertie',
     loadChildren: () => import('./pages/properties/galery-propertie/galery-propertie.module').then( m => m.GaleryPropertiePageModule)
+  },
+  {
+    path: 'gallery-development',
+    // eslint-disable-next-line max-len
+    loadChildren: () => import('./pages/developments/gallery-development/gallery-development.module').then( m => m.GalleryDevelopmentPageModule)
   }
+
 
 
 

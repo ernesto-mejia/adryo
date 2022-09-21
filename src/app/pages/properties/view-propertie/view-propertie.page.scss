@@ -99,3 +99,18 @@
 {
     text-align: center;
 }
+
+/* ------------------------------- amenidades ------------------------------- */
+.Title-amenidad {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.menu-filtros {
+  padding: 0;
+}
+.menu-filtros li {
+  list-style: none;
+  border-radius: 8px;
+  box-shadow: 2px 4px 16px 0px rgb(0 0 0 / 25%);
+}

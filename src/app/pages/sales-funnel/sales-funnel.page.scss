@@ -1,0 +1,65 @@
+/* ---------------------------------- filtro event  --------------------------------- */
+.find_advance {
+  display: flex !important;
+  position: relative;
+  justify-content: space-between;
+  padding: 0 15px;
+  min-height: 40px;
+  min-height: 45px;
+  border:solid 1px #1e5b5a;
+  align-items: center;
+  color: #1e5b5a;
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+
+.filter-event {
+  width: 40px;
+  border: solid 1px #1e5b5a;
+  border-radius: 25px;
+  color: #1e5b5a;
+}
+.active {
+  background-color: #1e5b5a;
+  color: #fff;
+}
+.cont-filtro-status label input[type="checkbox"] {
+  width: 10px;
+  position: relative;
+  height: 10px;
+}
+
+.cont-filtro-status label input {
+  appearance: none;
+}
+.cont-filtro-status label input:checked ~ p {
+  background-color: #1e5b5a;
+  color: #fff;
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+
+/* ------------------------------- card client ------------------------------ */
+
+.cont-card-event {
+  border-radius: 8px;
+  box-shadow: 2px 4px 16px 0px rgb(0 0 0 / 25%);
+}
+.card-date{
+  width: 15px;
+  padding: 3px;
+  background-color: #258F8D;
+  border-radius: 8px 0px 0px 8px;
+  color: #fff;
+}
+.card-info{
+  padding-left: 15px;
+}
+
+.card-info p{
+  color: #000;
+  margin: 0;
+}
+/* -------------------------------------------------------------------------- */

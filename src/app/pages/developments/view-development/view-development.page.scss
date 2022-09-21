@@ -1,0 +1,127 @@
+.img-user{
+  height: 100px;
+  width: 100%;
+  padding: 0;background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+.card-image{
+align-items: end;
+display: flex;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: #c7f5f4;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 90%;
+  height: 250px;
+}
+
+.Estado{
+  height: 35px;
+  width: 106px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;background-color: #1e5b5a;
+  border-radius: 25px;
+}
+.share {
+  color: #1e5b5a;
+  float: right;
+  font-size: 20px;
+}
+
+.title-propiertie {
+  color: #1e5b5a;
+}
+.price-properti {
+  font-weight: 700;
+  color: black;
+}
+.direction-propertie {
+  color: black;
+}
+.map-propertie {
+  background-image: url(../../../../assets/media/map.png);
+  margin-top: 10px;
+  border-radius: 10px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.extra-img {
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.full{
+  background-image: url(../../../../assets/media/full.png);
+}
+.cam{
+  background-image: url(../../../../assets/media/cam.png);
+}
+.car{
+  background-image: url(../../../../assets/media/car.png);
+}
+.ban {
+  background-image: url(../../../../assets/media/ban.png);
+}
+.col-3 {
+  text-align: center;
+  padding: 5px;
+}
+.extra-propertie {
+  font-size: 15px;
+  color: black;
+  font-weight: 700;
+}
+.btn-section-more {
+  background-color: #1e5b5a;
+  border-radius: 15px;
+  color: #fff;
+  text-align: center;
+  height: 100px;
+  padding: 15px 0px;
+}
+.btn-section-more i{
+  font-size: 30px;
+}
+.section-more
+{
+  text-align: center;
+}
+.section-more, p
+{
+  text-align: center;
+}
+/* ------------------------------- amenidades ------------------------------- */
+.Title-amenidad {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.menu-filtros {
+  padding: 0;
+}
+.menu-filtros li {
+  list-style: none;
+  border-radius: 8px;
+  box-shadow: 2px 4px 16px 0px rgb(0 0 0 / 25%);
+}
+
+/* ---------------------------- descriciopn corta --------------------------- */
+.descripcion-dev-title {
+  margin: 0;
+  text-align: start;
+  color: #000;
+  font-weight: 700;
+}
+.descripcion-dev-cont {
+  text-align: start;
+  color: rgb(152, 152, 152);
+}
