@@ -1,35 +1,33 @@
 <app-header titulo="Propiedades"></app-header>
 
 
+<!-- -------------------------- Busqueda avanzada -------------------------- -->
+<div class="col-12 text-center" style="background-color: #fff; color: black; padding: 0 40px; margin-bottom: 15px !important;">
+  <h5 class="find_advance"  routerLink="/search-client"><i class="far fa-search" style="margin-right: 15px;"></i>  Búsqueda avanzada</h5>
+</div>
+<!-- ----------------------------------------------------------------------- -->
+
 
 
 <ion-content>
 
-  <div class="col-12" style="background-color: #fff; color: black; padding: 0px 20px;" >
+  <div id="Propierties" class="col-12" style="background-color: #fff; color: black; padding: 0px 20px;" >
 
-    <h3>Mes</h3>
-    <div class=" " style="margin-top: 10px;" >
-      <div class="row cont-card-event">
-        <div class="col-3 card-date text-center">
-          <div class="row h-100">
+    <div class="d-flex justify-content-center " style="margin-top: 10px;" >
+      <div class="row cont-card-event w-100">
+        <div class="col-12 card-date text-center" routerLink="/view-propertie">
 
-          <p>lunes</p>
-          <p>1</p>
-          <p>Enero</p>
+          <div class=" card-image" ></div>
+          <div class=" card-name">
+            <p>Cumbres Herradura</p>
+          </div>
+          <div class=" card-price">
+            <p>Desde $1,500,000.00</p>
+          </div>
+          <div class=" card-amenidad">
+
           </div>
 
-        </div>
-        <div class="col-8 card-info">
-          <div class="row">
-
-          <p><i class="fas fa-info-circle"></i> Visita</p>
-          <p><i class="fas fa-alarm-exclamation"></i> alarma</p>
-          <p><i class="fas fa-map-marker-alt"></i> cumbres herradura</p>
-          <p><i class="fas fa-car-building"></i> cumbres herradura</p>
-          </div>
-        </div>
-        <div class="col-1">
-          <i class="far fa-ellipsis-v menu float-right"></i>
         </div>
       </div>
     </div>
@@ -39,108 +37,28 @@
 </ion-content>
 
 
-<!-- ----------------------- boton agregar evento ----------------------- -->
-<div class="btn-add-client">
-  <p class="find_advance_ "  id="open-modal-add-event" expand="block">
-    <i class="fas fa-plus"></i>
-  </p>
-</div>
-<!-- ----------------------------------------------------------------------- -->
-
-   <!-- ----------------------- Modal agregar cliente ----------------------- -->
-
-   <div class="row">
-    <ion-modal trigger="open-modal-add-event" [initialBreakpoint]="0.60" [breakpoints]="[0, 0.25, 0.5, 0.75]">
-      <ng-template>
-
-        <ion-content class="ion-padding">
-
-          <ion-list>
-
-            <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
-              <p class="m-0 font-weight-bold" style="color: black; margin-bottom: 10px !important;">Registrar evento</p>
-
-              <div class="col-12 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Nombre del cliente:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="nombre apellidos"></ion-input>
-                </div>
-              </div>
-
-              <div class="col-12 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Fecha:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
-                </div>
-              </div>
-
-              <div class="col-6 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Tipo de evento:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-                </div>
-              </div>
-
-              <div class="col-6 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Ubicación:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-                </div>
-              </div>
-
-              <div class="col-6 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Hora:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-                </div>
-              </div>
-
-              <div class="col-12 btn-add">
-                <ion-buttons >
-                  <ion-button (click)="confirm()" [strong]="true" class="color-back ">Guardar</ion-button>
-                </ion-buttons>
-
-              </div>
-              <div class="col-12 btn-back text-center" style="margin-top: 20px;">
-                <ion-buttons >
-                  <ion-button (click)="cancel()" [strong]="true" class="color-back w-100">Regresar</ion-button>
-                </ion-buttons>
-              </div>
-            </div>
-
-          </ion-list>
-
-        </ion-content>
-
-      </ng-template>
-    </ion-modal>
-  </div>
-
-<!-- ----------------------------------------------------------------------- -->
-
-
 <!-- ------------------------- Barra de navegacion ------------------------- -->
-<ion-tabs class="navigationBar">
+  <ion-tabs class="navigationBar">
 
-  <ion-tab-bar slot="bottom" class="cont-navigation">
+    <ion-tab-bar slot="bottom" class="cont-navigation">
 
-    <ion-tab-button routerLink="/properties">
-      <i class="fas fa-home-lg"></i>
-    </ion-tab-button>
+      <ion-tab-button routerLink="/properties">
+        <i class="fas fa-home-lg"></i>
+      </ion-tab-button>
 
-    <ion-tab-button routerLink="/client-list">
-      <i class="fas fa-user-friends"></i>
-    </ion-tab-button>
+      <ion-tab-button routerLink="/client-list">
+        <i class="fas fa-user-friends"></i>
+      </ion-tab-button>
 
-    <ion-tab-button routerLink="/sales-funnel">
-      <i class="fas fa-filter"></i>
-    </ion-tab-button>
+      <ion-tab-button routerLink="/sales-funnel">
+        <i class="fas fa-filter"></i>
+      </ion-tab-button>
 
-    <ion-tab-button routerLink="/calendar">
-      <i class="fas fa-calendar-alt"></i>
-    </ion-tab-button>
+      <ion-tab-button routerLink="/calendar">
+        <i class="fas fa-calendar-alt"></i>
+      </ion-tab-button>
 
-  </ion-tab-bar>
+    </ion-tab-bar>
 
-</ion-tabs>
+  </ion-tabs>
 <!-- ----------------------------------------------------------------------- -->

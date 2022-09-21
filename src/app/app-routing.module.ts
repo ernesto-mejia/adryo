@@ -71,6 +71,14 @@ const routes: Routes = [
   {
     path: 'search-event',
     loadChildren: () => import('./pages/search-event/search-event.module').then( m => m.SearchEventPageModule)
+  },
+  {
+    path: 'view-propertie',
+    loadChildren: () => import('./pages/properties/view-propertie/view-propertie.module').then( m => m.ViewPropertiePageModule)
+  },
+  {
+    path: 'view-development',
+    loadChildren: () => import('./pages/developments/view-development/view-development.module').then( m => m.ViewDevelopmentPageModule)
   }
 
 

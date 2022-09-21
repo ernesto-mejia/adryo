@@ -37,6 +37,8 @@ export class UsuarioService {
 
           if ( resp['Ok'] ) {
             this.saveUserId(resp['user_id']);
+            this.saveUserFoto(resp['cuenta_logo']);
+            this.saveUserCuenta(resp['cuenta_id']);
             this.message = resp['mensaje'];
             resolve(true);
           };
@@ -60,9 +62,28 @@ export class UsuarioService {
 
     };
 
+    async saveUserFoto(user: string) {
+
+      await this.storage.create();
+      this.user = user;
+      await this.storage.set('cuenta_logo', user);
+      const store = new Storage();
+
+    };
+
+    async saveUserCuenta(user: string) {
+
+      await this.storage.create();
+      this.user = user;
+      await this.storage.set('cuenta_id', user);
+      const store = new Storage();
+
+    };
+
   /* -------------------------------------------------------------------------- */
 
   /* ------------------------------ Cerrar Sesion ----------------------------- */
+  
     logout() {
       this.user = null;
       this.naveCtrl.navigateRoot('/login', {animated: true});

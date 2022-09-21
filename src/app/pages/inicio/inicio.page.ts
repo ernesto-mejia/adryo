@@ -18,6 +18,7 @@ export class InicioPage  {
   user: string = null;
   userId: string = null;
   events: string;
+  avatar: any;
 
   constructor(private http: HttpClient,
               private storage: Storage,
@@ -37,14 +38,16 @@ export class InicioPage  {
   async as() {
     const storage = await this.storage.create();
     const name = await this.storage.get('user_id');
-
+    const foto = await this.storage.get('cuenta_logo');
+    this.avatar = foto;
     this.usuarioService.getUserData(this.advId.id).subscribe(resp => {
       this.adviser = resp;
+     
       this.events = resp.events;
-      console.log(resp);
+      
 
     });
-
+    console.log(this.avatar);
   }
 
   logout() {

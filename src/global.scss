@@ -127,3 +127,12 @@ ion-toolbar {
 ion-tab-bar {
   border-radius: 10px 10px 0 0;
 }
+ion-modal{
+  --background: none;
+}
+ion-modal .ion-page {
+  border-radius: 15px;
+}
+.wrapper {
+  margin: 0 !important;
+}

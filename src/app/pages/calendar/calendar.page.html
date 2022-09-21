@@ -9,89 +9,61 @@
 
 <!-- -------------------------- Contenido -------------------------- -->
 
-<ion-content>
+  <ion-content>
 
-  <div class="col-12 " style="background-color: #fff; color: black; padding: 0px 20px;" >
-    <div class="row">
-      <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-plus-circle"></i></p></div>
-      <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-map-marker-alt"></i></p></div>
-      <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-phone"></i></p></div>
-      <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-envelope"></i></p></div>
-    </div>
+    <div class="col-12 " style="background-color: #fff; color: black; padding: 0px 20px;" >
+      <div class="row">
+        <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-plus-circle"></i></p></div>
+        <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-map-marker-alt"></i></p></div>
+        <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-phone"></i></p></div>
+        <div class="col-3 d-flex justify-content-center text-center"><p class="filter-event"><i class="fas fa-envelope"></i></p></div>
+      </div>
 
-    <div class=" " style="margin-top: 10px;" >
-      <div class="row cont-card-event">
-        <div class="col-3 card-date text-center">
-          <div class="row h-100">
+      <div class=" " style="margin-top: 10px;" >
+        <div class="row cont-card-event">
+          <div class="col-3 card-date text-center">
+            <div class="row h-100">
 
-          <p>lunes</p>
-          <p>1</p>
-          <p>Enero</p>
+            <p>lunes</p>
+            <p>1</p>
+            <p>Enero</p>
+            </div>
+
           </div>
+          <div class="col-8 card-info">
+            <div class="row">
 
-        </div>
-        <div class="col-8 card-info">
-          <div class="row">
-
-          <p><i class="fas fa-info-circle"></i> Visita</p>
-          <p><i class="fas fa-alarm-exclamation"></i> alarma</p>
-          <p><i class="fas fa-map-marker-alt"></i> cumbres herradura</p>
-          <p><i class="fas fa-car-building"></i> cumbres herradura</p>
+            <p><i class="fas fa-info-circle"></i> Visita</p>
+            <p><i class="fas fa-alarm-exclamation"></i> alarma</p>
+            <p><i class="fas fa-map-marker-alt"></i> cumbres herradura</p>
+            <p><i class="fas fa-car-building"></i> cumbres herradura</p>
+            </div>
           </div>
-        </div>
-        <div class="col-1">
-          <i class="far fa-ellipsis-v menu float-right" id="open-custom-dialog" expand="block"></i>
+          <div class="col-1">
+            <i class="far fa-ellipsis-v menu float-right" id="open-custom-dialog" expand="block"></i>
+          </div>
         </div>
       </div>
+
     </div>
+    <ion-list lines="none">
+      <ion-item button="true" detail="false" >
+        <ion-label id="open-modal-recordatorios" expand="block" >Recordatorios</ion-label>
+      </ion-item>
+      <ion-item button="true" detail="false" (click)="modal.dismiss()">
+        <ion-label>Editar</ion-label>
+      </ion-item>
+      <ion-item button="true" detail="false" id="open-custom-dialog-event-cancel" expand="block">
+        <ion-label>Cancelar</ion-label>
+      </ion-item>
+    </ion-list>
 
-  </div>
-
-</ion-content>
-
-
-
-<!-- ----------------------- moda setting event ----------------------- -->
-<ion-modal id="example-modal" #modal trigger="open-custom-dialog">
-  <ng-template>
-    <div class="wrapper">
-      <h1>Dialog header</h1>
-
-      <ion-list lines="none">
-        <ion-item button="true" detail="false" (click)="modal.dismiss()">
-          <ion-icon name="person-circle"></ion-icon>
-          <ion-label>Item 1</ion-label>
-        </ion-item>
-        <ion-item button="true" detail="false" (click)="modal.dismiss()">
-          <ion-icon name="person-circle"></ion-icon>
-          <ion-label>Item 2</ion-label>
-        </ion-item>
-        <ion-item button="true" detail="false" (click)="modal.dismiss()">
-          <ion-icon name="person-circle"></ion-icon>
-          <ion-label>Item 3</ion-label>
-        </ion-item>
-      </ion-list>
-    </div>
-  </ng-template>
-</ion-modal>
+  </ion-content>
 
 
-<!-- ----------------------------------------------------------------------- -->
+<!-- ----------------------- Modal recordatorios ----------------------- -->
 
-
-
-<!-- ----------------------- boton agregar evento ----------------------- -->
-<div class="btn-add-client">
-  <p class="find_advance_ "  id="open-modal-add-event" expand="block">
-    <i class="fas fa-plus"></i>
-  </p>
-</div>
-<!-- ----------------------------------------------------------------------- -->
-
-   <!-- ----------------------- Modal agregar cliente ----------------------- -->
-
-   <div class="row">
-    <ion-modal trigger="open-modal-add-event" [initialBreakpoint]="0.60" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+    <ion-modal trigger="open-modal-recordatorios" [initialBreakpoint]="0.50" [breakpoints]="[0, 0.55, 0.5, 0.95]" style="--background: none;">
       <ng-template>
 
         <ion-content class="ion-padding">
@@ -99,46 +71,27 @@
           <ion-list>
 
             <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
-              <p class="m-0 font-weight-bold" style="color: black; margin-bottom: 10px !important;">Registrar evento</p>
-
+              <p class="m-0 font-weight-bold" style="color: black; margin-bottom: 10px !important;">Recordatorios</p>
+              
               <div class="col-12 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Nombre del cliente:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="nombre apellidos"></ion-input>
-                </div>
-              </div>
-
-              <div class="col-12 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Fecha:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
-                </div>
-              </div>
-
-              <div class="col-6 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Tipo de evento:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-                </div>
-              </div>
-
-              <div class="col-6 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Ubicación:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-                </div>
-              </div>
-
-              <div class="col-6 text-center mb-2" >
-                <div class="input-group">
-                  <ion-label class="label_">Hora:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                <div class="row">
+                  <div class="col-5">
+                    <input type="checkbox" name="" id="">Agregar recordatorio
+                  </div>
+                  <div class="col-7">
+                    <div class="row">
+                      <ion-label>Recordatorio 1</ion-label>
+                    </div>
+                    <div class="row">
+                      <ion-label>Recordatorio 2</ion-label>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div class="col-12 btn-add">
                 <ion-buttons >
-                  <ion-button (click)="confirm()" [strong]="true" class="color-back ">Guardar</ion-button>
+                  <ion-button (click)="confirm()" [strong]="true" class="color-back save-event">Guardar</ion-button>
                 </ion-buttons>
 
               </div>
@@ -155,33 +108,156 @@
 
       </ng-template>
     </ion-modal>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- ----------------------- modal cancelar evento ----------------------- -->
+  <ion-modal id="example-modal" #modal trigger="open-custom-dialog-event-cancel">
+    <ng-template>
+      <div class="wrapper">
+       
+        <ion-list lines="none" style="padding: 30px 15px;">
+           <h1 class="text-center m-0 mb-4">Cancelar evento</h1>
+        <ion-label>Motivo de cancelación</ion-label>
+        <ion-input type="text" placeholder="Motivo"></ion-input>
+      
+        <div class="col-12 btn-add">
+          <ion-buttons >
+            <ion-button (click)="confirm()" [strong]="true" class="color-back save-event">Cancelar evento</ion-button>
+          </ion-buttons>
+
+        </div>
+        <div class="col-12 btn-back text-center" style="margin-top: 20px;">
+          <ion-buttons >
+            <ion-button  (click)="cancel()" [strong]="true" class="color-back w-100">Regresar</ion-button>
+          </ion-buttons>
+        </div>
+        </ion-list>
+      </div>
+    </ng-template>
+  </ion-modal>
+<!-- ----------------------------------------------------------------------- -->
+
+
+
+
+<!-- ----------------------- boton agregar evento ----------------------- -->
+  <div class="btn-add-client">
+    <p class="find_advance_ "  id="open-modal-add-event" expand="block">
+      <i class="fas fa-plus"></i>
+    </p>
   </div>
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- ----------------------- Modal agregar evento ----------------------- -->
+
+  <ion-modal trigger="open-modal-add-event" [initialBreakpoint]="0.80" [breakpoints]="[0, 0.55, 0.5, 0.95]" style="--background: none;">
+    <ng-template>
+
+      <ion-content class="ion-padding">
+
+        <ion-list>
+
+          <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
+            <p class="m-0 font-weight-bold" style="color: black; margin-bottom: 10px !important;">Añadir evento</p>
+
+            <div class="col-12 text-center mb-2" >
+              <div class="input-group">
+                <ion-label class="label_">Cliente</ion-label>
+                <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="Nombre del cliente"></ion-input>
+              </div>
+            </div>
+
+            <div class="col-12 text-center mb-2" >
+              <div class="input-group">
+                <ion-label class="label_">Fecha</ion-label>
+                <ion-input [(ngModel)]="name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
+              </div>
+            </div>
+
+            <div class="col-12 text-center mb-2" >
+              <div class="input-group">
+                <ion-label class="label_">Tipo de evento</ion-label>
+                <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+              </div>
+            </div>
+
+            <div class="col-12 text-center mb-2" >
+              <div class="input-group">
+                <ion-label class="label_">Ubicación</ion-label>
+                <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+              </div>
+            </div>
+
+            <div class="col-12 text-center mb-2" >
+              <div class="input-group">
+                <ion-label class="label_">Hora</ion-label>
+                <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+              </div>
+            </div>
+
+            
+            <div class="col-12 text-center mb-2" >
+              <div class="row">
+                <div class="col-5">
+                  <input type="checkbox" name="" id="">Agregar recordatorio
+                </div>
+                <div class="col-7">
+                  <div class="row">
+                    <ion-label>Recordatorio 1</ion-label>
+                  </div>
+                  <div class="row">
+                    <ion-label>Recordatorio 2</ion-label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 btn-add">
+              <ion-buttons >
+                <ion-button (click)="confirm()" [strong]="true" class="color-back save-event">Guardar</ion-button>
+              </ion-buttons>
+
+            </div>
+            <div class="col-12 btn-back text-center" style="margin-top: 20px;">
+              <ion-buttons >
+                <ion-button  (click)="cancel()" [strong]="true" class="color-back w-100">Regresar</ion-button>
+              </ion-buttons>
+            </div>
+          </div>
+
+        </ion-list>
+
+      </ion-content>
+
+    </ng-template>
+  </ion-modal>
 
 <!-- ----------------------------------------------------------------------- -->
 
 
 <!-- ------------------------- Barra de navegacion ------------------------- -->
-<ion-tabs class="navigationBar">
+  <ion-tabs class="navigationBar">
 
-  <ion-tab-bar slot="bottom" class="cont-navigation">
+    <ion-tab-bar slot="bottom" class="cont-navigation">
 
-    <ion-tab-button routerLink="/properties">
-      <i class="fas fa-home-lg"></i>
-    </ion-tab-button>
+      <ion-tab-button routerLink="/properties">
+        <i class="fas fa-home-lg"></i>
+      </ion-tab-button>
 
-    <ion-tab-button routerLink="/client-list">
-      <i class="fas fa-user-friends"></i>
-    </ion-tab-button>
+      <ion-tab-button routerLink="/client-list">
+        <i class="fas fa-user-friends"></i>
+      </ion-tab-button>
 
-    <ion-tab-button routerLink="/sales-funnel">
-      <i class="fas fa-filter"></i>
-    </ion-tab-button>
+      <ion-tab-button routerLink="/sales-funnel">
+        <i class="fas fa-filter"></i>
+      </ion-tab-button>
 
-    <ion-tab-button routerLink="/calendar">
-      <i class="fas fa-calendar-alt"></i>
-    </ion-tab-button>
+      <ion-tab-button routerLink="/calendar">
+        <i class="fas fa-calendar-alt"></i>
+      </ion-tab-button>
 
-  </ion-tab-bar>
+    </ion-tab-bar>
 
-</ion-tabs>
+  </ion-tabs>
 <!-- ----------------------------------------------------------------------- -->

@@ -98,12 +98,13 @@ ion-input {
   font-weight: bold;
 }
 .img-user{
-  height: 90px;
-  width: 91px;
+  height: 130px;
+  width: 200px;
   background-color: #27a091;
-  border-radius: 100px;
-  padding: 0;
-  background-size: 100% auto;
+  border-radius: 15px;
+  padding: 0;background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
 }
 .icon-edit{
   height: 25px;

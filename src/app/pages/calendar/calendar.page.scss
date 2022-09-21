@@ -88,7 +88,6 @@ ion-content {
 }
 .btn-add {
   color: #fff;
-  background-color: #1e5b5a;
   display: flex;
   justify-content: center;
   margin-top: 15px;
@@ -133,4 +132,18 @@ ion-modal#example-modal ion-icon {
 
 ion-modal#example-modal .wrapper {
   margin-bottom: 10px;
+}
+
+
+/* --------------------------------- settins -------------------------------- */
+
+.item.sc-ion-label-md-h, .item .sc-ion-label-md-h  {
+  --color: #000;
+}
+
+.save-event{
+  background: #1e5b5a;
+    min-width: 270px;
+    border-radius: 5px;
+    height: 40px;
 }
