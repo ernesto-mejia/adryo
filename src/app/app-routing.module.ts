@@ -79,7 +79,12 @@ const routes: Routes = [
   {
     path: 'view-development',
     loadChildren: () => import('./pages/developments/view-development/view-development.module').then( m => m.ViewDevelopmentPageModule)
+  },
+  {
+    path: 'galery-propertie',
+    loadChildren: () => import('./pages/properties/galery-propertie/galery-propertie.module').then( m => m.GaleryPropertiePageModule)
   }
+
 
 
 

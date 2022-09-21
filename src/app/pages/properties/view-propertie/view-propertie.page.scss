@@ -6,6 +6,8 @@
     background-size: auto 100%;
 }
 .card-image{
+  align-items: end;
+  display: flex;
     margin-top: 10px;
     border-radius: 10px;
     background-color: #c7f5f4;
@@ -42,7 +44,7 @@
     color: black;
 }
 .map-propertie {
-    background-image: url(../../../../assets/media/map.png); 
+    background-image: url(../../../../assets/media/map.png);
     margin-top: 10px;
     border-radius: 10px;
     background-size: 100% auto;
@@ -53,21 +55,21 @@
     width: 80%;
     height: 80%;
     border-radius: 10px;
-    background-size: 80% auto;
+    background-size: auto;
     background-repeat: no-repeat;
     background-position: center;
 }
 .full{
-    background-image: url(../../../../assets/media/full.png); 
+    background-image: url(../../../../assets/media/full.png);
 }
 .cam{
-    background-image: url(../../../../assets/media/cam.png); 
+    background-image: url(../../../../assets/media/cam.png);
 }
 .car{
-    background-image: url(../../../../assets/media/car.png); 
+    background-image: url(../../../../assets/media/car.png);
 }
 .ban {
-    background-image: url(../../../../assets/media/ban.png); 
+    background-image: url(../../../../assets/media/ban.png);
 }
 .col-3 {
     text-align: center;
@@ -89,7 +91,7 @@
 .btn-section-more i{
     font-size: 30px;
 }
-.section-more 
+.section-more
 {
     text-align: center;
 }

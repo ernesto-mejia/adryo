@@ -1,4 +1,6 @@
+import { Share } from '@capacitor/share';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-view-propertie',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewPropertiePage implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
+  share() {
+    Share.share({
+      title: 'Hola',
+      text: 'Descripcion',
+      url: 'url a compartir',
+    });
+
+  }
+  showsection(){
+      $('.Drop_submenu').click(function(e){
+
+          $(this).children('ul').slideToggle();
+
+      });
+
+
+  }
 }

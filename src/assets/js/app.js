@@ -11,3 +11,4 @@ function myFunction() {
         $('#eye_').addClass('fal fa-eye');
     }
 }
+
