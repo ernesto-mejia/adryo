@@ -7,7 +7,7 @@
             </ion-buttons>
             <ion-title class="ion-text-capitalize title-default"> Busqueda avanzada </ion-title>
             <ion-buttons slot="end" >
-                
+
             </ion-buttons>
         </ion-toolbar>
     </ion-header>
@@ -19,12 +19,12 @@
     <ion-content>
 
         <ion-list>
-            
+
             <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
-                
+
                 <div class="col-12 text-center mb-2" >
-                    <div class="input-group">                    
-                        <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="nombre/correo/telèfono"></ion-input>
+                    <div class="input-group">
+                        <ion-input class="search_" type="text" placeholder="nombre/correo/telèfono"></ion-input>
                     </div>
                 </div>
                 <div class="col-12 text-center mb-2" >
@@ -32,30 +32,30 @@
                         <ion-label class="label_">Estatus</ion-label>
                         <div class="row">
                             <div class="col-6 text-start">
-                                <ion-radio slot="start" value="Opotuno"  [(ngModel)]="Opotuno"></ion-radio>
+                                <ion-radio slot="start" value="Opotuno" ></ion-radio>
                                 <ion-label>Opotuno</ion-label>
                             </div>
-                            <div class="col-6 text-start"> 
-                                <ion-radio slot="start" value="Tardio"  [(ngModel)]="Tardio"></ion-radio>
+                            <div class="col-6 text-start">
+                                <ion-radio slot="start" value="Tardio"  ></ion-radio>
                                 <ion-label>Tardio</ion-label>
                             </div>
-                            <div class="col-6 text-start"> 
-                                <ion-radio slot="start" value="No-atendido"  [(ngModel)]="No-atendido"></ion-radio>
+                            <div class="col-6 text-start">
+                                <ion-radio slot="start" value="No-atendido"  ></ion-radio>
                                 <ion-label>No atendido</ion-label>
                             </div>
                             <div class="col-6 text-start">
-                                <ion-radio slot="start" value="Por-reasignar"  [(ngModel)]="Por-reasignar"></ion-radio>
+                                <ion-radio slot="start" value="Por-reasignar"  ></ion-radio>
                                 <ion-label>Por reasignar</ion-label>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
-               
+
                 <div class="col-12 text-center mb-2" >
                     <div class="input-group">
                         <ion-label class="label_">Estatus</ion-label>
                         <div class="row">
-                            
+
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                                 <label class="form-check-label" for="exampleRadios1"> 1
@@ -91,40 +91,40 @@
                                 <label class="form-check-label" for="exampleRadios1"> 7
                                 </label>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-12 text-center mb-2" >
                     <div class="input-group">
                         <ion-label class="label_">Inmuebles</ion-label>
-                        <ion-select placeholder="Seleccionar Propiedades"  [(ngModel)]="properties"  >
+                        <ion-select placeholder="Seleccionar Propiedades"   >
                             <ion-select-option value="apples">Apples</ion-select-option>
                             <ion-select-option value="oranges">Oranges</ion-select-option>
                             <ion-select-option value="bananas">Bananas</ion-select-option>
-                        </ion-select>                    
+                        </ion-select>
                     </div>
-                </div> 
+                </div>
 
                 <div class="col-12 text-center mb-2" >
                     <div class="input-group">
                     <ion-label class="label_">Desarrollos</ion-label>
-                    <ion-select placeholder="Seleccionar Desarrollos"  [(ngModel)]="develops" >
+                    <ion-select placeholder="Seleccionar Desarrollos"   >
                         <ion-select-option value="apples">Apples</ion-select-option>
                         <ion-select-option value="oranges">Oranges</ion-select-option>
                         <ion-select-option value="bananas">Bananas</ion-select-option>
                     </ion-select>
-                    
+
                     </div>
-                </div>  
+                </div>
 
                 <div class="col-12 btn-add">
                     <ion-buttons >
-                        <ion-button (click)="confirm()" [strong]="true" class="color-back">Buscar</ion-button>
+                        <ion-button  [strong]="true" class="color-back">Buscar</ion-button>
                     </ion-buttons>
                 </div>
 
-            </div> 
+            </div>
             <ion-item>
                 <label>Pizza</label>
                 <select value="" id="select-chosen" chosen
@@ -150,9 +150,9 @@
                     <option value="16" label="Bahamas">Bahamas</option>
                 </select>
             </ion-item>
-                
+
         </ion-list>
-        
+
 
     </ion-content>
 
@@ -163,23 +163,23 @@
     <ion-tabs class="navigationBar">
 
         <ion-tab-bar slot="bottom" class="cont-navigation">
-        
+
             <ion-tab-button routerLink="/properties">
-                <i class="fas fa-home-lg"></i>   
+                <i class="fas fa-home-lg"></i>
             </ion-tab-button>
 
             <ion-tab-button routerLink="/client-list">
-                <i class="fas fa-user-friends"></i>  
+                <i class="fas fa-user-friends"></i>
             </ion-tab-button>
 
             <ion-tab-button routerLink="/sales-funnel">
-                <i class="fas fa-filter"></i>  
+                <i class="fas fa-filter"></i>
             </ion-tab-button>
 
             <ion-tab-button routerLink="/calendar">
                 <i class="fas fa-calendar-alt"></i>
             </ion-tab-button>
-        
+
         </ion-tab-bar>
 
     </ion-tabs>

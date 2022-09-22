@@ -17,7 +17,6 @@ export class LoginPage implements OnInit {
     password: ''
   };
 
-  
   @Input() message;
 
   ionicForm: FormGroup;

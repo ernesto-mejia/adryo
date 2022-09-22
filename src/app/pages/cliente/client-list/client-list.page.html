@@ -15,7 +15,7 @@
     <div class="col-12 text-center" style="background-color: #fff; color: black">
 
       <ion-list >
-
+<!--
         <ion-item  class="background-color" *ngFor="let cliente of cliens">
 
             <ion-label class="color">
@@ -43,11 +43,11 @@
             </ion-label>
 
         </ion-item>
-
+-->
       </ion-list>
 
     </div>
-    
+
   </ion-content>
 <!-- ----------------------------------------------------------------------- -->
 
@@ -75,37 +75,37 @@
               <div class="col-12 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Nombre del cliente:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="nombre apellidos"></ion-input>
+                  <ion-input  class="search_" type="text" placeholder="nombre apellidos"></ion-input>
                 </div>
               </div>
               <div class="col-12 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Correo electrónico:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
+                  <ion-input  class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
                 </div>
               </div>
               <div class="col-6 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Teléfono 1:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                  <ion-input  class="search_" type="number" placeholder="0000000"></ion-input>
                 </div>
               </div>
               <div class="col-6 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Teléfono 2:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                  <ion-input  class="search_" type="number" placeholder="0000000"></ion-input>
                 </div>
               </div>
               <div class="col-6 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Teléfono 3:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                  <ion-input  class="search_" type="number" placeholder="0000000"></ion-input>
                 </div>
               </div>
               <div class="col-6 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Tipo de cliente:</ion-label>
-                  <ion-select placeholder="Select fruit"  [(ngModel)]="name"  >
+                  <ion-select placeholder="Select fruit"    >
                     <ion-select-option value="apples">Apples</ion-select-option>
                     <ion-select-option value="oranges">Oranges</ion-select-option>
                     <ion-select-option value="bananas">Bananas</ion-select-option>
@@ -116,13 +116,13 @@
               <div class="col-12 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Forma de contacto:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="Mercado libre"></ion-input>
+                  <ion-input  class="search_" type="text" placeholder="Mercado libre"></ion-input>
                 </div>
               </div>
               <div class="col-12 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Desarrolo</ion-label>
-                  <ion-select placeholder="Select fruit"  [(ngModel)]="name"  >
+                  <ion-select placeholder="Select fruit"    >
                     <ion-select-option value="apples">Apples</ion-select-option>
                     <ion-select-option value="oranges">Oranges</ion-select-option>
                     <ion-select-option value="bananas">Bananas</ion-select-option>
@@ -133,7 +133,7 @@
 
               <div class="col-12 btn-add">
                 <ion-buttons >
-                  <ion-button (click)="confirm()" [strong]="true" class="color-back">Registrar</ion-button>
+                  <ion-button  [strong]="true" class="color-back">Registrar</ion-button>
                 </ion-buttons>
               </div>
             </div>
@@ -154,23 +154,23 @@
   <ion-tabs class="navigationBar">
 
     <ion-tab-bar slot="bottom" class="cont-navigation">
-      
+
       <ion-tab-button routerLink="/properties">
-        <i class="fas fa-home-lg"></i>   
+        <i class="fas fa-home-lg"></i>
       </ion-tab-button>
 
       <ion-tab-button routerLink="/client-list">
-        <i class="fas fa-user-friends"></i>  
+        <i class="fas fa-user-friends"></i>
       </ion-tab-button>
 
       <ion-tab-button routerLink="/sales-funnel">
-        <i class="fas fa-filter"></i>  
+        <i class="fas fa-filter"></i>
       </ion-tab-button>
 
       <ion-tab-button routerLink="/calendar">
         <i class="fas fa-calendar-alt"></i>
       </ion-tab-button>
-      
+
     </ion-tab-bar>
 
   </ion-tabs>
