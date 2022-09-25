@@ -104,7 +104,7 @@
             <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
               <p class="m-0 font-weight-bold" style="color: black; margin-bottom: 10px !important;">Recordatorios</p>
 
-              <div class="col-12 text-center mb-2" >
+              <div class="col-12 text-center mb-2 d-flex justify-content-center" >
                 <div class="row">
                   <div class="col-5">
                     <input type="checkbox" name="" id="">Agregar recordatorio
@@ -143,7 +143,7 @@
 <!-- ----------------------------------------------------------------------- -->
 
 <!-- ----------------------- modal cancelar evento ----------------------- -->
-  <ion-modal id="example-modal" #modal trigger="open-custom-dialog-event-cancel">
+  <ion-modal id="example-modal"  trigger="open-custom-dialog-event-cancel">
     <ng-template>
       <div class="wrapper">
 
@@ -170,8 +170,6 @@
 <!-- ----------------------------------------------------------------------- -->
 
 
-
-
 <!-- ----------------------- boton agregar evento ----------------------- -->
   <div class="btn-add-client">
     <p class="find_advance_ "  id="open-modal-add-event" expand="block">
@@ -182,7 +180,7 @@
 
 <!-- ----------------------- Modal agregar evento ----------------------- -->
 
-  <ion-modal trigger="open-modal-add-event" [initialBreakpoint]="0.80" [breakpoints]="[0, 0.55, 0.5, 0.95]" style="--background: none;">
+  <ion-modal   trigger="open-modal-add-event" [initialBreakpoint]="0.80" [breakpoints]="[0, 0.55, 0.5, 0.95]" style="--background: none;">
     <ng-template>
 
       <ion-content class="ion-padding">
@@ -192,43 +190,43 @@
           <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
             <p class="m-0 font-weight-bold" style="color: black; margin-bottom: 10px !important;">Añadir evento</p>
 
-            <div class="col-12 text-center mb-2" >
+            <div class="col-12 text-center mb-2 d-flex justify-content-center d-flex justify-content-center" >
               <div class="input-group">
                 <ion-label class="label_">Cliente</ion-label>
                 <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="Nombre del cliente"></ion-input>
               </div>
             </div>
 
-            <div class="col-12 text-center mb-2" >
+            <div class="col-12 text-center mb-2 d-flex justify-content-center" >
               <div class="input-group">
                 <ion-label class="label_">Fecha</ion-label>
                 <ion-input [(ngModel)]="name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
               </div>
             </div>
 
-            <div class="col-12 text-center mb-2" >
+            <div class="col-12 text-center mb-2 d-flex justify-content-center" >
               <div class="input-group">
                 <ion-label class="label_">Tipo de evento</ion-label>
-                <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                <ion-input [(ngModel)]="name" class="search_" type="select" placeholder="0000000"></ion-input>
               </div>
             </div>
 
-            <div class="col-12 text-center mb-2" >
+            <div class="col-12 text-center mb-2 d-flex justify-content-center" >
               <div class="input-group">
                 <ion-label class="label_">Ubicación</ion-label>
-                <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="0000000"></ion-input>
               </div>
             </div>
 
-            <div class="col-12 text-center mb-2" >
+            <div class="col-12 text-center mb-2 d-flex justify-content-center" >
               <div class="input-group">
                 <ion-label class="label_">Hora</ion-label>
-                <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                <ion-input [(ngModel)]="name" class="search_" type="date" placeholder="0000000"></ion-input>
               </div>
             </div>
 
 
-            <div class="col-12 text-center mb-2" >
+            <div class="col-12 text-center mb-2 d-flex justify-content-center" >
               <div class="row">
                 <div class="col-5">
                   <input type="checkbox" name="" id="">Agregar recordatorio

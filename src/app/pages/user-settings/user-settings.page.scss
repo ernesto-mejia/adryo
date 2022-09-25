@@ -73,3 +73,8 @@ label .action input:checked ~ i::before {
 
 
 /* -------------------------------------------------------------------------- */
+.passwor-label {
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}

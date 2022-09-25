@@ -42,20 +42,14 @@ export class InicioPage  {
     this.avatar = foto;
     this.usuarioService.getUserData(this.advId.id).subscribe(resp => {
       this.adviser = resp;
-     
+
       this.events = resp.events;
-      
+
 
     });
     console.log(this.avatar);
   }
 
-  logout() {
-    this.storage.clear();
-    this.user = null;
-    this.storage.clear();
-    this.naveCtrl.navigateRoot('/login', {animated: true});
-  };
 
 
   @ViewChild(IonModal) modal: IonModal;

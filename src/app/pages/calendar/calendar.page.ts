@@ -16,8 +16,9 @@ export class CalendarPage implements OnInit {
 
   @ViewChild(IonModal) modal: IonModal;
 
-  message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
+
   name: string;
+
   confirm() {
     this.modal.dismiss(this.name, 'confirm');
   }
