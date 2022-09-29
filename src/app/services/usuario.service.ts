@@ -33,6 +33,7 @@ export class UsuarioService {
       return new Promise(resolve => {
         this.http.post(`https://adryo.com.mx/users/login_app`, data)
         .subscribe(resp => {
+
           console.log(resp);
 
           if ( resp['Ok'] ) {
@@ -41,13 +42,16 @@ export class UsuarioService {
             this.saveUserCuenta(resp['cuenta_id']);
             this.message = resp['mensaje'];
             resolve(true);
+
           };
           if (!resp['Ok']) {
 
             console.log(resp['mensaje']);
             resolve(false);
             this.message = resp['mensaje'];
+
           };
+
         });
       });
 
@@ -115,9 +119,11 @@ export class UsuarioService {
 
       var dataUser = {
         id: data.adviserId
+       
       };
+  
 
-      const url = 'https://beta.adryo.com.mx/users/get_advisor_info';
+      const url = 'http://localhost/adryo/web/users/get_advisor_info';
 
       return this.http.post<InfoAdviser>(url, dataUser).pipe(map(resp => resp[0]));
 
@@ -127,15 +133,16 @@ export class UsuarioService {
 
   /* ----------------------------- Lista-de-clientes ----------------------------- */
 
-  getClientList(adviserId: string):Observable<clientList> {
+  getClientList(adviserId: string, cuentaId: string):Observable<clientList> {
 
-    var data = {adviserId};
+    var data = {adviserId, cuentaId};
 
     var dataUser = {
-      id: data.adviserId
+      id: data.adviserId,
+      cuenta_id: data.cuentaId
     };
 
-    const url = 'https://beta.adryo.com.mx/clientes/get_cliente_info';
+    const url = 'http://localhost/adryo/web/clientes/get_cliente_info';
 
     return this.http.post<clientList>(url, dataUser).pipe(map(resp => resp));
 
