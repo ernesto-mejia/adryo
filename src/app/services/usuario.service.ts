@@ -2,7 +2,7 @@ import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { NavController } from '@ionic/angular';
-import { InfoAdviser, clientList, recoverPassword } from '../interfaces';
+import { InfoAdviser, clientList, recoverPassword, developments } from '../interfaces';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -41,13 +41,16 @@ export class UsuarioService {
             this.saveUserCuenta(resp['cuenta_id']);
             this.message = resp['mensaje'];
             resolve(true);
+
           };
           if (!resp['Ok']) {
 
             console.log(resp['mensaje']);
             resolve(false);
             this.message = resp['mensaje'];
+
           };
+
         });
       });
 
@@ -97,7 +100,7 @@ export class UsuarioService {
     recover(email: string):Observable<recoverPassword> {
 
       const data = {email};
-      const url = 'https://beta.adryo.com.mx/users/app_send_mail_recovery';
+      const url = 'http://192.168.1.67/users/app_send_mail_recovery';
 
       return this.http.post<recoverPassword>(url, data).pipe(map(resp => resp));
 
@@ -111,13 +114,15 @@ export class UsuarioService {
 
     getUserData(adviserId: string):Observable<InfoAdviser> {
 
-      var data = {adviserId};
+      const data = {adviserId};
 
-      var dataUser = {
+      const dataUser = {
         id: data.adviserId
+
       };
 
-      const url = 'https://beta.adryo.com.mx/users/get_advisor_info';
+
+      const url = 'http://192.168.1.67/users/get_advisor_info';
 
       return this.http.post<InfoAdviser>(url, dataUser).pipe(map(resp => resp[0]));
 
@@ -127,61 +132,41 @@ export class UsuarioService {
 
   /* ----------------------------- Lista-de-clientes ----------------------------- */
 
-    getClientList(adviserId: string):Observable<clientList> {
+  getClientList(adviserId: string, cuentaId: string):Observable<clientList> {
 
-      var data = {adviserId};
+    const data = {adviserId, cuentaId};
 
-      var dataUser = {
-        id: data.adviserId
-      };
+    const dataUser = {
+      asesor: data.adviserId,
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      cuenta_id: data.cuentaId
+    };
 
-      const url = 'https://beta.adryo.com.mx/clientes/get_cliente_info';
+    const url = 'http://192.168.1.67/clientes/get_cliente_info';
+    console.log(data);
 
-      return this.http.post<clientList>(url, dataUser).pipe(map(resp => resp));
+    return this.http.post<clientList>(url, dataUser).pipe(map(resp => resp));
+  }
 
-    }
+/* ----------------------------- Lista-de-desarrollos ----------------------------- */
 
-  /* -------------------------------------------------------------------------- */
+  getDevelopmentsList(cuentaId: string):Observable<developments> {
+
+    const data = {cuentaId};
+
+    const dataUser = {
+      cuenta_id: data.cuentaId
+    };
+
+    const url = 'http://192.168.1.67/desarrollos/get_desarrollo_app';
+
+    return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
+
+  }
+
+/* -------------------------------------------------------------------------- */
 
 
-
-
-  /* ----------------------------- Agregar-Cliente ----------------------------- */
-
-    addClient(
-      name: string,
-      email: string,
-      phoneOne: string,
-      phoneTwo: string,
-      phoneThree: string,
-      type: string,
-      contact: string,
-      development: string
-      ) {
-
-      const data = {
-        name,
-        email,
-        phoneOne,
-        phoneTwo,
-        phoneThree,
-        type,
-        contact,
-        development
-      };
-
-      console.log(data);
-
-      return new Promise(resolve => {
-        this.http.post(`http://127.0.0.1:8000/api/addClient`, data)
-        .subscribe(resp => {
-          console.log(resp);
-        });
-      });
-
-    }
-
-  /* -------------------------------------------------------------------------- */
 
 
 }

@@ -28,19 +28,21 @@ export class RecoverPage implements OnInit {
     if (fLogin.invalid) {
       return;
     }
-    const valido = await this.usuarioService.recover(this.recoverUser.email);
-
-    if (valido) {
-      this.naveCtrl.navigateRoot('mail-send', {animated: true});
-    }
+ 
+    
     this.usuarioService.recover(this.recoverUser.email).subscribe(resp => {
+      console.log(resp);
 
-      if (!resp['flag']) {
+      if (!resp['Ok']) {
         this.error();
         this.mensaje = resp;
+        return;
+      };
 
-      }
-
+      if ( resp['Ok'] ) {
+        this.mensaje = resp;
+        this.naveCtrl.navigateRoot('mail-send', {animated: true});
+      };
 
     });
 

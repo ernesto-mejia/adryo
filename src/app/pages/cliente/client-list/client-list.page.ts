@@ -18,7 +18,10 @@ export class ClientListPage implements OnInit {
       private usuarioService: UsuarioService
   ) { this.as(); }
 
-  public cliens: clientList;
+  public clients: clientList;
+  cuentaId: string;
+
+ 
 
   ngOnInit() {
   }
@@ -26,13 +29,14 @@ export class ClientListPage implements OnInit {
   async as() {
     const storage = await this.storage.create();
     const name = await this.storage.get('user_id');
-
-    this.usuarioService.getClientList(name).subscribe( (resp: clientList) => {
-    this.cliens = resp;
+    const cuenta = await this.storage.get('cuenta_id');
+    this.usuarioService.getClientList(name, cuenta).subscribe( (resp: clientList) => {
+    this.clients = resp;
+      console.log(this.clients);
 
     });
 
   }
-0
+
 
 }
