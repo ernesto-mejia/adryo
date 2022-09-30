@@ -33,7 +33,7 @@ export class UsuarioService {
       return new Promise(resolve => {
         this.http.post(`https://adryo.com.mx/users/login_app`, data)
         .subscribe(resp => {
-          console.log(resp);
+          //console.log(resp);
 
           if ( resp['Ok'] ) {
             this.saveUserId(resp['user_id']);
@@ -127,22 +127,61 @@ export class UsuarioService {
 
   /* ----------------------------- Lista-de-clientes ----------------------------- */
 
-  getClientList(adviserId: string):Observable<clientList> {
+    getClientList(adviserId: string):Observable<clientList> {
 
-    var data = {adviserId};
+      var data = {adviserId};
 
-    var dataUser = {
-      id: data.adviserId
-    };
+      var dataUser = {
+        id: data.adviserId
+      };
 
-    const url = 'https://beta.adryo.com.mx/clientes/get_cliente_info';
+      const url = 'https://beta.adryo.com.mx/clientes/get_cliente_info';
 
-    return this.http.post<clientList>(url, dataUser).pipe(map(resp => resp));
+      return this.http.post<clientList>(url, dataUser).pipe(map(resp => resp));
 
-  }
+    }
 
-/* -------------------------------------------------------------------------- */
+  /* -------------------------------------------------------------------------- */
 
+
+
+
+  /* ----------------------------- Agregar-Cliente ----------------------------- */
+
+    addClient(
+      name: string,
+      email: string,
+      phoneOne: string,
+      phoneTwo: string,
+      phoneThree: string,
+      type: string,
+      contact: string,
+      development: string
+      ) {
+
+      const data = {
+        name,
+        email,
+        phoneOne,
+        phoneTwo,
+        phoneThree,
+        type,
+        contact,
+        development
+      };
+
+      console.log(data);
+
+      return new Promise(resolve => {
+        this.http.post(`http://127.0.0.1:8000/api/addClient`, data)
+        .subscribe(resp => {
+          console.log(resp);
+        });
+      });
+
+    }
+
+  /* -------------------------------------------------------------------------- */
 
 
 }

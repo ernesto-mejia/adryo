@@ -6,6 +6,7 @@ import { IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { InfoAdviser } from '../../interfaces/index';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-inicio',
@@ -14,6 +15,17 @@ import { InfoAdviser } from '../../interfaces/index';
 })
 
 export class InicioPage  {
+
+  clientAdd = {
+    name: '',
+    email: '',
+    phoneOne: '',
+    phoneTwo: '',
+    phoneThree: '',
+    type: '',
+    development: '',
+    contact: '',
+  };
   cliente: string = null;
   user: string = null;
   userId: string = null;
@@ -51,6 +63,32 @@ export class InicioPage  {
   }
 
 
+
+  async adClient(fAddClient: NgForm) {
+
+    if (fAddClient.invalid) {
+      return;
+    }
+
+    const valido = await this.usuarioService.addClient(
+      this.clientAdd.name,
+      this.clientAdd.email,
+      this.clientAdd.phoneOne,
+      this.clientAdd.phoneTwo,
+      this.clientAdd.phoneThree,
+      this.clientAdd.type,
+      this.clientAdd.contact,
+      this.clientAdd.development
+    );
+
+  }
+
+
+  error() {
+    $('#error').removeClass('d-none');
+    $('.cont_input').addClass('input_error');
+
+  }
 
   @ViewChild(IonModal) modal: IonModal;
 
