@@ -2,7 +2,7 @@ import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { NavController } from '@ionic/angular';
-import { InfoAdviser, clientList, recoverPassword } from '../interfaces';
+import { InfoAdviser, clientList, recoverPassword, developments } from '../interfaces';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -101,7 +101,7 @@ export class UsuarioService {
     recover(email: string):Observable<recoverPassword> {
 
       const data = {email};
-      const url = 'https://beta.adryo.com.mx/users/app_send_mail_recovery';
+      const url = 'http://localhost/adryo/web/users/app_send_mail_recovery';
 
       return this.http.post<recoverPassword>(url, data).pipe(map(resp => resp));
 
@@ -143,12 +143,32 @@ export class UsuarioService {
     };
 
     const url = 'http://localhost/adryo/web/clientes/get_cliente_info';
-
+    console.log(data);
+    
     return this.http.post<clientList>(url, dataUser).pipe(map(resp => resp));
 
   }
 
 /* -------------------------------------------------------------------------- */
+
+/* ----------------------------- Lista-de-desarrollos ----------------------------- */
+
+  getDevelopmentsList(cuentaId: string):Observable<developments> {
+
+    var data = {cuentaId};
+
+    var dataUser = {
+      cuenta_id: data.cuentaId
+    };
+
+    const url = 'http://localhost/adryo/web/desarrollos/get_desarrollo_app';
+
+    return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
+
+  }
+
+/* -------------------------------------------------------------------------- */
+
 
 
 

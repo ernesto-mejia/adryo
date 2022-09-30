@@ -47,10 +47,10 @@ export class InicioPage  {
       this.adviser = resp;
 
       this.events = resp.events;
-      console.log(this.events);
+      //console.log(this.events);
       
     });
-    console.log(this.avatar);
+    //console.log(this.avatar);
   }
 
 

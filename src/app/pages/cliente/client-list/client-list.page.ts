@@ -37,6 +37,6 @@ export class ClientListPage implements OnInit {
     });
 
   }
-0
+
 
 }

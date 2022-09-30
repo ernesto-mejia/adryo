@@ -26,7 +26,7 @@ export interface clientList {
     nombre?:                string;
     correo_electronico?:    string;
     desarrollo?:            string;
-    telefono?:              string;
+    telefono1?:              string;
     status?:                string;
     etapa?:                 string;
 }
@@ -35,4 +35,8 @@ export interface recoverPassword {
   usuario?: [];
   flag?: string;
 }
-
+export interface developments {
+    desarrollo?:                string;
+    id?:                        string;
+  }
+  
