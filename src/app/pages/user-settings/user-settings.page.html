@@ -9,23 +9,23 @@
 
       <ion-item  class="background-color" >
         <div class="col-4 h-100" style="padding:28px 0px 28px 1px;">
-          <div class="img-user" style="background-image: url('https://adryo.com.mx/');" >
+          <div class="img-user" style="background-image: url({{adviser.user_Photo}});" >
 
           </div>
         </div>
-         <div class="col-8">
+        <div class="col-8">
           <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Nombre (s)</p>
-          <p class="m-0" style="color: rgb(129, 129, 129);">Erick Jacobo </p>
+          <p class="m-0" style="color: rgb(129, 129, 129);">{{adviser.user_name}} </p>
           <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Apellido (s)</p>
           <p class="m-0" style="color: rgb(129, 129, 129);;">Wong Lopéz</p>
-         </div>
+        </div>
 
       </ion-item>
 
       <ion-item  class="background-color" >
         <div class="col-12 p-0">
-          <p class="m-0 w-100" style="color: rgb(0, 0, 0); font-weight: 700;">correo</p>
-          <p class="m-0 w-100" style="color: rgb(129, 129, 129);">wongj@adryo.com.mx </p>
+          <p class="m-0 w-100" style="color: rgb(0, 0, 0); font-weight: 700;">Correo electrònico</p>
+          <p class="m-0 w-100" style="color: rgb(129, 129, 129);">{{adviser.correo_electronico}} </p>
         </div>
 
 
@@ -34,7 +34,7 @@
       <ion-item  class="background-color" >
         <div class="col-12 p-0">
           <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Teléfono</p>
-          <p class="m-0" style="color: rgb(129, 129, 129);">5511229988 </p>
+          <p class="m-0" style="color: rgb(129, 129, 129);">{{adviser.telefono1}} </p>
 
         </div>
         <p></p>
@@ -44,7 +44,7 @@
       <ion-item  class="background-color" >
         <div class="col-11 p-0">
           <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Contraseña</p>
-
+          <ion-input id="password" type="password"  password="true" name="password" value="{{adviser.telefono1}}"    required  style="color: red;"></ion-input>
         </div>
         <div class="col-1 text-end p-0 ">
           <i class="fas fa-eye" style="color: rgb(0, 0, 0); "></i>

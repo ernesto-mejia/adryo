@@ -26,6 +26,8 @@ export class InicioPage  {
     development: '',
     contact: '',
   };
+
+  
   cliente: string = null;
   user: string = null;
   userId: string = null;
@@ -59,7 +61,7 @@ export class InicioPage  {
       this.adviser = resp;
 
       this.events = resp.events;
-      //console.log(this.events);
+      console.log(this.events);
 
     });
     //console.log(this.avatar);
