@@ -1,0 +1,32 @@
+/* ---------------------------------- filtro event  --------------------------------- */
+.find_advance {
+    display: flex !important;
+    position: relative;
+    justify-content: space-between;
+    padding: 0 15px;
+    min-height: 40px;
+    min-height: 45px;
+    border:solid 1px #1e5b5a;
+    align-items: center;
+    color: #1e5b5a;
+    border-radius: 8px;
+    margin-bottom: 0;
+  }
+
+  ion-buttons {
+    background: #1e5b5a;
+      border-radius: 5px;
+  }
+  .btn-add {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  .ios ion-modal ion-toolbar  {
+    padding-top: 0px !important;
+  }
+  .color-back {
+    color: #fff;
+  }
+  

@@ -88,7 +88,16 @@ const routes: Routes = [
     path: 'gallery-development',
     // eslint-disable-next-line max-len
     loadChildren: () => import('./pages/developments/gallery-development/gallery-development.module').then( m => m.GalleryDevelopmentPageModule)
+  },
+  {
+    path: 'add-development',
+    loadChildren: () => import('./pages/cliente/card-client/add-development/add-development.module').then( m => m.AddDevelopmentPageModule)
+  },
+  {
+    path: 'add-inmueble',
+    loadChildren: () => import('./pages/cliente/card-client/add-inmueble/add-inmueble.module').then( m => m.AddInmueblePageModule)
   }
+
 
 
 

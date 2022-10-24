@@ -1,0 +1,109 @@
+<!-- ----------------------------- Encabezado ------------------------------ -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button class="back_color" defaultHref="/client-list" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title class=" title-default"> Bùsqueda de unidades </ion-title>
+    <ion-buttons slot="end" >
+      <ion-button class="back_color"  >
+        <i class="fas fa-pen" style="color: #1E5B5A;"></i>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- ------------------------------ contenido ------------------------------ -->
+  <ion-content>
+  <!-- -------------------------- list card client --------------------------- -->
+
+    <div class="container " style="padding: 20px;">
+      <div class="col-12 cont-card-event">
+        <div class="row h-100">
+          <div class="col-1 p-0 d-flex justify-content-center align-items-center">     
+              <label class="form-check-label" for="exampleRadios1">
+                <input class="form-check-input" type="radio" name="exampleRadios"  value="option1">
+              </label>
+          </div>
+    
+          <div class="col-2 p-0">
+            <div class="img_" style="background-image: url('https://adryo.com.mx//files/cuentas/179/generales/logoNew.png');" >
+    
+            </div>
+          </div>
+    
+          <div class="col-9 text-end">
+            <div class="row" style="height: 50%;">
+    
+              <div class="col-8 ion-text-left">
+                <p class="tipo_">Tipo A / A-201</p>
+              </div>
+    
+              <div class="col-4">
+                <p class="status_">Liberado</p>
+              </div>
+    
+            </div>
+     
+            <div class="row card-amenidad justify-content-center" style="height: 50%; padding-left: 10px;">
+              <div class="col-3 extra-propertie p-0 justify-content-center">  <img  alt="" class="extra-img full"><p class="info-amenidad">52.68 m2</p> </div>
+              <div class="col-3 extra-propertie p-0 justify-content-center">  <img  alt="" class="extra-img cam"> <p class="info-amenidad">2</p> </div>
+              <div class="col-3 extra-propertie p-0 justify-content-center">  <img  alt="" class="extra-img ban"> <p class="info-amenidad">1</p>  </div>
+              <div class="col-3 extra-propertie p-0 justify-content-center">  <img  alt="" class="extra-img car"> <p class="info-amenidad">1</p> </div>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+     
+          
+    </div>
+
+  <!-- ----------------------------------------------------------------------- -->
+  
+    <!-- --------------------------- filter estatus ---------------------------- -->
+    <div class="col-12 mt-3">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+        <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
+          <ion-button (click)="confirm()" [strong]="true" class="color-back w-100" style=" font-size: 12px;">Asignar propiedades</ion-button>
+        </ion-buttons>
+      </div>
+
+      </div>
+      
+    </div>
+  <!-- ----------------------------------------------------------------------- -->
+
+
+  </ion-content>
+
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- ------------------------- Barra de navegacion ------------------------- -->
+<ion-tabs class="navigationBar">
+
+  <ion-tab-bar slot="bottom" class="cont-navigation">
+
+    <ion-tab-button routerLink="/inicio">
+      <i class="fas fa-home-lg"></i>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/client-list">
+      <i class="fas fa-user-friends"></i>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/sales-funnel">
+      <i class="fas fa-filter"></i>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/calendar">
+      <i class="fas fa-calendar-alt"></i>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>
+<!-- ----------------------------------------------------------------------- -->

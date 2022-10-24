@@ -1,0 +1,135 @@
+/*------------------------------- card client ------------------------------ */
+label {
+  position: absolute;
+  left: 26px;
+  top: 25px;
+}
+.cont-card-event {
+  height: 70px;
+  border-radius: 8px;
+  box-shadow: 2px 4px 16px 0px rgb(0 0 0 / 25%);
+}
+.card-date{
+  width: 5px;
+  background-color: #258F8D;
+  border-radius: 8px 0px 0px 8px;
+  color: #fff;
+}
+
+.cont-card-event p{
+  color: #000;
+  margin: 0;
+}
+.status-p span {
+  padding: 0;
+  font-size: 10px;
+    width: 30px;
+    float: right;
+    background: #29c3e3;
+    border-radius: 25px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.date-card {
+  font-size: 15px;
+  color: rgb(143, 143, 143);
+}
+.card-name-client {
+  font-weight: 700;
+}
+.card-netx-etap {
+  font-size: 8px;
+  color: rgb(184, 184, 184);
+}
+.img_ {
+  width: 100%;
+   
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.tipo_{
+  font-weight: 700;
+  font-size: 20px;
+}
+.status_ {
+  background: #258F8D;
+    width: 70px;
+    border-radius: 25px;
+    color: #fff !important;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 5px !important;
+}
+
+.extra-propertie {
+  display: inline-flex !important;
+  color: #6f6f6f;
+}
+.extra-img {
+  width: 30%;
+  border-radius: 50%;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.full{
+  background-image: url(../../../../../assets/media/full.png);
+}
+.cam{
+  background-image: url(../../../../../assets/media/cam.png);
+}
+.car{
+  background-image: url(../../../../../assets/media/car.png);
+}
+.ban {
+  background-image: url(../../../../../assets/media/ban.png);
+}
+.info-amenidad {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: gray;
+  font-weight: 700;
+}
+/* -------------------------------------------------------------------------- */
+
+
+/* ---------------------------------- filtro event  --------------------------------- */
+.find_advance {
+    display: flex !important;
+    position: relative;
+    justify-content: space-between;
+    padding: 0 15px;
+    min-height: 40px;
+    min-height: 45px;
+    border:solid 1px #1e5b5a;
+    align-items: center;
+    color: #1e5b5a;
+    border-radius: 8px;
+    margin-bottom: 0;
+  }
+
+  ion-buttons {
+    background: #1e5b5a;
+      border-radius: 5px;
+  }
+  .btn-add {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  .ios ion-modal ion-toolbar  {
+    padding-top: 0px !important;
+  }
+  .color-back {
+    color: #fff;
+  }
+  

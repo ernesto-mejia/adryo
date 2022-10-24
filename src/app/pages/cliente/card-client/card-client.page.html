@@ -1,10 +1,10 @@
 <!-- ----------------------------- Encabezado ------------------------------ -->
-|  <ion-header>
+  <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start" >
         <ion-back-button class="back_color" defaultHref="/client-list" text="" ></ion-back-button>
       </ion-buttons>
-      <ion-title class="ion-text-capitalize title-default"> card del cliente </ion-title>
+      <ion-title class="ion-text-capitalize title-default"> Indormaciòn del cliente </ion-title>
       <ion-buttons slot="end" >
         <ion-button class="back_color"  id="open-modal-client-edit" expand="block" >
           <i class="fas fa-pen"></i>
@@ -85,13 +85,13 @@
               </div>
             </div>
 
-            <div class="col-12 btn-add">
+            <div class="col-12 btn-add d-flex justify-content-center">
               <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
                 <ion-button (click)="confirm()" [strong]="true" class="color-back w-100" style=" font-size: 15px;">Aceptar</ion-button>
               </ion-buttons>
             </div>
 
-            <div class="col-12 btn-add" style="margin-top: 20px; background: #fff !important;">
+            <div class="col-12 btn-add  d-flex justify-content-center" style="margin-top: 20px; background: #fff !important;">
               <ion-buttons style="height: 45px; width: 80%; background: #FFF;" >
                 <ion-button  (click)="cancel()" [strong]="true" class=" w-100" style=" font-size: 15px; color:  #1E5B5A;     text-decoration: underline;">Regresar</ion-button>
               </ion-buttons>
@@ -198,7 +198,7 @@
     <!-- ------------------------ Inmuebles de interes ------------------------- -->
 
       <h2 style="color: black;">Inmuebles de interés
-        <i class="fas fa-plus-circle float-end" style="margin-right: 15px; color: #1e5b5a;" id="open-modal" expand="block"></i>
+        <i class="fas fa-plus-circle float-end" style="margin-right: 15px; color: #1e5b5a;" routerLink="/add-inmueble"  ></i>
       </h2>
 
       <div class="col-12">
@@ -208,65 +208,12 @@
         </div>
 
       </div>
-      <!-- ------------------------- modal-add-inmueble -------------------------- -->
-        <ion-modal #modal trigger="open-modal" class="ion-modal_">
-          <ng-template>
-            <ion-content>
-              <ion-toolbar>
-                <ion-title>Agregar Inmueble</ion-title>
-                <ion-buttons slot="end">
-                  <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
-                </ion-buttons>
-              </ion-toolbar>
-              <ion-list>
-                <ion-item>
-                  <ion-avatar slot="start">
-                    <ion-img src="https://i.pravatar.cc/300?u=b"></ion-img>
-                  </ion-avatar>
-                  <ion-label>
-                    <h2>Connor Smith</h2>
-                    <p>Sales Rep</p>
-                  </ion-label>
-                </ion-item>
-                <ion-item>
-                  <ion-avatar slot="start">
-                    <ion-img src="https://i.pravatar.cc/300?u=a"></ion-img>
-                  </ion-avatar>
-                  <ion-label>
-                    <h2>Daniel Smith</h2>
-                    <p>Product Designer</p>
-                  </ion-label>
-                </ion-item>
-                <ion-item>
-                  <ion-avatar slot="start">
-                    <ion-img src="https://i.pravatar.cc/300?u=d"></ion-img>
-                  </ion-avatar>
-                  <ion-label>
-                    <h2>Greg Smith</h2>
-                    <p>Director of Operations</p>
-                  </ion-label>
-                </ion-item>
-                <ion-item>
-                  <ion-avatar slot="start">
-                    <ion-img src="https://i.pravatar.cc/300?u=e"></ion-img>
-                  </ion-avatar>
-                  <ion-label>
-                    <h2>Zoey Smith</h2>
-                    <p>CEO</p>
-                  </ion-label>
-                </ion-item>
-              </ion-list>
-            </ion-content>
-          </ng-template>
-        </ion-modal>
-      <!-- ----------------------------------------------------------------------- -->
-
     <!-- ----------------------------------------------------------------------- -->
 
     <!-- ----------------------- Desarrollos de interes ------------------------ -->
 
       <h2 style="color: black;">Desarrollos de interés
-        <i class="fas fa-plus-circle float-end" style="margin-right: 15px; color: #1e5b5a;"  id="open-modal_dev" expand="block"></i>
+        <i class="fas fa-plus-circle float-end" style="margin-right: 15px; color: #1e5b5a;"  routerLink="/add-development"></i>
       </h2>
 
       <div class="col-12">
@@ -275,42 +222,6 @@
           <div class="col-12">Cumbres Herradura</div>
         </div>
       </div>
-
-      <!-- ------------------------- modal-add-inmueble -------------------------- -->
-        <ion-modal #modal trigger="open-modal_dev" class="ion-modal_">
-        <ng-template>
-          <ion-content>
-            <ion-toolbar>
-              <ion-title>Agregar Desarrollo</ion-title>
-              <ion-buttons slot="end">
-                <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
-              </ion-buttons>
-            </ion-toolbar>
-            <ion-list>
-              <ion-item>
-                <ion-avatar slot="start">
-                  <ion-img src="https://i.pravatar.cc/300?u=b"></ion-img>
-                </ion-avatar>
-                <ion-label>
-                  <h2>Connor Smith</h2>
-                  <p>Sales Rep</p>
-                </ion-label>
-              </ion-item>
-              <ion-item>
-                <ion-avatar slot="start">
-                  <ion-img src="https://i.pravatar.cc/300?u=a"></ion-img>
-                </ion-avatar>
-                <ion-label>
-                  <h2>Daniel Smith</h2>
-                  <p>Product Designer</p>
-                </ion-label>
-              </ion-item>
-
-            </ion-list>
-          </ion-content>
-        </ng-template>
-        </ion-modal>
-      <!-- ----------------------------------------------------------------------- -->
 
     <!-- ----------------------------------------------------------------------- -->
 
@@ -351,13 +262,13 @@
               </div>
             </div>
 
-            <div class="col-12 btn-add">
+            <div class="col-12 btn-add  d-flex justify-content-center">
               <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
                 <ion-button (click)="confirm()" [strong]="true" class="color-back w-100" style=" font-size: 15px;">Aceptar</ion-button>
               </ion-buttons>
             </div>
 
-            <div class="col-12 btn-add" style="margin-top: 20px; background: #fff !important;">
+            <div class="col-12 btn-add  d-flex justify-content-center" style="margin-top: 20px; background: #fff !important;">
               <ion-buttons style="height: 45px; width: 80%; background: #FFF;" >
                 <ion-button  (click)="cancel()" [strong]="true" class=" w-100" style=" font-size: 15px; color:  #1E5B5A;     text-decoration: underline;">Regresar</ion-button>
               </ion-buttons>

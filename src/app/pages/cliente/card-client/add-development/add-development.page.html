@@ -1,0 +1,78 @@
+<!-- ----------------------------- Encabezado ------------------------------ -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button class="back_color" defaultHref="/client-list" text="" ></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize title-default">Agregar desarrollo </ion-title>
+    <ion-buttons slot="end" >
+      <ion-button class="back_color"   >
+        <i class="fas fa-pen" style="color: #1E5B5A;"></i>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- ----------------------------------------------------------------------- -->
+<!-- -------------------------- Filtro etapa -------------------------- -->
+<div class="col-12 text-center" style="background-color: #fff; color: black; padding: 0 40px; ">
+  <p class="m-0 w-100 text-start mt-3">Desarrollos</p>
+  <h5 class="find_advance m-0"  >Seleccionar un desarrollo<i class="fas fa-chevron-down"></i></h5>
+  <p class="m-0 info-find"></p>
+</div>
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- ------------------------------ contenido ------------------------------ -->
+  <ion-content>
+
+    <!-- --------------------------- filter estatus ---------------------------- -->
+      <div class="col-12 mt-3">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center">
+          <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
+            <ion-button (click)="confirm()" [strong]="true" class="color-back w-100" style=" font-size: 12px;">Enviar desarrollo completo</ion-button>
+          </ion-buttons>
+        </div>
+
+        <div class="col-12  d-flex justify-content-center" style="margin-top: 20px; background: #fff !important;">
+          <ion-buttons style="height: 45px; width: 80%; background: #FFF;  border: solid 1px #1E5B5A; border-radius: 5px;" >
+            <ion-button  (click)="cancel()" [strong]="true" class=" w-100" style=" font-size: 12px; color:  #1E5B5A;">Bùsqueda de unidades</ion-button>
+          </ion-buttons>
+        </div>
+  
+        </div>
+        
+      </div>
+    <!-- ----------------------------------------------------------------------- -->
+  
+
+  </ion-content>
+
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- ------------------------- Barra de navegacion ------------------------- -->
+<ion-tabs class="navigationBar">
+
+  <ion-tab-bar slot="bottom" class="cont-navigation">
+
+    <ion-tab-button routerLink="/inicio">
+      <i class="fas fa-home-lg"></i>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/client-list">
+      <i class="fas fa-user-friends"></i>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/sales-funnel">
+      <i class="fas fa-filter"></i>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/calendar">
+      <i class="fas fa-calendar-alt"></i>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>
+<!-- ----------------------------------------------------------------------- -->
