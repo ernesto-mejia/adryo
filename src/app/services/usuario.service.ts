@@ -141,7 +141,7 @@ export class UsuarioService {
       cuenta_id: data.cuentaId
     };
 
-    const url = 'https://beta.adryo.com.mx/clientes/get_cliente_info';
+    const url = 'https://beta.adryo.com.mx/clientes/get_clientes_info';
     console.log(data);
 
     return this.http.post<clientList>(url, dataUser).pipe(map(resp => resp));

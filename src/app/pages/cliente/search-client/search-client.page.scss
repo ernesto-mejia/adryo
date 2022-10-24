@@ -44,6 +44,15 @@ ion-buttons {
 .cont_input_ {
   padding: 5px 20px 6px 20px;
 }
+
+
+.cont_input_ .mb-2 {
+  border-bottom: solid 1px #000;
+}
+
+.cont_input_ .col-12 .input-group{
+  margin-bottom: 10px;
+}
 .search_ {  
 text-align: left;
 height: 25px;
@@ -51,8 +60,10 @@ border: solid 1px gray;
 border-radius: 7px !important;
 }
 .label_ {
+  font-size: 18px;
   width: 100%;
   text-align: start;
+  font-weight: 700;
 }
 .form-check {
   text-align: center;
@@ -62,4 +73,13 @@ border-radius: 7px !important;
   padding-left: 1.5em;
   margin-bottom: 0.125rem;
   padding: 0;
+}
+.add-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+ 
+}
+.add-item i{
+ color: #1e5b5a;
 }

@@ -17,50 +17,49 @@
 
 <!-- ----------------------- Moldal editar cliente ----------------------- -->
 
-  <ion-modal trigger="open-modal-client-edit" [initialBreakpoint]="0.60" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+  <ion-modal trigger="open-modal-client-edit" [initialBreakpoint]="0.75" [breakpoints]="[0, 0.25, 0.5, 0.75]">
     <ng-template>
-
 
       <ion-content class="ion-padding">
 
         <ion-list>
 
           <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
-            <p class="m-0 font-weight-bold" style="color: black;">Editar cliente</p>
-          <div class="col-12 text-center mb-2" >
+            <p class="m-0 font-weight-bold" style="margin-bottom: 15px !important; font-size: 18px; color: black; font-weight: 700;">Editar cliente</p>
+            <div class="col-12 text-center mb-2" >
               <div class="input-group">
                 <ion-label class="label_">Nombre del cliente:</ion-label>
-                <ion-input class="search_" type="text" placeholder="nombre apellidos"></ion-input>
+                <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="nombre apellidos"></ion-input>
               </div>
             </div>
-          <div class="col-12 text-center mb-2" >
+            <div class="col-12 text-center mb-2" >
               <div class="input-group">
                 <ion-label class="label_">Correo electrónico:</ion-label>
-                <ion-input class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
+                <ion-input [(ngModel)]="name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
               </div>
             </div>
             <div class="col-6 text-center mb-2" >
               <div class="input-group">
                 <ion-label class="label_">Teléfono 1:</ion-label>
-                <ion-input class="search_" type="number" placeholder="0000000"></ion-input>
+                <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
               </div>
             </div>
             <div class="col-6 text-center mb-2" >
               <div class="input-group">
                 <ion-label class="label_">Teléfono 2:</ion-label>
-                <ion-input class="search_" type="number" placeholder="0000000"></ion-input>
+                <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
               </div>
             </div>
             <div class="col-6 text-center mb-2" >
               <div class="input-group">
                 <ion-label class="label_">Teléfono 3:</ion-label>
-                <ion-input class="search_" type="number" placeholder="0000000"></ion-input>
+                <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
               </div>
             </div>
             <div class="col-6 text-center mb-2" >
               <div class="input-group">
                 <ion-label class="label_">Tipo de cliente:</ion-label>
-                <ion-select placeholder="Select fruit"   >
+                <ion-select placeholder="Select fruit"  [(ngModel)]="name"  >
                   <ion-select-option value="apples">Apples</ion-select-option>
                   <ion-select-option value="oranges">Oranges</ion-select-option>
                   <ion-select-option value="bananas">Bananas</ion-select-option>
@@ -68,16 +67,16 @@
 
               </div>
             </div>
-          <div class="col-12 text-center mb-2" >
+            <div class="col-12 text-center mb-2" >
               <div class="input-group">
                 <ion-label class="label_">Forma de contacto:</ion-label>
-                <ion-input class="search_" type="text" placeholder="Mercado libre"></ion-input>
+                <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="Mercado libre"></ion-input>
               </div>
             </div>
-          <div class="col-12 text-center mb-2" >
+            <div class="col-12 text-center mb-2" >
               <div class="input-group">
                 <ion-label class="label_">Desarrolo</ion-label>
-                <ion-select placeholder="Select fruit"   >
+                <ion-select placeholder="Select fruit"  [(ngModel)]="name" style="padding: 0;" >
                   <ion-select-option value="apples">Apples</ion-select-option>
                   <ion-select-option value="oranges">Oranges</ion-select-option>
                   <ion-select-option value="bananas">Bananas</ion-select-option>
@@ -86,14 +85,20 @@
               </div>
             </div>
 
-          <div class="col-12 btn-add">
-            <ion-buttons >
-              <ion-button  [strong]="true" class="color-back">Guardar</ion-button>
-            </ion-buttons>
-          </div>
-        </div>
-        </ion-list>
+            <div class="col-12 btn-add">
+              <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
+                <ion-button (click)="confirm()" [strong]="true" class="color-back w-100" style=" font-size: 15px;">Aceptar</ion-button>
+              </ion-buttons>
+            </div>
 
+            <div class="col-12 btn-add" style="margin-top: 20px; background: #fff !important;">
+              <ion-buttons style="height: 45px; width: 80%; background: #FFF;" >
+                <ion-button  (click)="cancel()" [strong]="true" class=" w-100" style=" font-size: 15px; color:  #1E5B5A;     text-decoration: underline;">Regresar</ion-button>
+              </ion-buttons>
+            </div>
+          </div>
+
+        </ion-list>
 
       </ion-content>
 
@@ -101,6 +106,7 @@
   </ion-modal>
 
 <!-- ----------------------------------------------------------------------- -->
+
 
 
 <!-- -------------------------- Contenido de card -------------------------- -->
@@ -337,71 +343,25 @@
         <ion-list>
 
           <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
-            <p class="m-0 font-weight-bold" style="color: black;">Editar cliente</p>
+            <p class="m-0 font-weight-bold" style="color: black;">Añadir nueva nota</p>
           <div class="col-12 text-center mb-2" >
               <div class="input-group">
-                <ion-label class="label_">Nombre del cliente:</ion-label>
-                <ion-input class="search_" type="text" placeholder="nombre apellidos"></ion-input>
-              </div>
-            </div>
-          <div class="col-12 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Correo electrónico:</ion-label>
-                <ion-input class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
-              </div>
-            </div>
-            <div class="col-6 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Teléfono 1:</ion-label>
-                <ion-input class="search_" type="number" placeholder="0000000"></ion-input>
-              </div>
-            </div>
-            <div class="col-6 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Teléfono 2:</ion-label>
-                <ion-input class="search_" type="number" placeholder="0000000"></ion-input>
-              </div>
-            </div>
-            <div class="col-6 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Teléfono 3:</ion-label>
-                <ion-input class="search_" type="number" placeholder="0000000"></ion-input>
-              </div>
-            </div>
-            <div class="col-6 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Tipo de cliente:</ion-label>
-                <ion-select placeholder="Select fruit"   >
-                  <ion-select-option value="apples">Apples</ion-select-option>
-                  <ion-select-option value="oranges">Oranges</ion-select-option>
-                  <ion-select-option value="bananas">Bananas</ion-select-option>
-                </ion-select>
-
-              </div>
-            </div>
-          <div class="col-12 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Forma de contacto:</ion-label>
-                <ion-input class="search_" type="text" placeholder="Mercado libre"></ion-input>
-              </div>
-            </div>
-          <div class="col-12 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Desarrolo</ion-label>
-                <ion-select placeholder="Select fruit"   >
-                  <ion-select-option value="apples">Apples</ion-select-option>
-                  <ion-select-option value="oranges">Oranges</ion-select-option>
-                  <ion-select-option value="bananas">Bananas</ion-select-option>
-                </ion-select>
-
+                <ion-label class="label_">Agregar un comentario para continuar*</ion-label>
+                <ion-input class="search_" type="text" placeholder="" style="    min-height: 115px;"></ion-input>
               </div>
             </div>
 
-          <div class="col-12 btn-add">
-            <ion-buttons >
-              <ion-button  [strong]="true" class="color-back">Guardar</ion-button>
-            </ion-buttons>
-          </div>
+            <div class="col-12 btn-add">
+              <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
+                <ion-button (click)="confirm()" [strong]="true" class="color-back w-100" style=" font-size: 15px;">Aceptar</ion-button>
+              </ion-buttons>
+            </div>
+
+            <div class="col-12 btn-add" style="margin-top: 20px; background: #fff !important;">
+              <ion-buttons style="height: 45px; width: 80%; background: #FFF;" >
+                <ion-button  (click)="cancel()" [strong]="true" class=" w-100" style=" font-size: 15px; color:  #1E5B5A;     text-decoration: underline;">Regresar</ion-button>
+              </ion-buttons>
+            </div>
         </div>
         </ion-list>
 
@@ -419,7 +379,7 @@
 
     <ion-tab-bar slot="bottom" class="cont-navigation">
 
-      <ion-tab-button routerLink="/properties">
+      <ion-tab-button routerLink="/inicio">
         <i class="fas fa-home-lg"></i>
       </ion-tab-button>
 

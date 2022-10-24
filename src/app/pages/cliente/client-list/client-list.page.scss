@@ -40,7 +40,7 @@ ion-input {
   margin-bottom: 0;
   height: 100%;
   border-radius: 50%;
-  font-size: calc(2.5rem - 1vw);
+  font-size: calc(2rem - 1vw);
   width: 100%;
 }
 
@@ -90,8 +90,8 @@ background-color: #29c3e3;
   transition: all 300ms ease 0ms;
   box-shadow: 0px 8px 15px rgb(0 0 0 / 10%);
   z-index: 99;
-  width: 72px;
-  height: 72px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
 }
 .add-client {
@@ -120,7 +120,7 @@ ion-buttons {
   color: #fff;
 }
 .cont_input_ {
-  padding: 5px 20px 6px 20px;
+  padding: 5px ;
 }
 .search_ {
 text-align: left;
