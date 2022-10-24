@@ -36,10 +36,6 @@ export class UserSettingsPage  {
 
     adviser: InfoAdviser = {};
 
-    advId = {
-      id: '5',
-      cuentaId: '12'
-    };
 
     
   async as() {
@@ -51,11 +47,9 @@ export class UserSettingsPage  {
     this.usuarioService.getUserData(name).subscribe(resp => {
       this.adviser = resp;
 
-      //this.events = resp.events;
       //console.log(this.events);
 
     });
-    //console.log(this.avatar);
   }
 
   logout() {

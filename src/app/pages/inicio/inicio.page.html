@@ -128,7 +128,7 @@
               <ion-list>
 
                 <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
-                  <p class="m-0 font-weight-bold" style="color: black; font-weight: 700;">Añadir cliente</p>
+                  <p class="m-0 font-weight-bold" style="margin-bottom: 15px !important; font-size: 18px; color: black; font-weight: 700;">Añadir cliente</p>
                   <div class="col-12 text-center mb-2" >
                     <div class="input-group">
                       <ion-label class="label_">Nombre del cliente:</ion-label>
@@ -179,7 +179,7 @@
                   <div class="col-12 text-center mb-2" >
                     <div class="input-group">
                       <ion-label class="label_">Desarrolo</ion-label>
-                      <ion-select placeholder="Select fruit"  [(ngModel)]="name"  >
+                      <ion-select placeholder="Select fruit"  [(ngModel)]="name" style="padding: 0;" >
                         <ion-select-option value="apples">Apples</ion-select-option>
                         <ion-select-option value="oranges">Oranges</ion-select-option>
                         <ion-select-option value="bananas">Bananas</ion-select-option>
@@ -189,13 +189,14 @@
                   </div>
 
                   <div class="col-12 btn-add">
-                    <ion-buttons >
-                      <ion-button (click)="confirm()" [strong]="true" class="color-back">Aceptar</ion-button>
+                    <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
+                      <ion-button (click)="confirm()" [strong]="true" class="color-back w-100" style=" font-size: 15px;">Aceptar</ion-button>
                     </ion-buttons>
                   </div>
-                  <div class="col-12 btn-back text-center" style="margin-top: 20px;">
-                    <ion-buttons >
-                      <ion-button  (click)="cancel()" [strong]="true" class="color-back w-100">Regresar</ion-button>
+
+                  <div class="col-12 btn-add" style="margin-top: 20px; background: #fff !important;">
+                    <ion-buttons style="height: 45px; width: 80%; background: #FFF;" >
+                      <ion-button  (click)="cancel()" [strong]="true" class=" w-100" style=" font-size: 15px; color:  #1E5B5A;     text-decoration: underline;">Regresar</ion-button>
                     </ion-buttons>
                   </div>
                 </div>

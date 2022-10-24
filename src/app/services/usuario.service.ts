@@ -138,7 +138,6 @@ export class UsuarioService {
 
     const dataUser = {
       asesor: data.adviserId,
-      // eslint-disable-next-line @typescript-eslint/naming-convention
       cuenta_id: data.cuentaId
     };
 

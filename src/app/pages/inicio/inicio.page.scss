@@ -235,8 +235,19 @@ ion-buttons {
 /* ---------------------------------- modal --------------------------------- */
 
 ion-buttons {
-  background: #1e5b5a;
   border-radius: 5px;
+}
+
+ion-label{
+  font-size: 13px;
+  margin-top: 10px;
+}
+ion-select {
+  padding: 0!important;
+  border: solid 1px #000;
+  border-radius: 5px;
+  width: 100%;
+  height: 32px;
 }
 .btn-add {
   color: #fff;
@@ -252,13 +263,13 @@ ion-buttons {
   color: #fff;
 }
 .cont_input_ {
-  padding: 5px 20px 6px 20px;
+  padding: 5px;
 }
 .search_ {
   text-align: left;
-  height: 25px;
-  border: solid 1px gray;
   border-radius: 7px !important;
+  height: 32px;
+  border: solid 1px black;
 }
 .label_ {
   width: 100%;
