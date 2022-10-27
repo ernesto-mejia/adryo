@@ -107,15 +107,15 @@
                 </div>
               </div>
 
-              <div class="col-12 btn-add">
-                <ion-buttons >
-                  <ion-button (click)="confirm()" [strong]="true" class="color-back ">Guardar</ion-button>
+              <div class="col-12 btn-add" style="background-color: #fff">
+                <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
+                  <ion-button (click)="confirm()" [strong]="true" class="color-back w-100" style=" font-size: 15px;">Aceptar</ion-button>
                 </ion-buttons>
-
               </div>
-              <div class="col-12 btn-back text-center" style="margin-top: 20px;">
-                <ion-buttons >
-                  <ion-button (click)="cancel()" [strong]="true" class="color-back w-100">Regresar</ion-button>
+
+              <div class="col-12 btn-add" style="margin-top: 20px; background: #fff !important;">
+                <ion-buttons style="height: 45px; width: 80%; background: #FFF;" >
+                  <ion-button  (click)="cancel()" [strong]="true" class=" w-100" style=" font-size: 15px; color:  #1E5B5A;     text-decoration: underline;">Regresar</ion-button>
                 </ion-buttons>
               </div>
             </div>
@@ -136,7 +136,7 @@
 
   <ion-tab-bar slot="bottom" class="cont-navigation">
 
-    <ion-tab-button routerLink="/properties">
+    <ion-tab-button routerLink="/inicio">
       <i class="fas fa-home-lg"></i>
     </ion-tab-button>
 
