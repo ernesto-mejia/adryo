@@ -80,3 +80,97 @@ ion-content {
   justify-content: center;
   margin-top: 15px;
 }
+
+/* -------------------------------------------------------------------------- */
+
+
+/* ----------------------------- modal settings ----------------------------- */
+
+.modal-settings {
+  position: fixed;
+  z-index: 999;
+  background-color: rgb(255 255 255 / 0.5);
+  height: 100%;
+  width: 100%;
+
+}
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/* ----------------------------- modal add event ---------------------------- */
+
+
+ion-buttons {
+  border-radius: 5px;
+}
+
+ion-label{
+  font-size: 13px;
+  margin-top: 10px;
+}
+ion-select {
+  padding: 0!important;
+  border: solid 1px #000;
+  border-radius: 5px;
+  width: 100%;
+  height: 32px;
+}
+.ios ion-modal ion-toolbar  {
+  padding-top: 0px !important;
+}
+.color-back {
+  font-size: 25px;
+  color: #fff;
+}
+.cont_input_ {
+  padding: 5px;
+}
+.search_ {
+  text-align: left;
+  border-radius: 7px !important;
+  height: 32px;
+  border: solid 1px black;
+}
+.label_ {
+  width: 100%;
+  text-align: start;
+}
+
+/* -------------------------------------------------------------------------- */
+
+
+/* ---------------------------------- modal view settings event--------------------------------- */
+
+
+ion-modal#example-modal {
+  --width: fit-content;
+  --min-width: 250px;
+  --height: fit-content;
+  --border-radius: 6px;
+  --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+}
+
+ion-modal#example-modal h1 {
+  margin: 20px 20px 10px 20px;
+}
+
+ion-modal#example-modal ion-icon {
+  margin-right: 6px;
+
+  width: 48px;
+  height: 48px;
+
+  padding: 4px 0;
+
+  color: #aaaaaa;
+}
+
+ion-modal#example-modal .wrapper {
+  margin-bottom: 10px;
+  width: 350px;
+}
