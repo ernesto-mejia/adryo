@@ -1,4 +1,4 @@
-import { Share } from '@capacitor/share';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,14 +13,7 @@ export class ViewDevelopmentPage implements OnInit {
   ngOnInit() {
     this.showsection();
   }
-  share() {
-    Share.share({
-      title: 'Hola',
-      text: 'Descripcion',
-      url: 'url a compartir',
-    });
-
-  }
+  
   showsection(){
     $('.Drop_submenu').click(function(e){
 

@@ -26,7 +26,7 @@ export class DevelopmentsPage implements OnInit {
     const cuenta = await this.storage.get('cuenta_id');
     this.usuarioService.getDevelopmentsList(cuenta).subscribe( (resp: developments) => {
     this.developments = resp;
-      //console.log(this.developments);
+      console.log(this.developments);
     });
 
   }

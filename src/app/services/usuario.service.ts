@@ -110,7 +110,7 @@ export class UsuarioService {
   /* -------------------------------------------------------------------------- */
 
 
-  /* ----------------------------- Navegacion/Inicio ----------------------------- */
+  /* ----------------------------- Navegacion/Inicio/configuracion ----------------------------- */
 
     getUserData(adviserId: string):Observable<InfoAdviser> {
 
@@ -137,7 +137,7 @@ export class UsuarioService {
     const data = {adviserId, cuentaId};
 
     const dataUser = {
-      asesor: data.adviserId,
+      id: data.adviserId,
       cuenta_id: data.cuentaId
     };
 
@@ -164,6 +164,39 @@ export class UsuarioService {
   }
 
 /* -------------------------------------------------------------------------- */
+
+/* ----------------------------- Agregar cleinte ----------------------------- */
+
+addClient(
+  cuentaId: string,
+  nombre: string,
+  correoelectronico:string,
+  telefono1: string,
+  propiedadid: string,
+  emailuser: string,
+  dictipocleinteid: string, diclineacontactoid: string):Observable<developments> {
+
+    const data = {cuentaId, nombre, correoelectronico, telefono1, propiedadid, emailuser, dictipocleinteid, diclineacontactoid};
+
+    const dataUser = {
+      cuenta_id: data.cuentaId,
+      nombre: data.nombre,
+      telefono1: data.telefono1,
+      correo_electronico: data.correoelectronico,
+      dic_tipo_cleinte_id: data.dictipocleinteid,
+      propiedad_id: data.propiedadid,
+      dic_linea_contacto_id: data.diclineacontactoid,
+      email_user: data.emailuser
+    };
+
+    const url = 'https://beta.adryo.com.mx/clientes/set_add_clientes';
+
+    return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
+
+}
+
+/* -------------------------------------------------------------------------- */
+
 
 
 
