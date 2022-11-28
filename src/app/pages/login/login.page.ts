@@ -42,7 +42,7 @@ export class LoginPage implements OnInit {
       this.error();
       this.message = this.message;
     }
-      //console.log(this.loginUser);
+    
   }
   error() {
     $('#error').removeClass('d-none');

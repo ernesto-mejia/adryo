@@ -37,9 +37,7 @@ export class RecoverPage implements OnInit {
         this.error();
         this.mensaje = resp;
         return;
-      };
-
-      if ( resp['Ok'] ) {
+      }else  {
         this.mensaje = resp;
         this.naveCtrl.navigateRoot('mail-send', {animated: true});
       };
