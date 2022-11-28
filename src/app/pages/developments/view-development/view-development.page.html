@@ -4,7 +4,7 @@
     <ion-buttons slot="start" >
       <ion-back-button class="back_color" defaultHref="/developments" text="" ></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-capitalize title-default"> Cumbres Herradura </ion-title>
+    <ion-title class="ion-text-capitalize title-default" *ngFor="let event of developments"> {{event.nombre}} </ion-title>
     <ion-buttons slot="end" >
       <ion-button class="" >
         <i class="fas fa-pensd"></i>
@@ -16,52 +16,52 @@
 
 <!-- ------------------------------ contenido ------------------------------ -->
 
-<ion-content>
+<ion-content *ngFor="let event of developments">
   <div class="row p-4 d-flex justify-content-center">
-    <div class="img-user" style="background-image: url('https://adryo.com.mx/files/cuentas/179/generales/logoNew.png');" ></div>
+    <div class="img-user" style="background-image: url('https://adryo.com.mx/{{avatar}}');" ></div>
     <div class=" card-image" >
       <div class="row gallery-btn w-100">
         <p class="gallery-info text-end" routerLink="/gallery-development" >Ver galeria <i class="fas fa-arrow-right"></i></p>
       </div>
     </div>
-    <div class="col-6 mt-1 pl-4"> <p class="Estado">Preventa</p> </div>
-    <div class="col-6 mt-1 pr-4"><i class="fad fa-share-alt share" (click)="share()"></i></div>
-    <div class="col-12 mt-1 title-propiertie"><h1>Cumbres Herradura</h1></div>
-    <div class="col-12 mt-1 price-properti">$1,520,00.00 - $.,7411,000.00</div>
-    <div class="col-8 direction-propertie">Camino arenero 150, Valle Escondido, CDMX, CP. 14600</div>
+    <div class="col-6 mt-1 pl-4"> <p class="Estado">{{event.etapa_desarrollo}}</p> </div>
+    <div class="col-6 mt-1 pr-4"><i class="fad fa-share-alt share" ></i></div>
+    <div class="col-12 mt-1 title-propiertie"><h1>{{event.nombre}}</h1></div>
+    <div class="col-12 mt-1 price-properti">{{event.desde}}</div>
+    <div class="col-8 direction-propertie">{{event.direccion}}</div>
     <div class="col-4 mt-1 map-propertie"></div>
-    <div class="col-3 extra-propertie mt-2">  <img  alt="" class="extra-img full"> <p>52.68 m2</p> </div>
-    <div class="col-3 extra-propertie mt-2">  <img  alt="" class="extra-img cam"> <p>1 - 2 </p> </div>
-    <div class="col-3 extra-propertie mt-2">  <img  alt="" class="extra-img ban"> <p>1 - 2 </p>  </div>
-    <div class="col-3 extra-propertie mt-2 mb- 3">  <img  alt="" class="extra-img car"> <p>1 - 2 </p> </div>
-<hr>
+    <div class="col-3 extra-propertie mt-2">  <img  alt="" class="extra-img full"> <p>{{event.metroscubicos}}</p> </div>
+    <div class="col-3 extra-propertie mt-2">  <img  alt="" class="extra-img cam"> <p>{{event.recamaras}} </p> </div>
+    <div class="col-3 extra-propertie mt-2">  <img  alt="" class="extra-img ban"> <p>{{event.banios}} </p>  </div>
+    <div class="col-3 extra-propertie mt-2 mb- 3">  <img  alt="" class="extra-img car"> <p>{{event.estacionamiento}}</p> </div>
+    <hr>
     <div class="col-6">
       <p class="descripcion-dev-title">Tipo de desarrollo</p>
-      <p class="descripcion-dev-cont">Vertical</p>
+      <p class="descripcion-dev-cont">{{event.tipo_desarrollo}}</p>
     </div>
     <div class="col-6">
       <p class="descripcion-dev-title">Etapa</p>
-      <p class="descripcion-dev-cont">Preventa</p>
+      <p class="descripcion-dev-cont">{{event.etapa_desarrollo}}</p>
     </div>
     <div class="col-6">
       <p class="descripcion-dev-title">Torres</p>
-      <p class="descripcion-dev-cont">6</p>
+      <p class="descripcion-dev-cont">{{event.torres}}</p>
     </div>
     <div class="col-6">
       <p class="descripcion-dev-title">Unidades totales</p>
-      <p class="descripcion-dev-cont">20</p>
+      <p class="descripcion-dev-cont">{{event.unidades_totales}}</p>
     </div>
     <div class="col-6">
       <p class="descripcion-dev-title">Depto muestra</p>
-      <p class="descripcion-dev-cont">Si</p>
+      <p class="descripcion-dev-cont">{{event.departamento_muestra}}</p>
     </div>
     <div class="col-6">
       <p class="descripcion-dev-title">Horario</p>
-      <p class="descripcion-dev-cont">L-D 10:00-18:00</p>
+      <p class="descripcion-dev-cont">{{event.horario_contacto}}</p>
     </div>
     <div class="col-6">
       <p class="descripcion-dev-title">Fecha de entrega</p>
-      <p class="descripcion-dev-cont">01/01/2025</p>
+      <p class="descripcion-dev-cont">{{event.fecha_entrega}}</p>
     </div>
     <div class="col-6">
 
@@ -102,28 +102,9 @@
 
     <div class="col-12 title-propiertie mt-3">
       <h1>Descripción</h1>
-      <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde libero delectus tempore voluptatem aspernatur cumque dicta voluptates quae deserunt officia amet ducimus ullam possimus commodi enim laboriosam sit, ea est?</p>
-      <p class="text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis quis earum, sint vitae aliquam eius explicabo dolor iste repellendus ducimus repellat quod deleniti placeat ratione error blanditiis exercitationem! Sunt, natus!</p>
-      <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde libero delectus tempore voluptatem aspernatur cumque dicta voluptates quae deserunt officia amet ducimus ullam possimus commodi enim laboriosam sit, ea est?</p>
-      <p class="text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis quis earum, sint vitae aliquam eius explicabo dolor iste repellendus ducimus repellat quod deleniti placeat ratione error blanditiis exercitationem! Sunt, natus!</p>
+      {{event.descripcion}}
+    </div>
 
-    </div>
-    <div class="col-12 title-propiertie">
-      <ul >
-        <li>Accesos Alberca</li>
-        <li>Pet Park</li>
-        <li>Zona de Azadores</li>
-        <li>Cine al aire libre</li>
-        <li>Gimnasio exterior</li>
-        <li>12,000 m2 de áreas verdes</li>
-        <li>Pista de hielo</li>
-        <li>Juegos infantiles</li>
-        <li>Cancha multiusos</li>
-        <li>Salón de eventos</li>
-        <li>Ludoteca</li>
-        <li>Gimnasio exterior</li>
-      </ul>
-    </div>
     <div class="col-12 title-propiertie">
 
        <ul class="menu-filtros">

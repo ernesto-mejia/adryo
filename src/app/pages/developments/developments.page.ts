@@ -11,7 +11,6 @@ import { developments } from '../../interfaces';
 export class DevelopmentsPage implements OnInit {
 
   constructor(
-
     private storage: Storage,
     private usuarioService: UsuarioService
   ) { this.devs();}
@@ -26,7 +25,7 @@ export class DevelopmentsPage implements OnInit {
     const cuenta = await this.storage.get('cuenta_id');
     this.usuarioService.getDevelopmentsList(cuenta).subscribe( (resp: developments) => {
     this.developments = resp;
-      //console.log(this.developments);
+      console.log(this.developments);
     });
 
   }
