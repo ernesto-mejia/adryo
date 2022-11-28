@@ -9,10 +9,10 @@ export interface InfoAdviser {
     nombre?:                string;
     correo_electronico?:    string;
     desarrollo?:            string;
-    telefono?:              string;
+    telefono1?:              string;
     status?:                string;
     etapa?:                 string;
-
+    name?:                 string;
 }
 
 export interface loginData {
@@ -29,6 +29,7 @@ export interface clientList {
     telefono1?:              string;
     status?:                string;
     etapa?:                 string;
+    name?:                  string;
 }
 export interface recoverPassword {
   message?:                string;
@@ -38,5 +39,6 @@ export interface recoverPassword {
 export interface developments {
     desarrollo?:                string;
     id?:                        string;
-  }
-  
+
+}
+

@@ -50,8 +50,17 @@
 
       </ion-item>
 
-      <ion-item  class="background-color" >
-        <label class="d-flex finger-label">
+      <ion-item  *ngIf=" bio == '1' " (click)="bioOff()"  class="background-color" >
+        <label class="d-flex finger-label" >
+            <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Acceder con huella</p>
+            <span class="action d-flex">
+              <input type="checkbox" name="" id="" *ngIf=" bio == '1' " checked><i></i>
+            </span>
+          </label>
+      </ion-item>
+
+      <ion-item  *ngIf=" bio == '0' " (click)="bioOn()"  class="background-color" >
+        <label class="d-flex finger-label" >
             <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Acceder con huella</p>
             <span class="action d-flex">
               <input type="checkbox" name="" id=""><i></i>
@@ -62,7 +71,7 @@
     </ion-list>
 
 
-    <div class="col-12 cont-logout">
+    <div class="col-12 ">
       <p class="btn-logout " (click)="logout()" >
       Cerrar sesión
       </p>

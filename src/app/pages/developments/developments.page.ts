@@ -11,7 +11,6 @@ import { developments } from '../../interfaces';
 export class DevelopmentsPage implements OnInit {
 
   constructor(
-
     private storage: Storage,
     private usuarioService: UsuarioService
   ) { this.devs();}

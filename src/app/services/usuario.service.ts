@@ -33,12 +33,14 @@ export class UsuarioService {
       return new Promise(resolve => {
         this.http.post(`https://adryo.com.mx/users/login_app`, data)
         .subscribe(resp => {
-          //console.log(resp);
 
           if ( resp['Ok'] ) {
             this.saveUserId(resp['user_id']);
             this.saveUserFoto(resp['cuenta_logo']);
             this.saveUserCuenta(resp['cuenta_id']);
+            this.saveUserEmail(resp['correo_electronico']);
+            this.saveUserPhone(resp['telefono1']);
+            this.saveUserBiometric();
             this.message = resp['mensaje'];
             resolve(true);
 
@@ -79,6 +81,32 @@ export class UsuarioService {
       await this.storage.create();
       this.user = user;
       await this.storage.set('cuenta_id', user);
+      const store = new Storage();
+
+    };
+
+    async saveUserEmail(user: string) {
+
+      await this.storage.create();
+      this.user = user;
+      await this.storage.set('correo_electronico', user);
+      const store = new Storage();
+
+    };
+
+    async saveUserPhone(user: string) {
+
+      await this.storage.create();
+      this.user = user;
+      await this.storage.set('telefono1', user);
+      const store = new Storage();
+
+    };
+
+    async saveUserBiometric() {
+
+      await this.storage.create();
+      await this.storage.set('bio', '1');
       const store = new Storage();
 
     };
@@ -132,73 +160,93 @@ export class UsuarioService {
 
   /* ----------------------------- Lista-de-clientes ----------------------------- */
 
-  getClientList(adviserId: string, cuentaId: string):Observable<clientList> {
+    getClientList(adviserId: string, cuentaId: string):Observable<clientList> {
 
-    const data = {adviserId, cuentaId};
+      const data = {adviserId, cuentaId};
 
-    const dataUser = {
-      id: data.adviserId,
-      cuenta_id: data.cuentaId
-    };
+      const dataUser = {
+        id: data.adviserId,
+        cuenta_id: data.cuentaId
+      };
 
-    const url = 'https://beta.adryo.com.mx/clientes/get_clientes_info';
-    console.log(data);
+      const url = 'https://beta.adryo.com.mx/clientes/get_clientes_info';
+      console.log(data);
 
-    return this.http.post<clientList>(url, dataUser).pipe(map(resp => resp));
-  }
+      return this.http.post<clientList>(url, dataUser).pipe(map(resp => resp));
+    }
 
-/* ----------------------------- Lista-de-desarrollos ----------------------------- */
+  /* -------------------------------------------------------------------------- */
 
-  getDevelopmentsList(cuentaId: string):Observable<developments> {
 
-    const data = {cuentaId};
+  /* ----------------------------- Agregar cleinte ----------------------------- */
 
-    const dataUser = {
-      cuenta_id: data.cuentaId
-    };
+    addClient(
+      cuentaId: string,
+      nombre: string,
+      correoelectronico:string,
+      telefono1: string,
+      propiedadid: string,
+      emailuser: string,
+      dictipocleinteid: string, diclineacontactoid: string):Observable<developments> {
 
-    const url = 'https://beta.adryo.com.mx/desarrollos/get_desarrollo_app';
+        const data = {cuentaId, nombre, correoelectronico, telefono1, propiedadid, emailuser, dictipocleinteid, diclineacontactoid};
 
-    return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
+        const dataUser = {
+          cuenta_id: data.cuentaId,
+          nombre: data.nombre,
+          telefono1: data.telefono1,
+          correo_electronico: data.correoelectronico,
+          dic_tipo_cleinte_id: data.dictipocleinteid,
+          propiedad_id: data.propiedadid,
+          dic_linea_contacto_id: data.diclineacontactoid,
+          email_user: data.emailuser
+        };
 
-  }
+        const url = 'https://beta.adryo.com.mx/clientes/set_add_clientes';
 
-/* -------------------------------------------------------------------------- */
+        return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
 
-/* ----------------------------- Agregar cleinte ----------------------------- */
+    }
 
-addClient(
-  cuentaId: string,
-  nombre: string,
-  correoelectronico:string,
-  telefono1: string,
-  propiedadid: string,
-  emailuser: string,
-  dictipocleinteid: string, diclineacontactoid: string):Observable<developments> {
+  /* -------------------------------------------------------------------------- */
 
-    const data = {cuentaId, nombre, correoelectronico, telefono1, propiedadid, emailuser, dictipocleinteid, diclineacontactoid};
+
+  /* ----------------------------- Lista-de-desarrollos ----------------------------- */
+
+    getDevelopmentsList(cuentaId: string):Observable<developments> {
+
+      const data = {cuentaId};
+
+      const dataUser = {
+        cuenta_id: data.cuentaId
+      };
+
+      const url = 'https://beta.adryo.com.mx/desarrollos/get_desarrollo_app';
+
+      return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
+
+    }
+
+  /* -------------------------------------------------------------------------- */
+
+  /* --------------------------- vista de desarrollo -------------------------- */
+
+  getDevelopment(cuentaId: string, desarrolloId: string):Observable<developments> {
+
+    const data = {cuentaId, desarrolloId};
 
     const dataUser = {
       cuenta_id: data.cuentaId,
-      nombre: data.nombre,
-      telefono1: data.telefono1,
-      correo_electronico: data.correoelectronico,
-      dic_tipo_cleinte_id: data.dictipocleinteid,
-      propiedad_id: data.propiedadid,
-      dic_linea_contacto_id: data.diclineacontactoid,
-      email_user: data.emailuser
+      desarrollo_id: data.desarrolloId
     };
 
-    const url = 'https://beta.adryo.com.mx/clientes/set_add_clientes';
+    const url = 'https://beta.adryo.com.mx/desarrollos/get_index_app';
 
     return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
 
-}
+  }
 
-/* -------------------------------------------------------------------------- */
-
-
-
+  /* -------------------------------------------------------------------------- */
 
 
 }
