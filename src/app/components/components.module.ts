@@ -3,16 +3,20 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { DetalleComponent } from './detalle/detalle.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    DetailComponent
   ],
   exports: [
     HeaderComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    DetailComponent
   ],
   imports: [
     CommonModule,

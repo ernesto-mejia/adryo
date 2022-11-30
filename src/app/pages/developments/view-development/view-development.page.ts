@@ -39,10 +39,10 @@ export class ViewDevelopmentPage implements OnInit {
   async devs() {
     const storage = await this.storage.create();
     const cuenta = await this.storage.get('cuenta_id');
-    const desarrollo = await this.storage.get('cuenta_id');
+    const desarrollo = await this.storage.get('desarrollo_id');
     const foto = await this.storage.get('cuenta_logo');
     this.avatar = foto;
-    this.usuarioService.getDevelopment(this.advId.cuenta_id, this.advId.desarrollo_id).subscribe( (resp: developments) => {
+    this.usuarioService.getDevelopment(cuenta, desarrollo).subscribe( (resp: developments) => {
     this.developments = resp;
       console.log(this.developments);
     });
