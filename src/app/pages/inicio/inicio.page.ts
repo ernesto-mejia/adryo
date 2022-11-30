@@ -40,7 +40,7 @@ export class InicioPage  {
               private naveCtrl: NavController,
               private usuarioService: UsuarioService
   ) {
-    this.as();
+    this.us();
   }
 
   adviser: InfoAdviser = {};
@@ -51,7 +51,7 @@ export class InicioPage  {
   };
 
 
-  async as() {
+  async us() {
     const storage = await this.storage.create();
     const name = await this.storage.get('user_id');
     const cuenta = await this.storage.get('cuenta_id');
