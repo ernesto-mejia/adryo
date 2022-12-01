@@ -15,7 +15,7 @@
 
     <div class="d-flex justify-content-center " style="margin-top: 10px;" >
       <div class="row  w-100">
-        <div class="col-12 col-md-6 card-date text-center mt-2 cont-card-event" routerLink="/view-development" *ngFor="let desarrollo of developments" (click)="verDeatelle(desarrollo.id)">
+        <div class="col-12 col-md-6 card-date text-center mt-2 cont-card-event" *ngFor="let desarrollo of developments" (click)="verDeatelle(desarrollo.id)">
 
           <div class=" card-image" style="background-image: url({{desarrollo.portada}});" >
             <div class="">

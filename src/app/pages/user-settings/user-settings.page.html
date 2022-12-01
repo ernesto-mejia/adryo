@@ -9,13 +9,13 @@
 
       <ion-item  class="background-color" >
         <div class="col-4 h-100" style="padding:28px 0px 28px 1px;">
-          <div class="img-user" style="background-image: url({{adviser.user_Photo}});" >
+          <div class="img-user" style="background-image: url({{user_Photo}});" >
 
           </div>
         </div>
         <div class="col-8">
           <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Nombre(s) Apellido(s)</p>
-          <p class="m-0" style="color: rgb(129, 129, 129);">{{adviser.user_name}} </p>
+          <p class="m-0" style="color: rgb(129, 129, 129);">{{asesor_name}} </p>
         </div>
 
       </ion-item>
@@ -23,7 +23,7 @@
       <ion-item  class="background-color" >
         <div class="col-12 p-0">
           <p class="m-0 w-100" style="color: rgb(0, 0, 0); font-weight: 700;">Correo electrònico</p>
-          <p class="m-0 w-100" style="color: rgb(129, 129, 129);">{{adviser.correo_electronico}} </p>
+          <p class="m-0 w-100" style="color: rgb(129, 129, 129);">{{asesor_email}} </p>
         </div>
 
 
@@ -32,19 +32,8 @@
       <ion-item  class="background-color" >
         <div class="col-12 p-0">
           <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Teléfono</p>
-          <p class="m-0" style="color: rgb(129, 129, 129);">{{adviser.telefono1}} </p>
+          <p class="m-0" style="color: rgb(129, 129, 129);">{{asesor_phone}} </p>
 
-        </div>
-
-      </ion-item>
-
-      <ion-item  class="background-color" >
-        <div class="col-11 p-0">
-          <p class="m-0" style="color: rgb(0, 0, 0); font-weight: 700;">Contraseña</p>
-          <ion-input id="password" type="password"  password="true" name="password" value="{{adviser.telefono1}}"   disabled required  style="color: red;"></ion-input>
-        </div>
-        <div class="col-1 text-end p-0 ">
-          <i class="fas fa-eye" style="color: rgb(0, 0, 0); "></i>
         </div>
 
       </ion-item>
@@ -70,13 +59,13 @@
     </ion-list>
 
 
-    <div class="col-12 ">
-      <p class="btn-logout " (click)="logout()" >
-      Cerrar sesión
-      </p>
-    </div>
-  </div>
 
+  </div>
+  <div class="col-12 " style="position: absolute; bottom: 20px; left: 0;">
+    <p class="btn-logout " (click)="logout()" >
+    Cerrar sesión
+    </p>
+  </div>
 </ion-content>
 <!-- ----------------------------------------------------------------------- -->
 

@@ -33,13 +33,11 @@ export class UsuarioService {
       return new Promise(resolve => {
         this.http.post(`https://adryo.com.mx/users/login_app`, data)
         .subscribe(resp => {
-
+          console.log(resp);
           if ( resp['Ok'] ) {
             this.saveUserId(resp['user_id']);
             this.saveUserFoto(resp['cuenta_logo']);
             this.saveUserCuenta(resp['cuenta_id']);
-            this.saveUserEmail(resp['correo_electronico']);
-            this.saveUserPhone(resp['telefono1']);
             this.saveUserBiometric();
             this.message = resp['mensaje'];
             resolve(true);
@@ -81,24 +79,6 @@ export class UsuarioService {
       await this.storage.create();
       this.user = user;
       await this.storage.set('cuenta_id', user);
-      const store = new Storage();
-
-    };
-
-    async saveUserEmail(user: string) {
-
-      await this.storage.create();
-      this.user = user;
-      await this.storage.set('correo_electronico', user);
-      const store = new Storage();
-
-    };
-
-    async saveUserPhone(user: string) {
-
-      await this.storage.create();
-      this.user = user;
-      await this.storage.set('telefono1', user);
       const store = new Storage();
 
     };
@@ -165,12 +145,12 @@ export class UsuarioService {
       const data = {adviserId, cuentaId};
 
       const dataUser = {
-        id: data.adviserId,
-        cuenta_id: data.cuentaId
+        cuenta_id: data.adviserId,
+        email_id: data.cuentaId
       };
 
       const url = 'https://beta.adryo.com.mx/clientes/get_clientes_info';
-      console.log(data);
+      //console.log(data);
 
       return this.http.post<clientList>(url, dataUser).pipe(map(resp => resp));
     }
@@ -231,20 +211,20 @@ export class UsuarioService {
 
   /* --------------------------- vista de desarrollo -------------------------- */
 
-  getDevelopment(cuentaId: string, desarrolloId: string):Observable<developments> {
+    getDevelopment(cuentaId: string, desarrolloId: string):Observable<developments> {
 
-    const data = {cuentaId, desarrolloId};
+      const data = {cuentaId, desarrolloId};
 
-    const dataUser = {
-      cuenta_id: data.cuentaId,
-      desarrollo_id: data.desarrolloId
-    };
+      const dataUser = {
+        cuenta_id: data.cuentaId,
+        desarrollo_id: data.desarrolloId
+      };
 
-    const url = 'https://beta.adryo.com.mx/desarrollos/get_index_app';
+      const url = 'https://beta.adryo.com.mx/desarrollos/get_index_app';
 
-    return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
+      return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
 
-  }
+    }
 
   /* -------------------------------------------------------------------------- */
 

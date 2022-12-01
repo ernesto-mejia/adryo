@@ -22,6 +22,11 @@ export class UserSettingsPage  {
   avatar: any;
   bio: any;
   cuentaId: string;
+  asesor_avatar: any;
+  user_Photo: any;
+  asesor_email: any;
+  asesor_name: any;
+  asesor_phone: any;
 
   constructor(private storage: Storage,
               private naveCtrl: NavController,
@@ -36,16 +41,23 @@ export class UserSettingsPage  {
 
   async as() {
     const storage = await this.storage.create();
-    const name = await this.storage.get('user_id');
-    const cuenta = await this.storage.get('cuenta_id');
-    const foto = await this.storage.get('cuenta_logo');
+
     const bio = await this.storage.get('bio');
-    this.avatar = foto;
     this.bio = bio;
-    console.log(this.bio);
-    this.usuarioService.getUserData(name).subscribe(resp => {
-      this.adviser = resp;
-    });
+
+    const asesor_name = await this.storage.get('user_name');
+    this.asesor_name = asesor_name;
+
+    const asesor_email = await this.storage.get('correo_electronico');
+    this.asesor_email = asesor_email;
+
+    const asesor_phone = await this.storage.get('telefono1');
+    this.asesor_phone = asesor_phone;
+
+    const asesor_avatar = await this.storage.get('user_avatar');
+    this.user_Photo = asesor_avatar;
+      console.log(asesor_avatar);
+
   }
 
   logout() {

@@ -18,9 +18,9 @@
 
         <ion-item  class="background-color" *ngFor="let cliente of clients">
 
-            <ion-label class="color">
+            <ion-label class="color"  (click)="verClient(cliente.id)">
 
-              <div class="row" routerLink="/card-client">
+              <div class="row" >
 
                 <div class="col-10">
                   <p class="m-0" style="font-weight: 800;">{{cliente.nombre}}</p>
@@ -60,95 +60,95 @@
 
 <!-- ----------------------- Modal agregar cliente ----------------------- -->
 
-<div class="row">
-  <ion-modal trigger="open-modal-client-list" [initialBreakpoint]="0.75" [breakpoints]="[0, 0.25, 0.5, 0.75]">
-    <ng-template>
+  <div class="row">
+    <ion-modal trigger="open-modal-client-list" [initialBreakpoint]="0.75" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
 
-      <ion-content class="ion-padding">
+        <ion-content class="ion-padding">
 
-        <ion-list>
+          <ion-list>
 
-          <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
-            <p class="m-0 font-weight-bold" style="margin-bottom: 15px !important; font-size: 18px; color: black; font-weight: 700;">Añadir cliente</p>
-            <div class="col-12 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Nombre del cliente:</ion-label>
-                <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="nombre apellidos"></ion-input>
+            <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
+              <p class="m-0 font-weight-bold" style="margin-bottom: 15px !important; font-size: 18px; color: black; font-weight: 700;">Añadir cliente</p>
+              <div class="col-12 text-center mb-2" >
+                <div class="input-group">
+                  <ion-label class="label_">Nombre del cliente:</ion-label>
+                  <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="nombre apellidos"></ion-input>
+                </div>
+              </div>
+              <div class="col-12 text-center mb-2" >
+                <div class="input-group">
+                  <ion-label class="label_">Correo electrónico:</ion-label>
+                  <ion-input [(ngModel)]="name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
+                </div>
+              </div>
+              <div class="col-6 text-center mb-2" >
+                <div class="input-group">
+                  <ion-label class="label_">Teléfono 1:</ion-label>
+                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                </div>
+              </div>
+              <div class="col-6 text-center mb-2" >
+                <div class="input-group">
+                  <ion-label class="label_">Teléfono 2:</ion-label>
+                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                </div>
+              </div>
+              <div class="col-6 text-center mb-2" >
+                <div class="input-group">
+                  <ion-label class="label_">Teléfono 3:</ion-label>
+                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                </div>
+              </div>
+              <div class="col-6 text-center mb-2" >
+                <div class="input-group">
+                  <ion-label class="label_">Tipo de cliente:</ion-label>
+                  <ion-select placeholder="Select fruit"  [(ngModel)]="name"  >
+                    <ion-select-option value="apples">Apples</ion-select-option>
+                    <ion-select-option value="oranges">Oranges</ion-select-option>
+                    <ion-select-option value="bananas">Bananas</ion-select-option>
+                  </ion-select>
+
+                </div>
+              </div>
+              <div class="col-12 text-center mb-2" >
+                <div class="input-group">
+                  <ion-label class="label_">Forma de contacto:</ion-label>
+                  <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="Mercado libre"></ion-input>
+                </div>
+              </div>
+              <div class="col-12 text-center mb-2" >
+                <div class="input-group">
+                  <ion-label class="label_">Desarrolo</ion-label>
+                  <ion-select placeholder="Select fruit"  [(ngModel)]="name" style="padding: 0;" >
+                    <ion-select-option value="apples">Apples</ion-select-option>
+                    <ion-select-option value="oranges">Oranges</ion-select-option>
+                    <ion-select-option value="bananas">Bananas</ion-select-option>
+                  </ion-select>
+
+                </div>
+              </div>
+
+              <div class="col-12 btn-add">
+                <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
+                  <ion-button  [strong]="true" class="color-back w-100" style=" font-size: 15px;">Aceptar</ion-button>
+                </ion-buttons>
+              </div>
+
+              <div class="col-12 btn-add" style="margin-top: 20px; background: #fff !important;">
+                <ion-buttons style="height: 45px; width: 80%; background: #FFF;" >
+                  <ion-button   [strong]="true" class=" w-100" style=" font-size: 15px; color:  #1E5B5A;     text-decoration: underline;">Regresar</ion-button>
+                </ion-buttons>
               </div>
             </div>
-            <div class="col-12 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Correo electrónico:</ion-label>
-                <ion-input [(ngModel)]="name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
-              </div>
-            </div>
-            <div class="col-6 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Teléfono 1:</ion-label>
-                <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-              </div>
-            </div>
-            <div class="col-6 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Teléfono 2:</ion-label>
-                <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-              </div>
-            </div>
-            <div class="col-6 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Teléfono 3:</ion-label>
-                <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-              </div>
-            </div>
-            <div class="col-6 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Tipo de cliente:</ion-label>
-                <ion-select placeholder="Select fruit"  [(ngModel)]="name"  >
-                  <ion-select-option value="apples">Apples</ion-select-option>
-                  <ion-select-option value="oranges">Oranges</ion-select-option>
-                  <ion-select-option value="bananas">Bananas</ion-select-option>
-                </ion-select>
 
-              </div>
-            </div>
-            <div class="col-12 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Forma de contacto:</ion-label>
-                <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="Mercado libre"></ion-input>
-              </div>
-            </div>
-            <div class="col-12 text-center mb-2" >
-              <div class="input-group">
-                <ion-label class="label_">Desarrolo</ion-label>
-                <ion-select placeholder="Select fruit"  [(ngModel)]="name" style="padding: 0;" >
-                  <ion-select-option value="apples">Apples</ion-select-option>
-                  <ion-select-option value="oranges">Oranges</ion-select-option>
-                  <ion-select-option value="bananas">Bananas</ion-select-option>
-                </ion-select>
+          </ion-list>
 
-              </div>
-            </div>
+        </ion-content>
 
-            <div class="col-12 btn-add">
-              <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
-                <ion-button  [strong]="true" class="color-back w-100" style=" font-size: 15px;">Aceptar</ion-button>
-              </ion-buttons>
-            </div>
-
-            <div class="col-12 btn-add" style="margin-top: 20px; background: #fff !important;">
-              <ion-buttons style="height: 45px; width: 80%; background: #FFF;" >
-                <ion-button   [strong]="true" class=" w-100" style=" font-size: 15px; color:  #1E5B5A;     text-decoration: underline;">Regresar</ion-button>
-              </ion-buttons>
-            </div>
-          </div>
-
-        </ion-list>
-
-      </ion-content>
-
-    </ng-template>
-  </ion-modal>
-</div>
+      </ng-template>
+    </ion-modal>
+  </div>
 
 <!-- ----------------------------------------------------------------------- -->
 
