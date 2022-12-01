@@ -27,13 +27,16 @@ export class InicioPage  {
     contact: '',
   };
 
-  
+
   cliente: string = null;
   user: string = null;
   userId: string = null;
   events: string;
   avatar: any;
   cuentaId: string;
+  user_name: any;
+  asesor_name: any;
+  asesor_avatar: any;
 
   constructor(private http: HttpClient,
               private storage: Storage,
@@ -54,20 +57,57 @@ export class InicioPage  {
   async us() {
     const storage = await this.storage.create();
     const name = await this.storage.get('user_id');
-    const cuenta = await this.storage.get('cuenta_id');
     const foto = await this.storage.get('cuenta_logo');
     this.avatar = foto;
+
     this.usuarioService.getUserData(name).subscribe(resp => {
       this.adviser = resp;
-
+      this.saveUserEmail(resp['correo_electronico']);
+      this.saveUserPhone(resp['telefono1']);
+      this.saveUserName(resp['user_name']);
+      this.saveUserAvatar(resp['user_Photo']);
       this.events = resp.events;
-      console.log(this.events);
+      //console.log(this.events);
 
     });
-    console.log(this.avatar);
+    const asesor_name = await this.storage.get('user_name');
+    this.asesor_name = asesor_name;
   }
+  async saveUserAvatar(user: string) {
 
+    await this.storage.create();
+    this.user = user;
+    await this.storage.set('user_avatar', user);
+    const store = new Storage();
 
+  };
+
+  async saveUserName(user: string) {
+
+    await this.storage.create();
+    this.user = user;
+    await this.storage.set('user_name', user);
+    const store = new Storage();
+
+  };
+
+  async saveUserEmail(user: string) {
+
+    await this.storage.create();
+    this.user = user;
+    await this.storage.set('correo_electronico', user);
+    const store = new Storage();
+
+  };
+
+  async saveUserPhone(user: string) {
+
+    await this.storage.create();
+    this.user = user;
+    await this.storage.set('telefono1', user);
+    const store = new Storage();
+
+  };
 
   async adClient(fAddClient: NgForm) {
 

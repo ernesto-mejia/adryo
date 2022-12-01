@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { event } from 'jquery';
-import { IonModal } from '@ionic/angular';
-import { OverlayEventDetail } from '@ionic/core/components';
+import { NavController } from '@ionic/angular';
 
 import { Storage } from '@ionic/storage';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -14,6 +12,7 @@ import { clientList } from '../../../interfaces';
 export class ClientListPage implements OnInit {
 
     constructor(
+      private naveCtrl: NavController,
       private storage: Storage,
       private usuarioService: UsuarioService
   ) { this.as(); }
@@ -21,22 +20,31 @@ export class ClientListPage implements OnInit {
   public clients: clientList;
   cuentaId: string;
 
- 
+
 
   ngOnInit() {
   }
 
   async as() {
     const storage = await this.storage.create();
-    const name = await this.storage.get('user_id');
+    const name = await this.storage.get('correo_electronico');
     const cuenta = await this.storage.get('cuenta_id');
-    this.usuarioService.getClientList(name, cuenta).subscribe( (resp: clientList) => {
+    this.usuarioService.getClientList(cuenta, name).subscribe( (resp: clientList) => {
     this.clients = resp;
-      console.log(this.clients);
-
     });
 
   }
 
+  async verClient(id: string) {
+
+    await this.storage.create();
+    await this.storage.remove('cliente_id');
+    await this.storage.set('cliente_id', id);
+    const store = new Storage();
+
+    this.naveCtrl.navigateRoot('/card-client', {animated: true});
+
+
+  };
 
 }
