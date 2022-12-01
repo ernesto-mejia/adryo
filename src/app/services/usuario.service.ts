@@ -181,24 +181,35 @@ export class UsuarioService {
   /* ----------------------------- Agregar cleinte ----------------------------- */
 
     addClient(
-      cuentaId: string,
-      nombre: string,
-      correoelectronico:string,
-      telefono1: string,
-      propiedadid: string,
-      emailuser: string,
-      dictipocleinteid: string, diclineacontactoid: string):Observable<developments> {
+        cuentaId: string,
+        nombre: string,
+        correoelectronico:string,
+        telefono1: string,
+        propiedadId: string,
+        emailuser: string,
+        dicTipoClienteId: string, 
+        dicLineaContactoId: string
+      ):Observable<developments> {
 
-        const data = {cuentaId, nombre, correoelectronico, telefono1, propiedadid, emailuser, dictipocleinteid, diclineacontactoid};
+        const data = {
+          cuentaId, 
+          nombre, 
+          correoelectronico, 
+          telefono1, 
+          propiedadId, 
+          emailuser, 
+          dicTipoClienteId, 
+          dicLineaContactoId
+        };
 
         const dataUser = {
           cuenta_id: data.cuentaId,
           nombre: data.nombre,
           telefono1: data.telefono1,
           correo_electronico: data.correoelectronico,
-          dic_tipo_cleinte_id: data.dictipocleinteid,
-          propiedad_id: data.propiedadid,
-          dic_linea_contacto_id: data.diclineacontactoid,
+          dic_tipo_cliente_id: data.dicTipoClienteId,
+          propiedad_id: data.propiedadId,
+          dic_linea_contacto_id: data.dicLineaContactoId,
           email_user: data.emailuser
         };
 

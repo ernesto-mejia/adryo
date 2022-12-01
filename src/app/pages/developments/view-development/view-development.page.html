@@ -28,7 +28,7 @@
     <div class="col-6 mt-1 pr-4"><i class="fad fa-share-alt share" ></i></div>
     <div class="col-12 mt-1 title-propiertie"><h1>{{event.nombre}}</h1></div>
     <div class="col-12 mt-1 price-properti">{{event.desde}}</div>
-    <div class="col-8 direction-propertie">{{event.direccion}}</div>
+    <div class="col-8 direction-propertie" [innerHTML]="event.direccion"></div>
     <div class="col-4 mt-1 map-propertie"></div>
     <div class="col-3 extra-propertie mt-2">  <img  alt="" class="extra-img full"> <p>{{event.metroscubicos}}</p> </div>
     <div class="col-3 extra-propertie mt-2">  <img  alt="" class="extra-img cam"> <p>{{event.recamaras}} </p> </div>
@@ -102,7 +102,7 @@
 
     <div class="col-12 title-propiertie mt-3">
       <h1>Descripción</h1>
-      {{event.descripcion}}
+      <div  [innerHTML]="event.descripcion"></div>
     </div>
 
     <div class="col-12 title-propiertie">

@@ -64,7 +64,7 @@ export class InicioPage  {
       console.log(this.events);
 
     });
-    //console.log(this.avatar);
+    console.log(this.avatar);
   }
 
 
