@@ -19,7 +19,9 @@ export class UsuarioService {
   adviserId: string = null;
   mensaje: Object;
 
-
+  fecha:                 string;
+  direccion:                 string;
+  cliente:                 string;
   constructor(private http: HttpClient,
               private storage: Storage,
               private naveCtrl: NavController,) { }
@@ -120,19 +122,18 @@ export class UsuarioService {
 
   /* ----------------------------- Navegacion/Inicio/configuracion ----------------------------- */
 
-    getUserData(adviserId: string):Observable<InfoAdviser> {
+    getUserData(name: string):Observable<InfoAdviser> {
 
-      const data = {adviserId};
+      const data = {name};
 
       const dataUser = {
-        id: data.adviserId
+        id: data.name
 
       };
 
-
       const url = 'https://beta.adryo.com.mx/users/get_advisor_info';
 
-      return this.http.post<InfoAdviser>(url, dataUser).pipe(map(resp => resp[0]));
+      return this.http.post<InfoAdviser>(url, dataUser).pipe(map(resp => resp));
 
     }
 
@@ -145,8 +146,8 @@ export class UsuarioService {
       const data = {adviserId, cuentaId};
 
       const dataUser = {
-        cuenta_id: data.adviserId,
-        email_id: data.cuentaId
+        cuenta_id: data.cuentaId,
+        email_id: data.adviserId
       };
 
       const url = 'https://beta.adryo.com.mx/clientes/get_clientes_info';

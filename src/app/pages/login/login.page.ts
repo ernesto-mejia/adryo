@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Storage } from '@ionic/storage';
 import { NavController } from '@ionic/angular';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { UiServiceService } from '../../services/ui-service.service';
@@ -16,13 +17,16 @@ export class LoginPage implements OnInit {
     email: '',
     password: ''
   };
-
-  @Input() message;
+  //mensaje: [];
+  message: any;
+  @Input() mensaje;
 
   ionicForm: FormGroup;
+  user: string;
 
   constructor(private usuarioService: UsuarioService,
               private naveCtrl: NavController,
+              private storage: Storage,
               private uiService: UiServiceService,
               public formBuilder: FormBuilder) { }
 
@@ -38,12 +42,24 @@ export class LoginPage implements OnInit {
 
     if (valido) {
       this.naveCtrl.navigateRoot('inicio', {animated: true});
+      this.mensaje = this.message;
+      this.saveUserEmail(this.loginUser.email);
+
     } else {
       this.error();
-      this.message = this.message;
+      this.mensaje = this.message;
+      console.log(this.mensaje);
     }
-    
+
   }
+  async saveUserEmail(user: string) {
+
+    await this.storage.create();
+    this.user = user;
+    await this.storage.set('correo_electronico', user);
+    const store = new Storage();
+
+  };
   error() {
     $('#error').removeClass('d-none');
     $('.cont_input').addClass('input_error');

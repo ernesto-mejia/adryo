@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  ViewChild } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { clientList } from '../../../interfaces';
+import { IonModal } from '@ionic/angular';
 @Component({
   selector: 'app-card-client',
   templateUrl: './card-client.page.html',
   styleUrls: ['./card-client.page.scss'],
 })
 export class CardClientPage implements OnInit {
-
+  card = {
+    name: ''
+  };
   constructor(private storage: Storage) {  this.init(); }
 
   ngOnInit() {
@@ -19,5 +22,19 @@ export class CardClientPage implements OnInit {
     console.log(cliente_id);
 
 
+  }
+
+
+  @ViewChild(IonModal) modal: IonModal;
+
+  message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
+  name: string;
+
+  cancel() {
+    this.modal.dismiss(null, 'cancel');
+  }
+
+  confirm() {
+    this.modal.dismiss(this.name, 'confirm');
   }
 }

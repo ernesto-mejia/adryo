@@ -2,7 +2,7 @@
 
 
 <!-- -------------------------- Busqueda avanzada -------------------------- -->
-<div class="col-12 text-center" style="background-color: #fff; color: black; padding: 0 40px; margin-bottom: 15px !important;">
+<div class="col-12 text-center" style="    max-height: 70px; background-color: #fff; color: black; padding: 0 40px; margin-bottom: 15px !important;">
   <h5 class="find_advance"  routerLink="/search-client"><i class="far fa-search" style="margin-right: 15px;"></i>  Búsqueda avanzada</h5>
 </div>
 <!-- ----------------------------------------------------------------------- -->
@@ -15,7 +15,7 @@
 
     <div class="d-flex justify-content-center " style="margin-top: 10px;" >
       <div class="row  w-100">
-        <div class="col-12 col-md-6 card-date text-center mt-2 cont-card-event" *ngFor="let desarrollo of developments" (click)="verDeatelle(desarrollo.id)">
+        <div class="col-12 col-md-6 card-date text-center mt-2 cont-card-event" *ngFor="let desarrollo of developments">
 
           <div class=" card-image" style="background-image: url({{desarrollo.portada}});" >
             <div class="">

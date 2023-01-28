@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit,  ViewChild } from '@angular/core';
+import { IonModal } from '@ionic/angular';
 
 @Component({
   selector: 'app-view-propertie',
@@ -14,7 +14,7 @@ export class ViewPropertiePage implements OnInit {
   ngOnInit() {
     this.showsection();
   }
-  
+
   showsection(){
       $('.Drop_submenu').click(function(e){
 
@@ -23,5 +23,19 @@ export class ViewPropertiePage implements OnInit {
       });
 
 
+  }
+
+
+  @ViewChild(IonModal) modal: IonModal;
+
+  message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
+  name: string;
+
+  cancel() {
+    this.modal.dismiss(null, 'cancel');
+  }
+
+  confirm() {
+    this.modal.dismiss(this.name, 'confirm');
   }
 }

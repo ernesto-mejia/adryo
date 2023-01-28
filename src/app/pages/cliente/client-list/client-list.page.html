@@ -3,7 +3,7 @@
 <!-- ----------------------------------------------------------------------- -->
 
 <!-- -------------------------- Busqueda avanzada -------------------------- -->
-  <div class="col-12 text-center" style="background-color: #fff; color: black; padding: 0 60px;">
+  <div class="col-12 text-center" style="    max-height: 90px;background-color: #fff; color: black; padding: 0 60px;">
     <h5 class="find_advance mb-2"  routerLink="/search-client"><i class="far fa-search"> </i>&nbsp; Búsqueda avanzada</h5>
     <p class="m-0 info-find text-center">Da click para realizar una busqueda avanzada.</p>
   </div>
@@ -16,7 +16,7 @@
 
       <ion-list >
 
-        <ion-item  class="background-color" *ngFor="let cliente of clients">
+        <div class="background-color" *ngFor="let cliente of clientList">
 
             <ion-label class="color"  (click)="verClient(cliente.id)">
 
@@ -29,10 +29,10 @@
                 </div>
 
                 <div class="col-2 pt-2">
-                  <p *ngIf=" cliente.name_at == 'Oportuno' " class=" et_ t_1">OP</p>
-                  <p *ngIf=" cliente.name_at == 'Tardío' " class=" et_ t_2">TA</p>
-                  <p *ngIf=" cliente.name_at == 'No atendido' " class=" et_ t_3">NA</p>
-                  <p *ngIf=" cliente.name_at == 'Por reasignar' " class=" et_ t_4">PR</p>
+                  <p *ngIf=" cliente.status == 'Oportuno' " class=" et_ t_1">OP</p>
+                  <p *ngIf=" cliente.status == 'Tardío' " class=" et_ t_2">TA</p>
+                  <p *ngIf=" cliente.status == 'No atendido' " class=" et_ t_3">NA</p>
+                  <p *ngIf=" cliente.status == 'Por reasignar' " class=" et_ t_4">PR</p>
                   <p  class=" et_ t_5">AC</p>
                 </div>
 
@@ -40,7 +40,7 @@
 
             </ion-label>
 
-        </ion-item>
+          </div>
 
       </ion-list>
 
@@ -73,37 +73,37 @@
               <div class="col-12 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Nombre del cliente:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="nombre apellidos"></ion-input>
+                  <ion-input [(ngModel)]="clientL.name" class="search_" type="text" placeholder="nombre apellidos"></ion-input>
                 </div>
               </div>
               <div class="col-12 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Correo electrónico:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
+                  <ion-input [(ngModel)]="clientL.name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
                 </div>
               </div>
               <div class="col-6 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Teléfono 1:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                  <ion-input [(ngModel)]="clientL.name" class="search_" type="number" placeholder="0000000"></ion-input>
                 </div>
               </div>
               <div class="col-6 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Teléfono 2:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                  <ion-input [(ngModel)]="clientL.name" class="search_" type="number" placeholder="0000000"></ion-input>
                 </div>
               </div>
               <div class="col-6 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Teléfono 3:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                  <ion-input [(ngModel)]="clientL.name" class="search_" type="number" placeholder="0000000"></ion-input>
                 </div>
               </div>
               <div class="col-6 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Tipo de cliente:</ion-label>
-                  <ion-select placeholder="Select fruit"  [(ngModel)]="name"  >
+                  <ion-select placeholder="Select fruit"  [(ngModel)]="clientL.name"  >
                     <ion-select-option value="apples">Apples</ion-select-option>
                     <ion-select-option value="oranges">Oranges</ion-select-option>
                     <ion-select-option value="bananas">Bananas</ion-select-option>
@@ -114,13 +114,13 @@
               <div class="col-12 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Forma de contacto:</ion-label>
-                  <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="Mercado libre"></ion-input>
+                  <ion-input [(ngModel)]="clientL.name" class="search_" type="text" placeholder="Mercado libre"></ion-input>
                 </div>
               </div>
               <div class="col-12 text-center mb-2" >
                 <div class="input-group">
                   <ion-label class="label_">Desarrolo</ion-label>
-                  <ion-select placeholder="Select fruit"  [(ngModel)]="name" style="padding: 0;" >
+                  <ion-select placeholder="Select fruit"  [(ngModel)]="clientL.name" style="padding: 0;" >
                     <ion-select-option value="apples">Apples</ion-select-option>
                     <ion-select-option value="oranges">Oranges</ion-select-option>
                     <ion-select-option value="bananas">Bananas</ion-select-option>

@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { developments } from '../../../interfaces';
@@ -10,12 +10,13 @@ import { developments } from '../../../interfaces';
 })
 export class ViewDevelopmentPage implements OnInit {
   avatar: any;
-
+  //desarrollos: string;
+  @Input() developments;
   constructor(
     private storage: Storage,
     private usuarioService: UsuarioService
   ) {  this.devs(); }
-  public developments: developments;
+  //public desarrollos: developments;
   ngOnInit() {
     this.showsection();
   }
@@ -43,7 +44,7 @@ export class ViewDevelopmentPage implements OnInit {
     const foto = await this.storage.get('cuenta_logo');
     this.avatar = foto;
     this.usuarioService.getDevelopment(cuenta, desarrollo).subscribe( (resp: developments) => {
-    this.developments = resp;
+      this.developments = resp;
       console.log(this.developments);
     });
 

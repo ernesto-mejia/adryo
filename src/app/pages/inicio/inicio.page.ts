@@ -7,6 +7,7 @@ import { OverlayEventDetail } from '@ionic/core/components';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { InfoAdviser } from '../../interfaces/index';
 import { NgForm } from '@angular/forms';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-inicio',
@@ -27,17 +28,15 @@ export class InicioPage  {
     contact: '',
   };
 
-
   cliente: string = null;
   user: string = null;
   userId: string = null;
-  events: string;
+  public events: any;
   avatar: any;
   cuentaId: string;
   user_name: any;
   asesor_name: any;
   asesor_avatar: any;
-
   constructor(private http: HttpClient,
               private storage: Storage,
               private naveCtrl: NavController,
@@ -56,37 +55,39 @@ export class InicioPage  {
 
   async us() {
     const storage = await this.storage.create();
-    const name = await this.storage.get('user_id');
+    const id = await this.storage.get('user_id');
     const foto = await this.storage.get('cuenta_logo');
+    console.log(id);
+    console.log(foto);
+
     this.avatar = foto;
 
-    this.usuarioService.getUserData(name).subscribe(resp => {
+    this.usuarioService.getUserData(id).subscribe(resp => {
       this.adviser = resp;
-      this.saveUserEmail(resp['correo_electronico']);
-      this.saveUserPhone(resp['telefono1']);
-      this.saveUserName(resp['user_name']);
-      this.saveUserAvatar(resp['user_Photo']);
-      this.events = resp.events;
-      //console.log(this.events);
+      //this.saveUserEmail(resp['correo_electronico']);
+      this.saveUserPhone(resp[0].user_name);
+      this.saveUserName(resp[0].user_name);
+      this.saveUserAvatar(resp[0].user_Photo);
+      this.events = resp[0].events;
+      console.log(this.events);
 
     });
     const asesor_name = await this.storage.get('user_name');
     this.asesor_name = asesor_name;
+
   }
   async saveUserAvatar(user: string) {
 
     await this.storage.create();
-    this.user = user;
     await this.storage.set('user_avatar', user);
     const store = new Storage();
 
   };
 
-  async saveUserName(user: string) {
+  async saveUserName(nameUser: string) {
 
     await this.storage.create();
-    this.user = user;
-    await this.storage.set('user_name', user);
+    await this.storage.set('user_name', nameUser);
     const store = new Storage();
 
   };
@@ -94,7 +95,6 @@ export class InicioPage  {
   async saveUserEmail(user: string) {
 
     await this.storage.create();
-    this.user = user;
     await this.storage.set('correo_electronico', user);
     const store = new Storage();
 
@@ -103,7 +103,6 @@ export class InicioPage  {
   async saveUserPhone(user: string) {
 
     await this.storage.create();
-    this.user = user;
     await this.storage.set('telefono1', user);
     const store = new Storage();
 

@@ -5,7 +5,7 @@ export interface InfoAdviser {
     ventas_monto_vendidas?:     string;
     ventas_unidad_meta?:        string;
     ventas_monto_meta?:         string;
-    events?: string;
+    events?: [];
     nombre?:                string;
     correo_electronico?:    string;
     desarrollo?:            string;
@@ -13,6 +13,9 @@ export interface InfoAdviser {
     status?:                string;
     etapa?:                 string;
     name?:                 string;
+    fecha?:                 string;
+    direccion?:                 string;
+    cliente?:                 string;
 }
 
 export interface loginData {
@@ -23,13 +26,17 @@ export interface loginData {
 }
 
 export interface clientList {
+    clientList?: [];
     nombre?:                string;
     correo_electronico?:    string;
     desarrollo?:            string;
     telefono1?:              string;
     status?:                string;
     etapa?:                 string;
-    name?:                  string;
+    comentarios?:                  string;
+    linea_contacto?:                  string;
+    User?:                  string;
+    id?:                  string;
 }
 export interface recoverPassword {
   message?:                string;
@@ -37,8 +44,10 @@ export interface recoverPassword {
   flag?: string;
 }
 export interface developments {
+    desarrollos?:                 string;
+    developments?:                string;
     desarrollo?:                string;
     id?:                        string;
-
+    portada?:                        string;
 }
 

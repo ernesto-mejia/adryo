@@ -10,27 +10,30 @@ import { clientList } from '../../../interfaces';
   styleUrls: ['./client-list.page.scss'],
 })
 export class ClientListPage implements OnInit {
-
-    constructor(
+  clientL = {
+    name: ''
+  };
+  public clientList: any;
+  cuentaId: string;
+  id: any;
+  asesor_name: any;
+  constructor(
       private naveCtrl: NavController,
       private storage: Storage,
       private usuarioService: UsuarioService
   ) { this.as(); }
-
-  public clients: clientList;
-  cuentaId: string;
-
-
 
   ngOnInit() {
   }
 
   async as() {
     const storage = await this.storage.create();
-    const name = await this.storage.get('correo_electronico');
+    const email = await this.storage.get('correo_electronico');
     const cuenta = await this.storage.get('cuenta_id');
-    this.usuarioService.getClientList(cuenta, name).subscribe( (resp: clientList) => {
-    this.clients = resp;
+    this.usuarioService.getClientList(email, cuenta).subscribe( (resp: clientList) => {
+    this.clientList = resp;
+    console.log(this.clientList);
+
     });
 
   }

@@ -1,23 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input  } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { developments } from '../../interfaces';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-developments',
   templateUrl: './developments.page.html',
   styleUrls: ['./developments.page.scss'],
 })
 export class DevelopmentsPage implements OnInit {
-
+  //@Input() developments;
+  //developments: string;
+  portada: string;
   constructor(
     private naveCtrl: NavController,
     private storage: Storage,
     private usuarioService: UsuarioService
   ) { this.devs();}
 
-  public developments: developments;
-
+  //public developments: developments;
+  public developments: any;
   ngOnInit() {
   }
 
