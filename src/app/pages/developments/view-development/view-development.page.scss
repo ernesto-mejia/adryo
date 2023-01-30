@@ -6,21 +6,24 @@
   background-size: auto 100%;
 }
 .card-image{
-align-items: end;
-display: flex;
+  align-items: end;
+  display: flex;
   margin-top: 10px;
   border-radius: 10px;
   background-color: #c7f5f4;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 90%;
   height: 250px;
 }
-
+.gallery-info {
+  text-align: left;
+  margin-left: 15px;
+}
 .Estado{
   height: 35px;
-  width: 106px;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;

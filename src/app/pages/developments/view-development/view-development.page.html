@@ -16,11 +16,11 @@
 
 <!-- ------------------------------ contenido ------------------------------ -->
 
-<ion-content  *ngForAs="let event of developments" >
+<ion-content  *ngFor="let event of developments" >
   <div class="row p-4 d-flex justify-content-center">
     <div class="img-user" style="background-image: url('https://adryo.com.mx/{{avatar}}');" ></div>
-    <div class=" card-image" >
-      <div class="row gallery-btn w-100">
+    <div class=" card-image" style="background-image: url('{{event.portada}}');">
+      <div class="gallery-btn w-100" >
         <p class="gallery-info text-end" routerLink="/gallery-development" >Ver galeria <i class="fas fa-arrow-right"></i></p>
       </div>
     </div>

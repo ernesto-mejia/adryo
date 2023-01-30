@@ -221,7 +221,7 @@ export class UsuarioService {
         desarrollo_id: data.desarrolloId
       };
 
-      const url = 'https://beta.adryo.com.mx/desarrollos/get_index_app';
+      const url = 'http://localhost/adryo/web/desarrollos/get_index_app';
 
       return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
 

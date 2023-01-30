@@ -212,6 +212,16 @@ ion-buttons {
   font-size: 13px;
 }
 
+.next-event_ .row:nth-child(2n) {
+  background-color: rgb(20, 81, 94) !important;
+  color: #fff;
+  border: none;
+}
+.next-event_ .row:nth-child(4n) {
+  background-color: rgb(20, 81, 94) !important;
+  color: #fff;
+  border: none;
+}
 /* -------------------------------------------------------------------------- */
 
 
