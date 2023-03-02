@@ -23,13 +23,13 @@ ion-input {
   background-color: #fff;
 }
 #Principal .cont_user{
-  min-height: 310px;
-  height: auto;
+  height: 280px;
 }
 #Principal .cont_user .body{
   padding-left: 10%;
 }
 #Principal .cont_nav{
+  padding-top: 0 !important;
   padding: 40px 30px;
 }
 #Principal .cont_nav .body{
@@ -69,26 +69,25 @@ ion-input {
   flex-direction: column;
   align-items: center;
   border: rgba(243, 243, 243, 0.6862745098) 1px solid;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 2px 4px 16px 0px rgb(0 0 0 / 25%);
 }
-.btn-nav p{
+.btn-nav i,p{
   height: 35px;
   padding-top: 6px;
   margin: 0;
-  color: #195f57;
-  font-size: calc(0.6rem + 0.1vw);
+  color: #3D9B99 !important;
+  font-size: calc(0.9rem + 0.1vw);
   align-items: center;
-  display: flex;
 }
 .avatar {
   padding-top: 10px;
-  height: 60%;
   padding-left: 0;
 }
 .p_wel {
+  margin-top: 10px !important;
   color: #195f57;
-  font-size: 45px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -130,9 +129,7 @@ ion-input {
 }
 #carouselExampleIndicators {
   z-index: 99;
-  min-height: 82%;
   background-color: #d6f5f5;
-  min-height: 350px;
 }
 .card-bottom {
   position: absolute;
@@ -144,7 +141,7 @@ ion-input {
   box-shadow: 0px 4px 12px 0px rgb(0 0 0 / 25%);
 }
 .find_advance {
-  width: 100%;
+  width: 80%;
   min-height: 40px;
   min-height: 45px;
   background-color: #1e5b5a;
@@ -168,7 +165,7 @@ ion-input {
 }
 ion-buttons {
   background: #1e5b5a;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 .btn-add {
   color: #fff;
@@ -250,7 +247,7 @@ ion-buttons {
 /* ---------------------------------- modal --------------------------------- */
 
 ion-buttons {
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 ion-label{
@@ -337,10 +334,6 @@ ion-select {
 
 }
 /* -------------------------------------------------------------------------- */
-
-
-
-
 
 
 @media (orientation: landscape) {
