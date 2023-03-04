@@ -1,16 +1,16 @@
 /* ---------------------------------- filtro event  --------------------------------- */
 .find_advance {
+  margin: 0;
   display: flex !important;
   position: relative;
   justify-content: space-between;
   padding: 0 15px;
-  min-height: 40px;
-  min-height: 45px;
+  height: 45px;
   border:solid 1px #1e5b5a;
   align-items: center;
-  color: #1e5b5a;
+  color: #fff;
   border-radius: 8px;
-  margin-bottom: 0;
+  width: 100%;
 }
 
 .filter-event {
