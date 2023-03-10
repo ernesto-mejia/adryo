@@ -2,7 +2,7 @@ import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { NavController } from '@ionic/angular';
-import { InfoAdviser, clientList, recoverPassword, developments } from '../interfaces';
+import { InfoAdviser, clientList, recoverPassword, developments, events } from '../interfaces';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -17,7 +17,7 @@ export class UsuarioService {
   user: string = null;
   email: string = null;
   adviserId: string = null;
-  mensaje: Object;
+  mensaje: string = null;
 
   fecha:                 string;
   direccion:                 string;
@@ -107,7 +107,7 @@ export class UsuarioService {
 
   /* -------------------------- Recuperar contraseña -------------------------- */
 
-    recover(email: string):Observable<recoverPassword> {
+    recover(email: string): Observable<recoverPassword> {
 
       const data = {email};
       const url = 'https://beta.adryo.com.mx/users/app_send_mail_recovery';
@@ -122,7 +122,7 @@ export class UsuarioService {
 
   /* ----------------------------- Navegacion/Inicio/configuracion ----------------------------- */
 
-    getUserData(name: string):Observable<InfoAdviser> {
+    getUserData(name: string): Observable<InfoAdviser> {
 
       const data = {name};
 
@@ -141,7 +141,7 @@ export class UsuarioService {
 
   /* ----------------------------- Lista-de-clientes ----------------------------- */
 
-    getClientList(adviserId: string, cuentaId: string):Observable<clientList> {
+    getClientList(adviserId: string, cuentaId: string): Observable<clientList> {
 
       const data = {adviserId, cuentaId};
 
@@ -159,16 +159,16 @@ export class UsuarioService {
   /* -------------------------------------------------------------------------- */
 
 
-  /* ----------------------------- Agregar cleinte ----------------------------- */
+  /* ----------------------------- Agregar cliente ----------------------------- */
 
     addClient(
       cuentaId: string,
       nombre: string,
-      correoelectronico:string,
+      correoelectronico: string,
       telefono1: string,
       propiedadid: string,
       emailuser: string,
-      dictipocleinteid: string, diclineacontactoid: string):Observable<developments> {
+      dictipocleinteid: string, diclineacontactoid: string): Observable<developments> {
 
         const data = {cuentaId, nombre, correoelectronico, telefono1, propiedadid, emailuser, dictipocleinteid, diclineacontactoid};
 
@@ -194,7 +194,7 @@ export class UsuarioService {
 
   /* ----------------------------- Lista-de-desarrollos ----------------------------- */
 
-    getDevelopmentsList(cuentaId: string):Observable<developments> {
+    getDevelopmentsList(cuentaId: string): Observable<developments> {
 
       const data = {cuentaId};
 
@@ -212,7 +212,7 @@ export class UsuarioService {
 
   /* --------------------------- vista de desarrollo -------------------------- */
 
-    getDevelopment(cuentaId: string, desarrolloId: string):Observable<developments> {
+    getDevelopment(cuentaId: string, desarrolloId: string): Observable<developments> {
 
       const data = {cuentaId, desarrolloId};
 
@@ -229,5 +229,23 @@ export class UsuarioService {
 
   /* -------------------------------------------------------------------------- */
 
+  /* ----------------------------- Lista-de-eventos ----------------------------- */
+
+    getEvetnsList(userEmail: string): Observable<events> {
+
+      const data = {userEmail};
+
+      const dataUser = {
+        user_email: data.userEmail,
+        api_key: 'app'
+      };
+
+      const url = 'http://localhost/adryo/web/events/get_events_list';
+
+      return this.http.post<events>(url, dataUser).pipe(map(resp => resp));
+
+    }
+
+  /* -------------------------------------------------------------------------- */
 
 }

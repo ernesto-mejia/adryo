@@ -50,4 +50,17 @@ export interface developments {
     id?:                        string;
     portada?:                        string;
 }
-
+export interface events {
+  id?:                 string;
+  titulo?:                string;
+  fecha_inicio?:                string;
+  color?:                        string;
+  icon?:                        string;
+  url?:                 string;
+  fecha_inicio_format?:                string;
+  tipo_tarea?:                string;
+  ubicacion?:                        string;
+  id_evento?:                        string;
+  hora?:       string;
+  nombre_evento?: string;
+}

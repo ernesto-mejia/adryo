@@ -11,40 +11,36 @@
 
 <!-- ------------------ Contenido de listado de clientes ------------------- -->
   <ion-content>
+  <!-- -------------------------- list card client --------------------------- -->
 
-    <div class="col-12 text-center" style="background-color: #fff; color: black">
+  <div class="row " style="padding: 0px 40px; padding-top: 15px !important;">
+    <div class="col-12 cont-card-event d-flex p-0 mb-4"  *ngFor="let cliente of clientList"  (click)="verClient(cliente.id)">
+      <div class="color-status card-date text-center">
+      </div>
+      <div class="card-info w-100">
+        <div class="row w-100" style="margin: auto;">
+          <div class="col-6"><p class="card-name-client"> {{cliente.nombre}}</p></div>
+          <div class="col-6 text-end">
+            <div class="row">
 
-      <ion-list >
-
-        <div class="background-color" *ngFor="let cliente of clientList">
-
-            <ion-label class="color"  (click)="verClient(cliente.id)">
-
-              <div class="row" >
-
-                <div class="col-10">
-                  <p class="m-0" style="font-weight: 800;">{{cliente.nombre}}</p>
-                  <p class="m-0"> {{cliente.desarollo}}</p>
-                  <p class="m-0">{{cliente.telefono1}}</p>
-                </div>
-
-                <div class="col-2 pt-2">
-                  <p *ngIf=" cliente.status == 'Oportuno' " class=" et_ t_1">OP</p>
-                  <p *ngIf=" cliente.status == 'Tardío' " class=" et_ t_2">TA</p>
-                  <p *ngIf=" cliente.status == 'No atendido' " class=" et_ t_3">NA</p>
-                  <p *ngIf=" cliente.status == 'Por reasignar' " class=" et_ t_4">PR</p>
-                  <p  class=" et_ t_5">AC</p>
-                </div>
-
-              </div>
-
-            </ion-label>
-
+            <p class="pr-2 date-card">{{cliente.last_edit}}</p>
+            <p class="pr-2 status-p"><span>OP</span></p>
+            <p *ngIf=" cliente.status === 'Oportuno' " class=" et_ t_1">OP</p>
+            <p *ngIf=" cliente.status === 'Tardío' " class=" et_ t_2">TA</p>
+            <p *ngIf=" cliente.status === 'No atendido' " class=" et_ t_3">NA</p>
+            <p *ngIf=" cliente.status === 'Por reasignar' " class=" et_ t_4">PR</p>
+            <p  class=" et_ t_5">AC</p>
+            </div>
           </div>
+          <div class="col-12"><p> {{cliente.telefono1}}</p></div>
+          <div class="col-12"><p> {{cliente.desarollo}}</p></div>
+          <div class="col-12 text-end p-0"><p class="pr-2 card-netx-etap"> Siguiente etapa <i class="fas fa-angle-double-right"></i> </p></div>
 
-      </ion-list>
+        </div>
 
+      </div>
     </div>
+  </div>
 
   </ion-content>
 <!-- ----------------------------------------------------------------------- -->

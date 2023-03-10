@@ -143,3 +143,49 @@ ion-content {
   --background: #fff;
   --ion-background-color: rgb(255 255 255 / 0%) !important;
 }
+
+
+/* ------------------------------- card client ------------------------------ */
+
+.cont-card-event {
+  border-radius: 8px;
+  box-shadow: 2px 4px 16px 0px rgb(0 0 0 / 25%);
+}
+.card-date{
+  width: 5px;
+  background-color: #258F8D;
+  border-radius: 8px 0px 0px 8px;
+  color: #fff;
+}
+
+
+.card-info p{
+  color: #000;
+  margin: 0;
+}
+.status-p span {
+  padding: 0;
+  font-size: 10px;
+    width: 30px;
+    float: right;
+    background: #29c3e3;
+    border-radius: 25px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.date-card {
+  font-size: 15px;
+  color: rgb(143, 143, 143);
+}
+.card-name-client {
+  font-weight: 700;
+}
+.card-netx-etap {
+  font-size: 8px;
+  color: rgb(184, 184, 184);
+}
+/* -------------------------------------------------------------------------- */

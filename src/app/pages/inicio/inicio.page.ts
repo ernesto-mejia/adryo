@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/member-ordering */
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { NavController } from '@ionic/angular';
@@ -6,7 +8,7 @@ import { IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { InfoAdviser } from '../../interfaces/index';
-import { NgForm } from '@angular/forms';
+import {FormGroup, FormBuilder, Validators, NgForm}   from '@angular/forms';
 import * as $ from 'jquery';
 
 @Component({
@@ -32,24 +34,29 @@ export class InicioPage  {
   user: string = null;
   userId: string = null;
   public events: any;
+  public desarrollos: any;
   avatar: any;
   cuentaId: string;
   user_name: any;
   asesor_name: any;
   asesor_avatar: any;
+  ionicForm: FormGroup;
+
   constructor(private http: HttpClient,
               private storage: Storage,
               private naveCtrl: NavController,
-              private usuarioService: UsuarioService
+              private usuarioService: UsuarioService,
+              public formBuilder: FormBuilder
   ) {
     this.us();
   }
 
   adviser: InfoAdviser = {};
 
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   advId = {
     id: '5',
-    cuentaId: '12'
+    cuentaId: '12',
   };
 
 
@@ -72,9 +79,18 @@ export class InicioPage  {
       console.log(this.events);
 
     });
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     const asesor_name = await this.storage.get('user_name');
     this.asesor_name = asesor_name;
-
+    this.us2();
+  }
+  async us2() {
+    const storage = await this.storage.create();
+    const cuenta = await this.storage.get('cuenta_id');
+    this.usuarioService.getDevelopmentsList(cuenta).subscribe(resp => {
+      this.desarrollos = resp;
+      console.log(this.desarrollos);
+    });
   }
   async saveUserAvatar(user: string) {
 
@@ -108,7 +124,7 @@ export class InicioPage  {
 
   };
 
-  async adClient(fAddClient: NgForm) {
+  async addClients(fAddClient: NgForm) {
 
     if (fAddClient.invalid) {
       return;

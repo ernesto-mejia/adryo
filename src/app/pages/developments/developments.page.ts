@@ -20,6 +20,7 @@ export class DevelopmentsPage implements OnInit {
   ) { this.devs();}
 
   //public developments: developments;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   public developments: any;
   ngOnInit() {
   }
@@ -33,6 +34,7 @@ export class DevelopmentsPage implements OnInit {
     });
 
   }
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   advId = {
     cuenta_id: '178',
     desarrollo_id: '246'

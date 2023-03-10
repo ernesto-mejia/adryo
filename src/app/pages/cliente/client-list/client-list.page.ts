@@ -18,6 +18,7 @@ export class ClientListPage implements OnInit {
   cuentaId: string;
   id: any;
   asesor_name: any;
+
   constructor(
       private naveCtrl: NavController,
       private storage: Storage,
@@ -50,6 +51,7 @@ export class ClientListPage implements OnInit {
 
 
   };
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @ViewChild(IonModal) modal: IonModal;
   message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
   name: string;

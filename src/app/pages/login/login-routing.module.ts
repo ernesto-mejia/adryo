@@ -11,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), 
+  imports: [RouterModule.forChild(routes),
             FormsModule,
             ReactiveFormsModule],
   exports: [RouterModule],

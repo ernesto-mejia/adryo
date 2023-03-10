@@ -97,7 +97,7 @@
     <!-- ----------------------- Seccion agregar cliente ----------------------- -->
 
       <div class="col-12 add-client">
-        <p class="find_advance " id="open-modal-client-add-modal" expand="block"  style="color: #fff !important;">
+        <p class="find_advance " id="open-modal-client-add-modal" expand="block"  style="color: #fff !important; padding: 0;">
           <i class="fas fa-plus-circle" style="margin-right: 10px;"></i>
           <span style="padding-top: 2px;"> Agregar Cliente</span>
         </p>
@@ -108,7 +108,7 @@
       <div class="row">
         <ion-modal trigger="open-modal-client-add-modal" [initialBreakpoint]="0.75" [breakpoints]="[0, 0.25, 0.5, 0.75]">
           <ng-template>
-
+            <form class="custom-form h-100" (ngSubmit)="addClients(fAddClient)" #fAddClient="ngForm">
             <ion-content class="ion-padding">
 
               <ion-list>
@@ -118,54 +118,56 @@
                   <div class="col-12 text-center mb-2" >
                     <div class="input-group">
                       <ion-label class="label_">Nombre del cliente:</ion-label>
-                      <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="nombre apellidos"></ion-input>
+                      <ion-input [(ngModel)]="clientAdd.name" name="name" class="search_" type="text" placeholder="nombre apellidos"></ion-input>
                     </div>
                   </div>
                   <div class="col-12 text-center mb-2" >
                     <div class="input-group">
                       <ion-label class="label_">Correo electrónico:</ion-label>
-                      <ion-input [(ngModel)]="name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
+                      <ion-input [(ngModel)]="clientAdd.email" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
                     </div>
                   </div>
                   <div class="col-6 text-center mb-2" >
                     <div class="input-group">
                       <ion-label class="label_">Teléfono 1:</ion-label>
-                      <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                      <ion-input [(ngModel)]="clientAdd.phoneOne" class="search_" type="number" placeholder="0000000"></ion-input>
                     </div>
                   </div>
                   <div class="col-6 text-center mb-2" >
                     <div class="input-group">
                       <ion-label class="label_">Teléfono 2:</ion-label>
-                      <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                      <ion-input [(ngModel)]="clientAdd.phoneTwo" class="search_" type="number" placeholder="0000000"></ion-input>
                     </div>
                   </div>
                   <div class="col-6 text-center mb-2" >
                     <div class="input-group">
                       <ion-label class="label_">Teléfono 3:</ion-label>
-                      <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                      <ion-input [(ngModel)]="clientAdd.phoneThree" class="search_" type="number" placeholder="0000000"></ion-input>
                     </div>
                   </div>
                   <div class="col-6 text-center mb-2" >
                     <div class="input-group">
-                      <ion-label class="label_">Tipo de cliente:</ion-label>
-                      <ion-select placeholder="Select fruit"  [(ngModel)]="name"  >
-                        <ion-select-option value="apples">Apples</ion-select-option>
-                        <ion-select-option value="oranges">Oranges</ion-select-option>
-                        <ion-select-option value="bananas">Bananas</ion-select-option>
-                      </ion-select>
-
-                    </div>
-                  </div>
-                  <div class="col-12 text-center mb-2" >
-                    <div class="input-group">
                       <ion-label class="label_">Forma de contacto:</ion-label>
-                      <ion-input [(ngModel)]="name" class="search_" type="text" placeholder="Mercado libre"></ion-input>
+                      <ion-input [(ngModel)]="clientAdd.contact" class="search_" type="text" placeholder="Mercado libre"></ion-input>
                     </div>
                   </div>
+
+                  <div class="col-12 text-center mb-2" >
+
+                    <ion-item>
+                      <ion-label>Tipo de cliente:</ion-label>
+                      <ion-select [(ngModel)]="clientAdd.type" ok-text="Seleccionar" cancel-text="Cancelar" name="first">
+                      <ng-container *ngFor="let article of desarrollos">
+                          <ion-select-option  value="{{article.id}}">{{article.desarrollo}}</ion-select-option>
+                      </ng-container>
+                      </ion-select>
+                  </ion-item>
+                  </div>
+
                   <div class="col-12 text-center mb-2" >
                     <div class="input-group">
                       <ion-label class="label_">Desarrolo</ion-label>
-                      <ion-select placeholder="Select fruit"  [(ngModel)]="name" style="padding: 0;" >
+                      <ion-select placeholder="Select fruit"  style="padding: 0;" >
                         <ion-select-option value="apples">Apples</ion-select-option>
                         <ion-select-option value="oranges">Oranges</ion-select-option>
                         <ion-select-option value="bananas">Bananas</ion-select-option>
@@ -173,7 +175,6 @@
 
                     </div>
                   </div>
-
                   <div class="col-12 btn-add">
                     <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
                       <ion-button (click)="confirm()" [strong]="true" class="color-back w-100" style=" font-size: 15px;">Aceptar</ion-button>
@@ -190,7 +191,7 @@
               </ion-list>
 
             </ion-content>
-
+            </form>
           </ng-template>
         </ion-modal>
       </div>
