@@ -21,15 +21,16 @@ p {
 }
 .card-name{
   font-size: 22px;
-    height: 100%;
-    display: flex;
-    color: #258F8D;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  color: #258F8D;
+  align-items: center;
   height: 10%;
 }
 .card-name p {
   font-weight: 700;
-    color: #258F8D;
+  color: #258F8D;
+  font-size: 17px;
 }
 .card-price{
   display: flex;

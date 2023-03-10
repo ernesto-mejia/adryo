@@ -64,3 +64,13 @@ export interface events {
   hora?:       string;
   nombre_evento?: string;
 }
+export interface inmuebles {
+  nombre?:                 string;
+  etapa?:                string;
+  metros?:                string;
+  id?:                        string;
+  portada?:                        string;
+  recamaras?:                string;
+  banios?:                        string;
+  estacionamiento?:                        string;
+}

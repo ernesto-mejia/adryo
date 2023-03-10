@@ -2,7 +2,7 @@ import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { NavController } from '@ionic/angular';
-import { InfoAdviser, clientList, recoverPassword, developments, events } from '../interfaces';
+import { InfoAdviser, clientList, recoverPassword, developments, events, inmuebles } from '../interfaces';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -131,7 +131,7 @@ export class UsuarioService {
 
       };
 
-      const url = 'https://beta.adryo.com.mx/users/get_advisor_info';
+      const url = 'http://localhost/adryo/web/users/get_advisor_info';
 
       return this.http.post<InfoAdviser>(url, dataUser).pipe(map(resp => resp));
 
@@ -150,7 +150,7 @@ export class UsuarioService {
         email_id: data.adviserId
       };
 
-      const url = 'https://beta.adryo.com.mx/clientes/get_clientes_info';
+      const url = 'http://localhost/adryo/web/clientes/get_clientes_info';
       //console.log(data);
 
       return this.http.post<clientList>(url, dataUser).pipe(map(resp => resp));
@@ -202,7 +202,7 @@ export class UsuarioService {
         cuenta_id: data.cuentaId
       };
 
-      const url = 'https://beta.adryo.com.mx/desarrollos/get_desarrollo_app';
+      const url = 'http://localhost/adryo/web/desarrollos/get_desarrollo_app';
 
       return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
 
@@ -247,5 +247,24 @@ export class UsuarioService {
     }
 
   /* -------------------------------------------------------------------------- */
+
+
+  /* ----------------------------- Lista-de-inmuebless ----------------------------- */
+
+  getInmueblesList(desarrolloId: string): Observable<developments> {
+
+    const data = {desarrolloId};
+
+    const dataUser = {
+      desarrollo_id: data.desarrolloId
+    };
+
+    const url = 'http://localhost/adryo/web/desarrollos/get_unidades_desarrollo';
+
+    return this.http.post<inmuebles>(url, dataUser).pipe(map(resp => resp));
+
+  }
+
+/* -------------------------------------------------------------------------- */
 
 }

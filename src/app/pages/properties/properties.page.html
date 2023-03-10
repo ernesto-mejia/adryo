@@ -2,8 +2,8 @@
 
 
 <!-- -------------------------- Busqueda avanzada -------------------------- -->
-<div class="col-12 text-center" style="background-color: #fff; color: black; padding: 0 40px; margin-bottom: 15px !important;">
-  <h5 class="find_advance"  routerLink="/search-client"><i class="far fa-search" style="margin-right: 15px;"></i>  Búsqueda avanzada</h5>
+<div class="col-12 text-center" style="  max-height: 70px; background-color: #fff; color: black; padding: 0 40px;">
+  <h5 class="find_advance"  routerLink="/search-client" style="color: #fff; "><i class="far fa-search" style="margin-right: 15px;"></i>  Búsqueda avanzada</h5>
 </div>
 <!-- ----------------------------------------------------------------------- -->
 
@@ -11,37 +11,30 @@
 
 <ion-content>
 
+  <div id="Propierties" class="row" style="background-color: #fff; color: black; padding: 10px 30px;" >
 
-  <div id="Propierties" class="col-12" style="background-color: #fff; color: black; padding: 0px 20px;" >
+        <div class="col-12 card-date text-center mt-4 cont-card-event" routerLink="/view-propertie" *ngFor="let inmueble of inmuebles">
 
-    <div class="d-flex justify-content-center " style="margin-top: 10px;" >
-      <div class="row cont-card-event w-100">
-        <div class="col-12 card-date text-center" routerLink="/view-propertie">
-
-          <div class=" card-image" >
+          <div class=" card-image" style="background-image: url({{inmueble.portada}});" >
             <div class="">
-              <p class="status">Preventa</p>
+              <p class="status">{{inmueble.etapa}}</p>
             </div>
           </div>
           <div class=" card-name">
-            <p>Cumbres Herradura</p>
+            <p>{{inmueble.nombre}}</p>
           </div>
           <div class=" card-price">
-            <p>Desde $1,500,000.00</p>
+            <p>{{inmueble.precio}}</p>
           </div>
           <div class="row card-amenidad mt-2">
-            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img full"><p class="info-amenidad">52.68 m2</p> </div>
-            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img cam"> <p class="info-amenidad">1 - 2 </p> </div>
-            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img ban"> <p class="info-amenidad">1 - 2 </p>  </div>
-            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img car"> <p class="info-amenidad">1 - 2 </p> </div>
+            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img full"><p class="info-amenidad">{{inmueble.metros}}</p> </div>
+            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img cam"> <p class="info-amenidad">{{inmueble.recamaras}}</p> </div>
+            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img ban"> <p class="info-amenidad">{{inmueble.banios}} </p>  </div>
+            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img car"> <p class="info-amenidad">{{inmueble.estacionamiento}} </p> </div>
           </div>
 
         </div>
-      </div>
-    </div>
-
   </div>
-
 
 </ion-content>
 
