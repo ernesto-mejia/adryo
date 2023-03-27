@@ -13,27 +13,28 @@
 
   <div id="Propierties" class="row" style="background-color: #fff; color: black; padding: 10px 30px;" >
 
-        <div class="col-12 card-date text-center mt-4 cont-card-event" routerLink="/view-propertie" *ngFor="let inmueble of inmuebles">
+    <div class="col-12 card-date text-center mt-4 cont-card-event" routerLink="/view-propertie" *ngFor="let inmueble of inmuebles">
 
-          <div class=" card-image" style="background-image: url({{inmueble.portada}});" >
-            <div class="">
-              <p class="status">{{inmueble.etapa}}</p>
-            </div>
-          </div>
-          <div class=" card-name">
-            <p>{{inmueble.nombre}}</p>
-          </div>
-          <div class=" card-price">
-            <p>{{inmueble.precio}}</p>
-          </div>
-          <div class="row card-amenidad mt-2">
-            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img full"><p class="info-amenidad">{{inmueble.metros}}</p> </div>
-            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img cam"> <p class="info-amenidad">{{inmueble.recamaras}}</p> </div>
-            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img ban"> <p class="info-amenidad">{{inmueble.banios}} </p>  </div>
-            <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img car"> <p class="info-amenidad">{{inmueble.estacionamiento}} </p> </div>
-          </div>
-
+      <div class=" card-image" style="background-image: url({{inmueble.portada}});" >
+        <div class="">
+          <p class="status">{{inmueble.etapa}}</p>
         </div>
+      </div>
+      <div class=" card-name">
+        <p>{{inmueble.nombre}}</p>
+      </div>
+      <div class=" card-price">
+        <p>{{inmueble.precio}}</p>
+      </div>
+      <div class="row card-amenidad mt-2">
+        <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img full"><p class="info-amenidad">{{inmueble.metros}}</p> </div>
+        <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img cam"> <p class="info-amenidad">{{inmueble.recamaras}}</p> </div>
+        <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img ban"> <p class="info-amenidad">{{inmueble.banios}} </p>  </div>
+        <div class="col-3 extra-propertie ">  <img  alt="" class="extra-img car"> <p class="info-amenidad">{{inmueble.estacionamiento}} </p> </div>
+      </div>
+
+    </div>
+
   </div>
 
 </ion-content>

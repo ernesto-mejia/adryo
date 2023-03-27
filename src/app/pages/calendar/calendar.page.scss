@@ -96,7 +96,9 @@ ion-content {
   margin-top: 15px;
 }
 
-
+.dropdown-toggle::after {
+  display: none !important;
+}
 
 /* ---------------------------------- filtro event view --------------------------------- */
 
@@ -110,7 +112,7 @@ ion-content {
 /* ---------------------------------- modal view settings event--------------------------------- */
 
 
-ion-modal#example-modal {
+ion-modal#cancel-event {
   --width: fit-content;
   --min-width: 250px;
   --height: fit-content;
@@ -118,11 +120,11 @@ ion-modal#example-modal {
   --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
 }
 
-ion-modal#example-modal h1 {
+ion-modal#cancel-event h1 {
   margin: 20px 20px 10px 20px;
 }
 
-ion-modal#example-modal ion-icon {
+ion-modal#cancel-event ion-icon {
   margin-right: 6px;
 
   width: 48px;
@@ -133,10 +135,40 @@ ion-modal#example-modal ion-icon {
   color: #aaaaaa;
 }
 
-ion-modal#example-modal .wrapper {
+ion-modal#cancel-event .wrapper {
   margin-bottom: 10px;
 }
 
+
+/* ---------------------------------- modal view alert/error/success event--------------------------------- */
+
+
+ion-modal#modal-alert-error {
+  --width: fit-content;
+  --min-width: 250px;
+  --height: fit-content;
+  --border-radius: 6px;
+  --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+}
+
+ion-modal#modal-alert-error h1 {
+  margin: 20px 20px 10px 20px;
+}
+
+ion-modal#modal-alert-error ion-icon {
+  margin-right: 6px;
+
+  width: 48px;
+  height: 48px;
+
+  padding: 4px 0;
+
+  color: #aaaaaa;
+}
+
+ion-modal#modal-alert-error .wrapper {
+  margin-bottom: 10px;
+}
 
 /* --------------------------------- settins -------------------------------- */
 

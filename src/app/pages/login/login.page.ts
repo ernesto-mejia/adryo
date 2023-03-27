@@ -34,21 +34,22 @@ export class LoginPage implements OnInit {
 
   }
   async login(fLogin: NgForm) {
+
     if (fLogin.invalid) {
       return;
     }
 
     const valido = await this.usuarioService.login(this.loginUser.email,this.loginUser.password);
 
-    if (valido) {
+    if (valido['Ok']) {
       this.naveCtrl.navigateRoot('inicio', {animated: true});
-      this.mensaje = this.message;
+      this.mensaje = valido['mensaje'];
       this.saveUserEmail(this.loginUser.email);
-
-    } else {
+      console.log(valido['mensaje']);
+    } else if (!valido['Ok']){
       this.error();
-      this.mensaje = this.message;
-      console.log(this.mensaje);
+      this.mensaje = valido['mensaje'];
+      console.log(valido['mensaje']);
     }
 
   }
@@ -63,6 +64,8 @@ export class LoginPage implements OnInit {
   error() {
     $('#error').removeClass('d-none');
     $('.cont_input').addClass('input_error');
+    $('.cont_input').css("background-color", "#a0445b !important");
+    $('.cont_input').css("color", "#fff !important");
 
   }
 }

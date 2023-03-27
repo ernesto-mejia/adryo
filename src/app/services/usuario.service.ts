@@ -1,270 +1,427 @@
-import { Injectable, Input } from '@angular/core';
+/* eslint-disable @typescript-eslint/member-ordering */
+/* eslint-disable max-len */
+/* eslint-disable @typescript-eslint/dot-notation */
+/* eslint-disable @typescript-eslint/naming-convention */
+import { EventEmitter, Injectable, Input, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { NavController } from '@ionic/angular';
-import { InfoAdviser, clientList, recoverPassword, developments, events, inmuebles } from '../interfaces';
-import { Observable } from 'rxjs';
+import {
+  InfoAdviser,
+  clientList,
+  recoverPassword,
+  developments,
+  events,
+  inmuebles,
+} from '../interfaces';
+import { empty, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
-
 export class UsuarioService {
-
   @Input() message;
   user: string = null;
   email: string = null;
   adviserId: string = null;
   mensaje: string = null;
+  clienteId: string = null;
+  fechaInicio: string = null;
+  inmuebleId: string = null;
 
-  fecha:                 string;
-  direccion:                 string;
-  cliente:                 string;
-  constructor(private http: HttpClient,
-              private storage: Storage,
-              private naveCtrl: NavController,) { }
+  fecha: string;
+  direccion: string;
+  cliente: string;
+  constructor(
+    private http: HttpClient,
+    private storage: Storage,
+    private naveCtrl: NavController
+  ) {}
 
   /* ----------------------------- Iniciar sesion ----------------------------- */
 
-    login(email: string, password: string) {
+  login(email: string, password: string) {
+    const data = { email, password };
 
-      const data = {email, password};
-
-      return new Promise(resolve => {
-        this.http.post(`https://adryo.com.mx/users/login_app`, data)
-        .subscribe(resp => {
+    return new Promise((resolve) => {
+      this.http
+        .post(`https://adryo.com.mx/users/login_app`, data)
+        .subscribe((resp) => {
           console.log(resp);
-          if ( resp['Ok'] ) {
+          if (resp['Ok']) {
+            this.infoAdvi(resp['user_id']);
+            //this.saveUserEmail(email);
+            this.savePassword(password);
             this.saveUserId(resp['user_id']);
             this.saveUserFoto(resp['cuenta_logo']);
             this.saveUserCuenta(resp['cuenta_id']);
             this.saveUserBiometric();
             this.message = resp['mensaje'];
-            resolve(true);
-
-          };
+            resolve(resp);
+          }
           if (!resp['Ok']) {
+            console.log(resp['mensaje']);
+            resolve(resp);
+            this.message = resp['mensaje'];
+          }
+        });
+    });
+  }
 
+  async infoAdvi(id: string) {
+    const data = { id };
+
+    return new Promise((resolve) => {
+      this.http
+        .post(`http://localhost/adryo/web/users/get_advisor_info`, data)
+        .subscribe((resp) => {
+          console.log(resp);
+          if (resp != null) {
+            this.saveUserPhone(resp[0].user_phone);
+            this.saveUserName(resp[0].user_name);
+            this.saveUserAvatar(resp[0].user_Photo);
+            resolve(true);
+          } else {
             console.log(resp['mensaje']);
             resolve(false);
             this.message = resp['mensaje'];
-
-          };
-
+          }
         });
-      });
+    });
+  }
 
-    }
+  /* -------------------------------------------------------------------------- */
 
-    async saveUserId(user: string) {
+  async saveUserAvatar(user: string) {
+    await this.storage.create();
+    await this.storage.set('user_avatar', user);
+    const store = new Storage();
+  }
 
-      await this.storage.create();
-      this.user = user;
-      await this.storage.set('user_id', user);
-      const store = new Storage();
+  async saveUserName(nameUser: string) {
+    await this.storage.create();
+    await this.storage.set('user_name', nameUser);
+    const store = new Storage();
+  }
 
-    };
+  async saveUserEmail(user: string) {
+    await this.storage.create();
+    await this.storage.set('correo_electronico', user);
+    const store = new Storage();
+  }
 
-    async saveUserFoto(user: string) {
+  async savePassword(password: string) {
+    await this.storage.create();
+    await this.storage.set('password', password);
+    const store = new Storage();
+  }
 
-      await this.storage.create();
-      this.user = user;
-      await this.storage.set('cuenta_logo', user);
-      const store = new Storage();
+  async saveUserPhone(user: string) {
+    await this.storage.create();
+    await this.storage.set('telefono1', user);
+    const store = new Storage();
+  }
 
-    };
+  /* -------------------------------------------------------------------------- */
 
-    async saveUserCuenta(user: string) {
+  async saveUserId(user: string) {
+    await this.storage.create();
+    this.user = user;
+    await this.storage.set('user_id', user);
+    const store = new Storage();
+  }
 
-      await this.storage.create();
-      this.user = user;
-      await this.storage.set('cuenta_id', user);
-      const store = new Storage();
+  async saveUserFoto(user: string) {
+    await this.storage.create();
+    this.user = user;
+    await this.storage.set('cuenta_logo', user);
+    const store = new Storage();
+  }
 
-    };
+  async saveUserCuenta(user: string) {
+    await this.storage.create();
+    this.user = user;
+    await this.storage.set('cuenta_id', user);
+    const store = new Storage();
+  }
 
-    async saveUserBiometric() {
-
-      await this.storage.create();
-      await this.storage.set('bio', '1');
-      const store = new Storage();
-
-    };
+  async saveUserBiometric() {
+    await this.storage.create();
+    await this.storage.set('bio', '1');
+    const store = new Storage();
+  }
 
   /* -------------------------------------------------------------------------- */
 
   /* ------------------------------ Cerrar Sesion ----------------------------- */
 
-    logout() {
-      this.user = null;
-      this.naveCtrl.navigateRoot('/login', {animated: true});
-      this.storage.clear();
-    };
+  logout() {
+    this.user = null;
+    this.naveCtrl.navigateRoot('/login', { animated: true });
+    this.storage.clear();
+  }
 
   /* -------------------------------------------------------------------------- */
 
   /* -------------------------- Recuperar contraseña -------------------------- */
 
-    recover(email: string): Observable<recoverPassword> {
+  recover(email: string): Observable<recoverPassword> {
+    const data = { email };
+    const url = 'https://beta.adryo.com.mx/users/app_send_mail_recovery';
 
-      const data = {email};
-      const url = 'https://beta.adryo.com.mx/users/app_send_mail_recovery';
-
-      return this.http.post<recoverPassword>(url, data).pipe(map(resp => resp));
-
-
-    }
+    return this.http.post<recoverPassword>(url, data).pipe(map((resp) => resp));
+  }
 
   /* -------------------------------------------------------------------------- */
-
 
   /* ----------------------------- Navegacion/Inicio/configuracion ----------------------------- */
 
-    getUserData(name: string): Observable<InfoAdviser> {
-
-      const data = {name};
-
-      const dataUser = {
-        id: data.name
-
-      };
-
-      const url = 'http://localhost/adryo/web/users/get_advisor_info';
-
-      return this.http.post<InfoAdviser>(url, dataUser).pipe(map(resp => resp));
-
-    }
-
-  /* -------------------------------------------------------------------------- */
-
-  /* ----------------------------- Lista-de-clientes ----------------------------- */
-
-    getClientList(adviserId: string, cuentaId: string): Observable<clientList> {
-
-      const data = {adviserId, cuentaId};
-
-      const dataUser = {
-        cuenta_id: data.cuentaId,
-        email_id: data.adviserId
-      };
-
-      const url = 'http://localhost/adryo/web/clientes/get_clientes_info';
-      //console.log(data);
-
-      return this.http.post<clientList>(url, dataUser).pipe(map(resp => resp));
-    }
-
-  /* -------------------------------------------------------------------------- */
-
-
-  /* ----------------------------- Agregar cliente ----------------------------- */
-
-    addClient(
-      cuentaId: string,
-      nombre: string,
-      correoelectronico: string,
-      telefono1: string,
-      propiedadid: string,
-      emailuser: string,
-      dictipocleinteid: string, diclineacontactoid: string): Observable<developments> {
-
-        const data = {cuentaId, nombre, correoelectronico, telefono1, propiedadid, emailuser, dictipocleinteid, diclineacontactoid};
-
-        const dataUser = {
-          cuenta_id: data.cuentaId,
-          nombre: data.nombre,
-          telefono1: data.telefono1,
-          correo_electronico: data.correoelectronico,
-          dic_tipo_cleinte_id: data.dictipocleinteid,
-          propiedad_id: data.propiedadid,
-          dic_linea_contacto_id: data.diclineacontactoid,
-          email_user: data.emailuser
-        };
-
-        const url = 'https://beta.adryo.com.mx/clientes/set_add_clientes';
-
-        return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
-
-    }
-
-  /* -------------------------------------------------------------------------- */
-
-
-  /* ----------------------------- Lista-de-desarrollos ----------------------------- */
-
-    getDevelopmentsList(cuentaId: string): Observable<developments> {
-
-      const data = {cuentaId};
-
-      const dataUser = {
-        cuenta_id: data.cuentaId
-      };
-
-      const url = 'http://localhost/adryo/web/desarrollos/get_desarrollo_app';
-
-      return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
-
-    }
-
-  /* -------------------------------------------------------------------------- */
-
-  /* --------------------------- vista de desarrollo -------------------------- */
-
-    getDevelopment(cuentaId: string, desarrolloId: string): Observable<developments> {
-
-      const data = {cuentaId, desarrolloId};
-
-      const dataUser = {
-        cuenta_id: data.cuentaId,
-        desarrollo_id: data.desarrolloId
-      };
-
-      const url = 'http://localhost/adryo/web/desarrollos/get_index_app';
-
-      return this.http.post<developments>(url, dataUser).pipe(map(resp => resp));
-
-    }
-
-  /* -------------------------------------------------------------------------- */
-
-  /* ----------------------------- Lista-de-eventos ----------------------------- */
-
-    getEvetnsList(userEmail: string): Observable<events> {
-
-      const data = {userEmail};
-
-      const dataUser = {
-        user_email: data.userEmail,
-        api_key: 'app'
-      };
-
-      const url = 'http://localhost/adryo/web/events/get_events_list';
-
-      return this.http.post<events>(url, dataUser).pipe(map(resp => resp));
-
-    }
-
-  /* -------------------------------------------------------------------------- */
-
-
-  /* ----------------------------- Lista-de-inmuebless ----------------------------- */
-
-  getInmueblesList(desarrolloId: string): Observable<developments> {
-
-    const data = {desarrolloId};
+  getUserData(name: string): Observable<InfoAdviser> {
+    const data = { name };
 
     const dataUser = {
-      desarrollo_id: data.desarrolloId
+      id: data.name,
     };
 
-    const url = 'http://localhost/adryo/web/desarrollos/get_unidades_desarrollo';
+    const url = 'http://localhost/adryo/web/users/get_advisor_info';
 
-    return this.http.post<inmuebles>(url, dataUser).pipe(map(resp => resp));
+    return this.http.post<InfoAdviser>(url, dataUser).pipe(map((resp) => resp));
+  }
+
+  /* -------------------------------------------------------------------------- */
+
+
+
+
+
+
+  /* ----------------------------- Lista de Clientes ----------------------------- */
+
+  getClientList(adviserId: string, cuentaId: string): Observable<clientList> {
+    const data = { adviserId, cuentaId };
+
+    const dataUser = {
+      cuenta_id: data.cuentaId,
+      email_id: data.adviserId,
+    };
+
+    const url = 'http://localhost/adryo/web/clientes/get_clientes_info';
+    //console.log(data);
+
+    return this.http.post<clientList>(url, dataUser).pipe(map((resp) => resp));
+  }
+
+  /* -------------------------------------------------------------------------- */
+
+  /* ----------------------------- Agregar Cliente ----------------------------- */
+
+  addClient(
+    cuentaId: string,
+    nombre: string,
+    correoelectronico: string,
+    telefono1: string,
+    propiedadid: string,
+    emailuser: string,
+    dictipocleinteid: string,
+    diclineacontactoid: string
+  ): Observable<developments> {
+    const data = {
+      cuentaId,
+      nombre,
+      correoelectronico,
+      telefono1,
+      propiedadid,
+      emailuser,
+      dictipocleinteid,
+      diclineacontactoid,
+    };
+
+    const dataUser = {
+      cuenta_id: data.cuentaId,
+      nombre: data.nombre,
+      telefono1: data.telefono1,
+      correo_electronico: data.correoelectronico,
+      dic_tipo_cleinte_id: data.dictipocleinteid,
+      propiedad_id: data.propiedadid,
+      dic_linea_contacto_id: data.diclineacontactoid,
+      email_user: data.emailuser,
+    };
+
+    const url = 'https://beta.adryo.com.mx/clientes/set_add_clientes';
+
+    return this.http
+      .post<developments>(url, dataUser)
+      .pipe(map((resp) => resp));
+  }
+
+  /* -------------------------------------------------------------------------- */
+
+  /* ----------------------------- Vista de Cliente ----------------------------- */
+
+  /* -------------------------------------------------------------------------- */
+
+  /* ----------------------------- Editar Cliente ----------------------------- */
+
+  /* -------------------------------------------------------------------------- */
+
+  /* ----------------------------- Agregar Desarrollo a Cliente ----------------------------- */
+
+  /* -------------------------------------------------------------------------- */
+
+  /* ----------------------------- Agregar Inmueble a Cliente ----------------------------- */
+
+  /* -------------------------------------------------------------------------- */
+
+  /* ----------------------------- Agregar Seguimiento rapido a Cliente ----------------------------- */
+
+  /* -------------------------------------------------------------------------- */
+
+  /* ----------------------------- Agregar Nota ----------------------------- */
+
+  /* -------------------------------------------------------------------------- */
+
+
+
+
+  /* ----------------------------- Lista de Desarrollos ----------------------------- */
+
+  getDevelopmentsList(cuentaId: string): Observable<developments> {
+    const data = { cuentaId };
+
+    const dataUser = {
+      cuenta_id: data.cuentaId,
+    };
+
+    const url = 'http://localhost/adryo/web/desarrollos/get_desarrollo_app';
+
+    return this.http
+      .post<developments>(url, dataUser)
+      .pipe(map((resp) => resp));
+  }
+
+  /* -------------------------------------------------------------------------- */
+
+  /* --------------------------- Vista de Desarrollo -------------------------- */
+
+  getDevelopment(
+    cuentaId: string,
+    desarrolloId: string
+  ): Observable<developments> {
+    const data = { cuentaId, desarrolloId };
+
+    const dataUser = {
+      cuenta_id: data.cuentaId,
+      desarrollo_id: data.desarrolloId,
+    };
+
+    const url = 'http://localhost/adryo/web/desarrollos/get_index_app';
+
+    return this.http
+      .post<developments>(url, dataUser)
+      .pipe(map((resp) => resp));
+  }
+
+  /* -------------------------------------------------------------------------- */
+
+  /* ----------------------------- Galeria Desarrollo ----------------------------- */
+
+  /* -------------------------------------------------------------------------- */
+
+
+
+
+
+  /* ----------------------------- Lista de Eventos ----------------------------- */
+
+  getEvetnsList(userEmail: string): Observable<events> {
+    const data = { userEmail };
+
+    const dataUser = {
+      user_email: data.userEmail,
+      api_key: 'app',
+    };
+
+    const url = 'http://localhost/adryo/web/events/get_events_list';
+
+    return this.http.post<events>(url, dataUser).pipe(map((resp) => resp));
+  }
+
+  /* -------------------------------------------------------------------------- */
+
+
+
+
+  /* ----------------------------- Cancelar Evento ----------------------------- */
+  @Output() clickEvent = new EventEmitter();
+
+  postCancelEvent(eventoId: string, motivoCancelacion: string){
+    const data = { eventoId, motivoCancelacion };
+
+    const dataUser = {
+      motivo_cancelacion: data.motivoCancelacion,
+      evento_id: data.eventoId,
+      api_key: 'app',
+    };
+
+    return new Promise((resolve) => {
+      this.http
+        .post(`http://localhost/adryo/web/events/cancel_events`, data)
+        .subscribe((resp) => {
+          //console.log(resp);
+          if (resp['Ok']) {
+            resolve(resp);
+          }
+          if (!resp['Ok']) {
+            resolve(resp);
+          }
+        });
+    });
+
 
   }
 
-/* -------------------------------------------------------------------------- */
+  /* -------------------------------------------------------------------------- */
 
+
+
+
+
+
+  /* ----------------------------- Lista de Inmuebles ----------------------------- */
+
+  getInmueblesList(desarrolloId: string): Observable<developments> {
+    const data = { desarrolloId };
+
+    const dataUser = {
+      desarrollo_id: data.desarrolloId,
+    };
+
+    const url =
+      'http://localhost/adryo/web/desarrollos/get_unidades_desarrollo';
+
+    return this.http.post<inmuebles>(url, dataUser).pipe(map((resp) => resp));
+  }
+
+  /* -------------------------------------------------------------------------- */
+
+  /* ----------------------------- Vista de Inmueble ----------------------------- */
+
+  /* -------------------------------------------------------------------------- */
+
+  /* ----------------------------- Galeria Inmueble ----------------------------- */
+
+  /* -------------------------------------------------------------------------- */
+
+
+
+
+
+  /* ----------------------------- Embudo de Ventas ----------------------------- */
+
+  /* -------------------------------------------------------------------------- */
+
+  /* ----------------------------- Busqueda Embudo de Ventas ----------------------------- */
+
+  /* -------------------------------------------------------------------------- */
 }

@@ -1,0 +1,126 @@
+<!-- ----------------------------- Encabezado ------------------------------ -->
+
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start" >
+          <ion-back-button class="back_color"  text="" ></ion-back-button>
+      </ion-buttons>
+      <ion-title class="ion-text-capitalize title-default"> Busqueda avanzada </ion-title>
+      <ion-buttons slot="end" >
+        <ion-button class=""   >
+          <i class="fas fa-pen" style="color: #1E5B5A;"></i>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- -------------------------- Contenido de card -------------------------- -->
+
+<ion-content>
+
+  <ion-list class="h-100">
+
+    <div class="row cont_input_  pt-3 h-100" style="background-color: #fff; color: black">
+
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12 text-center mb-2" >
+            <div class="input-group">
+                <ion-input  class="search_" type="text" placeholder="nombre/correo/telèfono"></ion-input>
+            </div>
+        </div>
+
+        <div class="col-12 text-center mb-2" >
+            <div class="input-group">
+                <ion-label class="label_">Inmuebles</ion-label>
+                <ion-select placeholder="Seleccionar Propiedades"  >
+                    <ion-select-option value="apples">Apples</ion-select-option>
+                    <ion-select-option value="oranges">Oranges</ion-select-option>
+                    <ion-select-option value="bananas">Bananas</ion-select-option>
+                </ion-select>
+            </div>
+        </div>
+
+        <div class="col-12 text-center mb-2" >
+            <div class="input-group">
+            <ion-label class="label_">Desarrollos</ion-label>
+            <ion-select placeholder="Seleccionar Desarrollos"   >
+                <ion-select-option value="apples">Nova San angel</ion-select-option>
+                <ion-select-option value="oranges">Nova Bosques</ion-select-option>
+            </ion-select>
+
+            </div>
+        </div>
+
+        <div class="col-12 text-center mb-2" >
+          <div class="input-group">
+              <ion-label class="label_">Tipo de evento</ion-label>
+              <ion-select placeholder="Seleccionar Propiedades"  >
+                  <ion-select-option value="0">Cita</ion-select-option>
+                  <ion-select-option value="1">Visita</ion-select-option>
+                  <ion-select-option value="2">Llamada</ion-select-option>
+                  <ion-select-option value="3">Correo</ion-select-option>
+              </ion-select>
+          </div>
+        </div>
+
+        <div class="col-12 text-center mb-2" >
+          <div class="input-group">
+              <ion-label class="label_">Estatus de evento</ion-label>
+              <ion-select placeholder="Seleccionar Propiedades"  >
+                  <ion-select-option value="activo">Activo</ion-select-option>
+                  <ion-select-option value="inactivo">Inactivo</ion-select-option>
+              </ion-select>
+          </div>
+        </div>
+
+        </div>
+      </div>
+      <div class="col-12 d-flex justify-content-center">
+        <div class="row d-flex position-absolute" style="bottom: 0;">
+          <div class="col-12 btn-add">
+            <ion-buttons >
+                <ion-button  [strong]="true" class="color-back">Buscar</ion-button>
+            </ion-buttons>
+        </div>
+        </div>
+      </div>
+
+    </div>
+
+  </ion-list>
+
+
+</ion-content>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- ------------------------- Barra de navegacion ------------------------- -->
+
+<ion-tabs class="navigationBar">
+
+  <ion-tab-bar slot="bottom" class="cont-navigation">
+
+      <ion-tab-button routerLink="/inicio">
+          <i class="fas fa-home-lg"></i>
+      </ion-tab-button>
+
+      <ion-tab-button routerLink="/client-list">
+          <i class="fas fa-user-friends"></i>
+      </ion-tab-button>
+
+      <ion-tab-button routerLink="/sales-funnel">
+          <i class="fas fa-filter"></i>
+      </ion-tab-button>
+
+      <ion-tab-button routerLink="/calendar">
+          <i class="fas fa-calendar-alt"></i>
+      </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>
+
+<!-- ----------------------------------------------------------------------- -->
