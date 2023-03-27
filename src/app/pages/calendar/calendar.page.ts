@@ -59,7 +59,11 @@ export class CalendarPage  {
     this.modal.dismiss(null, 'cancel');
 
   }
-  showModalResp(){
+
+  cancel_() {
+    this.modal.dismiss(null, 'cancel');
+
+  }  showModalResp(){
     $('#respEvent').removeClass('d-none');
   }
   hideCancelEvent(){

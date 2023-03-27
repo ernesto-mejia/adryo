@@ -86,149 +86,89 @@
             <i  class="dropdown-toggle far fa-ellipsis-v menu float-right" data-toggle="dropdown" role="button" aria-expanded="false" (click)="saveEventId(event.id_evento)"></i>
 
             <ul class="dropdown-menu" role="menu">
-                <li style="text-align: center;" id="open-modal-recordatorios-{{event.id_evento}}" expand="block" >Recordatorios</li>
 
-                  <!-- ----------------------- Modal recordatorios ----------------------- -->
-
-                    <div class="row">
-                      <ion-modal trigger="open-modal-recordatorios-{{event.id_evento}}" [initialBreakpoint]="0.50" [breakpoints]="[0, 0.25, 0.5, 0.75]">
-                        <ng-template>
-
-                          <ion-content class="ion-padding">
-
-                            <ion-list>
-
-                              <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
-                                <p class="m-0 font-weight-bold" style="color: black; margin-bottom: 10px !important;">Recordatorios</p>
-
-
-                                <div class="col-12 text-center mb-2 d-flex justify-content-center" >
-                                  <div class="row">
-                                    <div class="col-12">
-                                      <input type="checkbox" name="" id="">Agregar recordatorio
-                                    </div>
-                                    <div class="col-12 text-center mb-2" >
-                                      <div class="input-group">
-                                        <ion-label class="label_">Fecha:</ion-label>
-                                        <ion-input [(ngModel)]="name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-12 text-center mb-2" >
-                                      <div class="input-group">
-                                        <ion-label class="label_">Tipo de evento:</ion-label>
-                                        <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="col-12 btn-add" style="background-color: #fff !important;">
-                                  <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
-                                    <ion-button (click)="confirm()" [strong]="true" class="color-back w-100" style=" font-size: 15px;">Guardar</ion-button>
-                                  </ion-buttons>
-                                </div>
-
-                                <div class="col-12 btn-add" style="margin-top: 20px; background-color: #fff !important;">
-                                  <ion-buttons style="height: 45px; width: 80%; background: #FFF;" >
-                                    <ion-button  (click)="cancel()" [strong]="true" class=" w-100" style=" font-size: 15px; color:  #1E5B5A;     text-decoration: underline;">Regresar</ion-button>
-                                  </ion-buttons>
-                                </div>
-                              </div>
-
-                            </ion-list>
-
-                          </ion-content>
-
-                        </ng-template>
-                      </ion-modal>
-                    </div>
-
-                  <!-- ----------------------------------------------------------------------- -->
-
-                <li style="text-align: center;"  id="open-modal-edit-event-{{event.id_evento}}" expand="block" >Editar</li>
+                <li style="text-align: center;"  id="edit-event-{{event.id_evento}}" expand="block" >Editar</li>
 
                   <!-- ----------------------- Modal editar ----------------------- -->
 
                     <div class="row">
-                      <ion-modal trigger="open-modal-edit-event-{{event.id_evento}}" [initialBreakpoint]="0.85" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+                      <ion-modal trigger="edit-event-{{event.id_evento}}" [initialBreakpoint]="0.85" [breakpoints]="[0, 0.25, 0.5, 0.75]">
                         <ng-template>
+                          <form class="custom-form h-100" (ngSubmit)="cancelClient(fEditClient)" #fEditClient="ngForm">
 
-                          <ion-content class="ion-padding">
+                            <ion-content class="ion-padding">
 
-                            <ion-list>
+                              <ion-list>
 
-                              <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
-                                <p class="m-0 font-weight-bold" style="color: black; margin-bottom: 10px !important;">Editar evento</p>
+                                <div class="row cont_input_  pt-3" style="background-color: #fff; color: black">
+                                  <p class="m-0 font-weight-bold w-100 text-center" style="color: #1e5b5a; margin-bottom: 15px !important; font-size: 18px; font-weight: 700;">Editar Evento</p>
 
-                                <div class="col-12 text-center mb-2" >
-                                  <div class="input-group">
-                                    <ion-label class="label_">Nombre del cliente:</ion-label>
-                                    <ion-input [(ngModel)]="name" class="search_ " type="text" placeholder="nombre apellidos" disabled></ion-input>
-                                  </div>
-                                </div>
-
-                                <div class="col-12 text-center mb-2" >
-                                  <div class="input-group">
-                                    <ion-label class="label_">Fecha:</ion-label>
-                                    <ion-input [(ngModel)]="name" class="search_" type="emial" placeholder="ejemplo@example.com"></ion-input>
-                                  </div>
-                                </div>
-
-                                <div class="col-12 text-center mb-2" >
-                                  <div class="input-group">
-                                    <ion-label class="label_">Tipo de evento:</ion-label>
-                                    <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-                                  </div>
-                                </div>
-
-                                <div class="col-12 text-center mb-2" >
-                                  <div class="input-group">
-                                    <ion-label class="label_">Ubicación:</ion-label>
-                                    <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-                                  </div>
-                                </div>
-
-                                <div class="col-12 text-center mb-2" >
-                                  <div class="input-group">
-                                    <ion-label class="label_">Hora:</ion-label>
-                                    <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
-                                  </div>
-                                </div>
-
-                                <div class="col-12 text-center mb-2 d-flex justify-content-center" >
-                                  <div class="row">
-                                    <div class="col-5">
-                                      <input type="checkbox" name="" id="">Agregar recordatorio
-                                    </div>
-                                    <div class="col-7">
-                                      <div class="row">
-                                        <ion-label>Recordatorio 1</ion-label>
-                                      </div>
-                                      <div class="row">
-                                        <ion-label>Recordatorio 2</ion-label>
-                                      </div>
+                                  <div class="col-12 text-center mb-2" >
+                                    <div class="input-group">
+                                      <ion-label class="label_">Nombre del cliente:</ion-label>
+                                      <ion-input [(ngModel)]="name" class="search_ " type="text" disabled>Tigre toño</ion-input>
                                     </div>
                                   </div>
+
+                                  <div class="col-12 text-center mb-2" >
+                                    <div class="input-group">
+                                        <ion-label class="label_">Tipo de evento</ion-label>
+                                        <ion-select placeholder="Seleccionar Propiedades"  >
+                                            <ion-select-option value="0">Cita</ion-select-option>
+                                            <ion-select-option value="1">Visita</ion-select-option>
+                                            <ion-select-option value="2">Llamada</ion-select-option>
+                                            <ion-select-option value="3">Correo</ion-select-option>
+                                        </ion-select>
+                                    </div>
+                                  </div>
+                                  <div class="col-12 text-center mb-2" >
+                                    <div class="input-group">
+                                      <ion-label class="label_">Ubicación:</ion-label>
+                                      <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-12 text-center mb-2" >
+                                    <div class="input-group">
+                                      <ion-label class="label_">Hora:</ion-label>
+                                      <ion-input [(ngModel)]="name" class="search_" type="number" placeholder="0000000"></ion-input>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-12 text-center mb-2 d-flex justify-content-center" >
+                                    <div class="row">
+                                      <div class="col-5">
+                                        <input type="checkbox" name="" id="">Agregar recordatorio
+                                      </div>
+                                      <div class="col-7">
+                                        <div class="row">
+                                          <ion-label>Recordatorio 1</ion-label>
+                                        </div>
+                                        <div class="row">
+                                          <ion-label>Recordatorio 2</ion-label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-12 btn-add" style="background-color: #fff !important;">
+                                    <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
+                                      <ion-button (click)="confirm()" [strong]="true" class="color-back w-100" style=" font-size: 15px;">Guardar</ion-button>
+                                    </ion-buttons>
+                                  </div>
+
+                                  <div class="col-12 btn-add" style="margin-top: 20px; background-color: #fff !important;">
+                                    <ion-buttons style="height: 45px; width: 80%; background: #FFF;" >
+                                      <ion-button  (click)="cancel()" [strong]="true" class=" w-100" style=" font-size: 15px; color:  #1E5B5A;     text-decoration: underline;">Regresar</ion-button>
+                                    </ion-buttons>
+                                  </div>
                                 </div>
 
-                                <div class="col-12 btn-add" style="background-color: #fff !important;">
-                                  <ion-buttons style="height: 45px; width: 80%; background: #1e5b5a;" >
-                                    <ion-button (click)="confirm()" [strong]="true" class="color-back w-100" style=" font-size: 15px;">Guardar</ion-button>
-                                  </ion-buttons>
-                                </div>
+                              </ion-list>
 
-                                <div class="col-12 btn-add" style="margin-top: 20px; background-color: #fff !important;">
-                                  <ion-buttons style="height: 45px; width: 80%; background: #FFF;" >
-                                    <ion-button  (click)="cancel()" [strong]="true" class=" w-100" style=" font-size: 15px; color:  #1E5B5A;     text-decoration: underline;">Regresar</ion-button>
-                                  </ion-buttons>
-                                </div>
-                              </div>
+                            </ion-content>
 
-                            </ion-list>
-
-                          </ion-content>
-
+                          </form>
                         </ng-template>
                       </ion-modal>
                     </div>
