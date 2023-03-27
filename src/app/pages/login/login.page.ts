@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
 import { NgForm } from '@angular/forms';
 import { Storage } from '@ionic/storage';
 import { NavController } from '@ionic/angular';
@@ -28,13 +29,20 @@ export class LoginPage implements OnInit {
               private naveCtrl: NavController,
               private storage: Storage,
               private uiService: UiServiceService,
-              public formBuilder: FormBuilder) { }
+              public formBuilder: FormBuilder,
+              public loadingCtr: LoadingController) { }
 
   ngOnInit() {
 
   }
-  async login(fLogin: NgForm) {
 
+  loading: HTMLIonLoadingElement;
+
+  async login(fLogin: NgForm) {
+    this.presentLoading('Cargando...');
+    setTimeout(() => {
+      this.loading.dismiss();
+    }, 2000);
     if (fLogin.invalid) {
       return;
     }
@@ -68,4 +76,14 @@ export class LoginPage implements OnInit {
     $('.cont_input').css("color", "#fff !important");
 
   }
+
+
+  async presentLoading(message: string) {
+    this.loading = await this.loadingCtr.create({
+      message,
+    });
+    await  this.loading.present();
+  }
+
+
 }
